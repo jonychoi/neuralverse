@@ -26,7 +26,7 @@ export const SearchModel = ({darkMode}) => {
 export const Model = ({modelVisual, setModelVisual, darkMode}) => {
     return (
         <Box margin="margin: 30px 0px;" padding="padding: 25px" style={{flexDirection: 'row', flex: 1, height: 220}} bg={bgStyler(darkMode)} br="20px;">
-            <Flex flex={1} style={{minHeight: 150, minHeight: 150}} align="center" jsutify="center">
+            <Flex flex={1} style={{minHeight: 150, minWidth: 150}} align="center" jsutify="center">
                 <Image src={gan} style={{height: '100%', width: '100%'}} of="cover" />
             </Flex>
             <Row flex={4} align="center" margin="margin-left: 25px;">
@@ -146,9 +146,9 @@ export const StateOfTheArt = ({setModelVisual, modelVisual, darkMode}) => {
     )
 }
 
-export const Main = ({setModelVisual, modelVisual, darkMode}) => {
+export const Main = ({sideBar, setModelVisual, modelVisual, darkMode}) => {
     return (
-        <Flex style={{paddingLeft: '15%', paddingRight: '15%', paddingTop: 70, opacity: modelVisual ? 0.48 : 1, transition: 'all 300ms'}}>
+        <Flex style={{paddingLeft: '15%', paddingRight: sideBar ? '30%' : '15%', paddingTop: 70, opacity: modelVisual ? 0.48 : 1, transition: 'all 300ms'}}>
             <StateOfTheArt setModelVisual={setModelVisual} modelVisual={modelVisual} darkMode={darkMode} />
         </Flex>
     )

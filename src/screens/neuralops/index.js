@@ -6,7 +6,7 @@ export const NeuralOps = ({route}) => {
     const {darkMode} = ThemeEvent();
     const [modelVisual, setModelVisual] = useState(false);
     return (
-        <Col align="center" bg={darkMode ? "rgb(15, 15, 15)" : "white"} style={{display: route == 6 ? 'flex': 'none', paddingTop: 80}}>
+        <Col align="center" bg={darkMode ? "rgb(15, 15, 15)" : "white"} style={{display: route == 5 ? 'flex': 'none', paddingTop: 80}}>
         </Col>
     )
 };

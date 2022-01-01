@@ -8,14 +8,14 @@ import { hueStyler } from '../styles';
 
 import me from '../imgs/me.jpeg';
 
-export const Header = ({loggedIn = true, setRoute}) => {
+export const Header = ({loggedIn = true, setRoute, route}) => {
     const [hoverModel, setHoverModel] = useState(false);
     const [hoverDataset, setHoverDataset] = useState(false);
     const [hoverTrend, setHoverTrend] = useState(false);
     const [hoverNft, setHoverNft] = useState(false);
     const {darkMode, setDarkMode} = ThemeEvent();
     return (
-        <Row position="fixed" align="center" justify="space-between" zIndex={1000} bg={darkMode ? "rgba(0, 0, 0, 0.9)" : "rgba(255, 255, 255, 0.9)"} style={{width: '100vw', height:  80, top: 0, backdropFilter: 'blur(2px)'}}>
+        <Row position="fixed" align="center" justify="space-between" zIndex={1000} bg={darkMode ? route == 0 ?"rgba(10, 10, 10, 0.9)" : "rgba(20, 20, 20, 0.9)" : "rgba(255, 255, 255, 0.9)"} style={{width: '100vw', height:  80, top: 0, backdropFilter: 'blur(2px)'}}>
             <Flex flex={2}>
                 <a href="/" onClick={() => setRoute(0)}>
                     <Row to="cursor" align="center" padding="padding: 30px;">
@@ -51,13 +51,13 @@ export const Header = ({loggedIn = true, setRoute}) => {
                 </a>
                 <a onClick={() => setRoute(4)}>
                     <Row align="center" hover={hoverNft} onMouseOver={() => setHoverNft(true)} onMouseLeave={() => setHoverNft(false)}>
-                        <DesignIcon width={33} />
+                        <DesignIcon width={33} height={33} />
                         <Flex to="cursor" padding="padding: 10px 15px 10px 15px;">
                             <Text className="light" size="12.8">DESIGN</Text>
                         </Flex>
                     </Row>
                 </a>
-                <a onClick={() => setRoute(4)}>
+                <a onClick={() => setRoute(5)}>
                     <Row align="center" hover={hoverNft} onMouseOver={() => setHoverNft(true)} onMouseLeave={() => setHoverNft(false)}>
                         <Image src={logo} width={33} />
                         <Flex to="cursor" padding="padding: 10px 15px 10px 12.8px;">

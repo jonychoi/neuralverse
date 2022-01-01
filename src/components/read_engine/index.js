@@ -3,7 +3,7 @@ import { Flex } from '../common/base';
 
 export const ReadEngine = ({darkMode, setExpand}) => {
     return (
-        <Flex style={{width: '100%', overflow: 'hidden'}}>
+        <Flex style={{width: '100%', overflow: 'hidden', position: 'relative'}}>
             <div id="graph" className="graph" style={{backgroundColor: darkMode ? "rgb(30, 30, 30)" : "white"}} tabIndex={0}>
                 <svg id="canvas" className="canvas" preserveAspectRatio="xMidYMid meet" width="100%" height="100%"></svg>
             </div>

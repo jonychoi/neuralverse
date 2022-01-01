@@ -3,7 +3,7 @@
 .node line { stroke: #333; fill: none; stroke-width: 1px; }
 
 .node-item path { stroke-width: 0; stroke: #000; fill: #fff; }
-.node-item text { font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "PingFang SC"; font-size: 11px; text-rendering: geometricPrecision; }
+.node-item text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; font-size: 11px; font-weight: 500; text-rendering: geometricPrecision; }
 
 .node-item-function path { fill: #fff; }
 .node-item-function text { fill: #000; }
@@ -51,7 +51,7 @@
 .node-item-undefined:hover path { fill: #fff; }
 
 .node-attribute:hover { cursor: pointer; }
-.node-attribute text { font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "PingFang SC"; font-size: 9px; font-weight: normal; text-rendering: geometricPrecision; }
+.node-attribute text { font-size: 9px; font-weight: normal; text-rendering: geometricPrecision; }
 .node-attribute path { fill: #fff; stroke-width: 0; stroke: #000; }
 .node-attribute:hover path { fill: #f6f6f6; }
 
@@ -63,7 +63,7 @@
 .graph-item-output:hover { cursor: pointer; }
 .graph-item-output:hover path { fill: #fff; }
 
-.edge-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "PingFang SC"; font-size: 10px; }
+.edge-label { font-size: 10px; }
 .edge-path { stroke: #000; stroke-width: 1px; fill: none; marker-end: url("#arrowhead-vee"); }
 #arrowhead-vee { fill: #000; }
 .edge-path-control-dependency { stroke-dasharray: 3, 2; }
@@ -120,16 +120,16 @@
     .node-item-constant path { fill: #4b4b4b; }
     .node-item-constant:hover path { fill: #666666; }
 
-    .node-item-type-layer path { fill: rgba(51, 85, 136, 0.7); }
-    .node-item-type-activation path { fill: rgba(75, 27, 22, 0.7); }
-    .node-item-type-activation path { fill: rgba(75, 27, 22, 0.7); }
-    .node-item-type-pool path { fill: rgba(51, 85, 51, 0.7); }
-    .node-item-type-pool path { fill: rgba(51, 85, 51, 0.7); }
-    .node-item-type-normalization path { fill: rgba(51, 85, 68, 0.7); }
+    .node-item-type-layer path { fill: #1C8BD8; }
+    .node-item-type-activation path { fill: #D84476; }
+    .node-item-type-activation path { fill: #D84476; }
+    .node-item-type-pool path { fill: #9E35AD; }
+    .node-item-type-pool path { fill: #9E35AD; }
+    .node-item-type-normalization path { fill: #219C5F; }
     .node-item-type-dropout path { fill: rgba(69, 71, 112, 0.7); }
     .node-item-type-shape path { fill: rgba(108, 79, 71, 0.7); }
     .node-item-type-tensor path { fill: rgba(89, 66, 59, 0.7); }
-    .node-item-type-transform path { fill: rgba(51, 85, 68, 0.7); }
+    .node-item-type-transform path { fill: #219C5F; }
     .node-item-type-data path { fill: rgba(85, 85, 85, 0.7); }
     .node-item-type-quantization path { fill: rgb(80, 40, 0, 0.7); }
     .node-item-type-custom path { fill: rgb(64, 64, 64, 0.7); }

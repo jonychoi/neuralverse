@@ -142,9 +142,9 @@ export const Datasets = ({setModelVisual, modelVisual, darkMode}) => {
     )
 }
 
-export const Main = ({setModelVisual, modelVisual, darkMode}) => {
+export const Main = ({sideBar, setModelVisual, modelVisual, darkMode}) => {
     return (
-        <Flex style={{paddingLeft: '15%', paddingRight: '15%', paddingTop: 70, opacity: modelVisual ? 0.5 : 1, transition: 'all 300ms'}}>
+        <Flex style={{paddingLeft: '15%', paddingRight: sideBar ? '30%' : '15%', paddingTop: 70, opacity: modelVisual ? 0.5 : 1, transition: 'all 300ms'}}>
             <Datasets setModelVisual={setModelVisual} modelVisual={modelVisual} darkMode={darkMode} />
         </Flex>
     )

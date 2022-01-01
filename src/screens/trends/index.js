@@ -1,5 +1,5 @@
 import React from 'react';
-import {Flex, Col, Row} from '../../components/common/base';
+import {Row} from '../../components/common/base';
 import {ThemeEvent} from '../../contexts/GlobalContext';
 import { Lefts, Rights, Main } from './components';
 

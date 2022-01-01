@@ -11,6 +11,9 @@ import Nfts from './screens/nfts';
 import Datasets from './screens/datasets';
 import Login from './screens/login';
 import Profile from './screens/profile';
+import GenerateButton from './components/buttons/generateButton';
+import MyButton from './components/buttons/myButton';
+import SideBar from './components/sidebar';
 
 export const App = ({}) => {
   const [route, setRoute] = useState(0);
@@ -30,7 +33,7 @@ export const App = ({}) => {
   
   return (
       <div style={{overflowX: 'hidden'}}>
-        <Header setRoute={setRoute} />
+        <Header route={route} setRoute={setRoute} />
         <Landing route={route} />
         <Trend route={route}/>
         <Models route={route}/>
@@ -41,6 +44,9 @@ export const App = ({}) => {
         <Login route={route} />
         <Profile route={route}/>
         <Footer darkMode={darkMode} />
+        <GenerateButton />
+        <SideBar />
+        <MyButton />
       </div>
   )
 };
