@@ -148,7 +148,7 @@ export const StateOfTheArt = ({setModelVisual, modelVisual, darkMode}) => {
 
 export const Main = ({setModelVisual, modelVisual, darkMode}) => {
     return (
-        <Flex style={{paddingLeft: '15%', paddingRight: '15%', paddingTop: 70, opacity: modelVisual ? 0.5 : 1, transition: 'all 300ms'}}>
+        <Flex style={{paddingLeft: '15%', paddingRight: '15%', paddingTop: 70, opacity: modelVisual ? 0.48 : 1, transition: 'all 300ms'}}>
             <StateOfTheArt setModelVisual={setModelVisual} modelVisual={modelVisual} darkMode={darkMode} />
         </Flex>
     )

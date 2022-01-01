@@ -5,6 +5,8 @@ import Header from './components/header';
 import Landing from './screens/landing';
 import Trend from './screens/trends';
 import Models from './screens/models';
+import Design from './screens/design';
+import NeuralOps from './screens/neuralops';
 import Nfts from './screens/nfts';
 import Datasets from './screens/datasets';
 import Login from './screens/login';
@@ -34,6 +36,8 @@ export const App = ({}) => {
         <Models route={route}/>
         <Datasets route={route}/>
         <Nfts route={route}/>
+        <Design route={route} />
+        <NeuralOps route={route} />
         <Login route={route} />
         <Profile route={route}/>
         <Footer darkMode={darkMode} />

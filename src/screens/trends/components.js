@@ -123,19 +123,19 @@ export const WriteFeed = ({darkMode}) => {
             <Row align="center" justify="space-between">
                 <Row to="cursor" align="center">
                     <ImageIcon stroke={hueStyler(darkMode)} width={18} height={18} />
-                    <Text size="14" weight="500" margin="margin-left: 8px; margin-bottom: 1px;">Photo</Text>
+                    <Text size="14" weight="500" margin="margin-left: 8px; margin-bottom: 2px;">Photo</Text>
                 </Row>
                 <Row to="cursor" align="center">
                     <VideoIcon stroke={hueStyler(darkMode)} width={18} height={18} />
-                    <Text size="14" weight="500" margin="margin-left: 8px; margin-bottom: 1px;">Video</Text>
+                    <Text size="14" weight="500" margin="margin-left: 8px; margin-bottom: 2px;">Video</Text>
                 </Row>
                 <Row to="cursor" align="center">
                     <ModelIcon stroke1={hueStyler(darkMode)} stroke2={hueStyler(darkMode)} width={20} height={20} />
-                    <Text size="14" weight="500" margin="margin-left: 8px; margin-bottom: 1px;">Model</Text>
+                    <Text size="14" weight="500" margin="margin-left: 8px; margin-bottom: 2px;">Model</Text>
                 </Row>
                 <Row to="cursor" align="center">
                     <DocumentIcon stroke={hueStyler(darkMode)} width={18} height={18} />
-                    <Text size="14" weight="500" margin="margin-left: 8px; margin-bottom: 1px;">Document</Text>
+                    <Text size="14" weight="500" margin="margin-left: 8px; margin-bottom: 2px;">Document</Text>
                 </Row>
                 <Row to="cursor" align="center">
                     <Flex width="18px" height="18px" align="center" justify="center" position="relative">
@@ -144,7 +144,7 @@ export const WriteFeed = ({darkMode}) => {
                             <EventIcon stroke={hueStyler(darkMode)} width={18} height={18} />
                         </Flex>
                     </Flex>
-                    <Text size="14" weight="500" margin="margin-left: 8px; margin-bottom: 1px;">Event</Text>
+                    <Text size="14" weight="500" margin="margin-left: 8px; margin-bottom: 2px;">Event</Text>
                 </Row>
             </Row>
         </Col>
