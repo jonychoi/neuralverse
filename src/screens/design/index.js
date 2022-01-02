@@ -3,13 +3,16 @@ import {Col, Row} from '../../components/common/base';
 import {ThemeEvent} from '../../contexts/GlobalContext';
 import {Main} from './components';
 import { SideBarEvent } from '../../contexts/GlobalContext';
+import DesignBar from './designbar';
+import Space from './space';
 
 export const Design = ({route}) => {
     const {darkMode} = ThemeEvent();
-    const {sideBar, setSideBar} = SideBarEvent();
+    const [bar, setBar] = useState(0);
     return (
-        <Col align="center" style={{display: route == 4 ? 'flex': 'none', paddingTop: 80}}>
-            <Main sideBar={sideBar} setSideBar={setSideBar} darkMode={darkMode} />
+        <Col align="center" bg={darkMode ? 'rgb(15, 15, 15)' : 'rgb(250, 250, 250)'} style={{display: route == 4 ? 'flex': 'none', paddingTop: 80}}>
+            <Space bar={bar} setBar={setBar} darkMode={darkMode} />
+            <DesignBar bar={bar} setBar={setBar} darkMode={darkMode} />
         </Col>
     )
 };

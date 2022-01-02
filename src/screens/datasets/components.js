@@ -11,10 +11,10 @@ const Box = styled(Col)`
     border: 0;
 `;
 
-export const SearchModel = ({darkMode}) => {
+export const SearchDatasets = ({darkMode}) => {
     return (
         <Row flex={1.5} margin="margin-bottom: 10px;" to="cursor" justify="space-between" align="center" position="relative">
-            <Input className="light" placeholderColor={bgStyler(!darkMode)} placeholder="Search" color={bgStyler(!darkMode)} weight="500" bg="rgba(0,0,0,0)" style={{width: '100%', borderWidth: 0, borderBottomWidth: 0.8, letterSpacing: 0.5, borderColor: bgStyler(!darkMode)}} padding="padding: 10px 2px; padding-right: 15px;" />
+            <Input className="light" placeholderColor={bgStyler(!darkMode)} placeholder="Search Datasets" color={bgStyler(!darkMode)} weight="500" bg="rgba(0,0,0,0)" style={{width: '100%', borderWidth: 0, borderBottomWidth: 0.8, letterSpacing: 0.5, borderColor: bgStyler(!darkMode)}} padding="padding: 10px 2px; padding-right: 15px;" />
             <Flex position="absolute" style={{right: 2, opacity: 0.75}} align="center" justify="center" to="cursor" width="25px" height="25px">
                 <SearchIcon stroke={bgStyler(!darkMode)} width={18} height={18} />
             </Flex>
@@ -132,7 +132,7 @@ export const Datasets = ({setModelVisual, modelVisual, darkMode}) => {
                     <Text size="30" className="bold">DATASETS</Text>
                     <Text margin="margin: 10px 0px;" className="light" weight="500" style={{opacity: 0.75}}>5,303 machine learning datasets</Text>
                 </Col>
-                <SearchModel darkMode={darkMode} />
+                <SearchDatasets darkMode={darkMode} />
             </Row>
             <TaskMenu darkMode={darkMode} />
             <Col margin="margin: 25px 0px;">

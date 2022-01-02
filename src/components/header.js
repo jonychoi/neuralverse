@@ -4,7 +4,8 @@ import {ModelIcon, DatasetIcon, TrendIcon, NftIcon, NotiIcon, DesignIcon} from '
 import ThemeToggle from './buttons/themeButton';
 import {ThemeEvent} from '../contexts/GlobalContext';
 import logo from '../imgs/logo.png';
-import { hueStyler } from '../styles';
+import DesignHeader from './designHeader';
+import OpsHeader from './opsHeader';
 
 import me from '../imgs/me.jpeg';
 
@@ -14,17 +15,29 @@ export const Header = ({loggedIn = true, setRoute, route}) => {
     const [hoverTrend, setHoverTrend] = useState(false);
     const [hoverNft, setHoverNft] = useState(false);
     const {darkMode, setDarkMode} = ThemeEvent();
+    const [headerShown, setHeaderShown] = useState(false);
     return (
         <Row position="fixed" align="center" justify="space-between" zIndex={1000} bg={darkMode ? route == 0 ?"rgba(10, 10, 10, 0.9)" : "rgba(20, 20, 20, 0.9)" : "rgba(255, 255, 255, 0.9)"} style={{width: '100vw', height:  80, top: 0, backdropFilter: 'blur(2px)'}}>
-            <Flex flex={2}>
+            <Row flex={2}>
                 <a href="/" onClick={() => setRoute(0)}>
-                    <Row to="cursor" align="center" padding="padding: 30px;">
+                    <Row to="cursor" align="center" padding="padding: 30px;" position="relative" style={{width: 300}}>
                         <Image width="43px;" src={logo} />
-                        <Text margin="margin-left: 15px;" className="bold" size="18">NEURALVERSE</Text>
+                        <Flex position="absolute" style={{left: 73, opacity: route != 4 && route != 5 ? 1 : 0, transition: 'all 500ms ease'}}>
+                            <Text margin="margin-left: 15px;" className="bold" size="18">NEURALVERSE</Text>
+                        </Flex>
+                        <Flex position="absolute" style={{left: 73, opacity: route == 4 ? 1 : 0, transition: 'all 500ms ease'}}>
+                            <Text margin="margin-left: 15px;" className="bold" size="18">NEURAL STUDIO</Text>
+                        </Flex>
+                        <Flex position="absolute" style={{left: 73, opacity: route == 5 ? 1 : 0, transition: 'all 500ms ease'}}>
+                            <Text margin="margin-left: 15px;" className="bold" size="18">NEURAL OPS</Text>
+                        </Flex>
                     </Row>
                 </a>
-            </Flex> 
-            <Row align="center" justify="space-between" flex={3.8} height="100%">
+                {(route == 4 || route == 5) && <Text onClick={() => setHeaderShown(!headerShown)}>See Header</Text>}
+            </Row>
+            <DesignHeader route={route} headerShown={headerShown}/>
+            <OpsHeader route={route} headerShown={headerShown}/>
+            <Row align="center" justify="space-between" flex={route == 4 || route == 5 ? headerShown ? 3.8 : 0 : 3.8} height="100%" style={{opacity: route == 4 || route == 5 ? headerShown ? 1 : 0 : 1, transition: 'all 500ms ease', overflow: 'hidden'}}>
                 <a onClick={() => setRoute(1)}>
                     <Row align="center" hover={hoverTrend} onMouseOver={() => setHoverTrend(true)} onMouseLeave={() => setHoverTrend(false)} >
                         <TrendIcon width={22} />

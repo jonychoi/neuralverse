@@ -56,6 +56,17 @@ export const Col = styled(Flex)`
     flex-direction: column;
 `;
 
+export const Box = styled(Col)`
+    transition: background-color .3s,color .3s,box-shadow .3s;
+    box-shadow: 0 0 0.1rem rgb(0 0 0 / 10%), 0 0.15rem 0.9rem rgb(0 0 0 / 10%);
+    border: 0;
+    ::-webkit-scrollbar {
+        display: none;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;
+      }
+`;
+
 export const Image = styled.img`
     position: ${props => props.position};
     object-fit: ${props => props.of};

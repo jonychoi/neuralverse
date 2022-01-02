@@ -25,7 +25,7 @@ export const App = ({}) => {
       if (darkMode) {
         body.style = "background-color: rgb(15, 15, 15); transition: all 500ms ease"
       } else {
-        body.style = "background-color: rgb(240, 240, 240); transition: all 500ms ease"
+        body.style = "background-color: white; transition: all 500ms ease"
       }
     }
     themechanger();
