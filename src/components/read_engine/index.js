@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Flex } from '../common/base';
 
-export const ReadEngine = ({darkMode, setExpand}) => {
+export const ReadEngine = ({darkMode}) => {
     return (
         <Flex style={{width: '100%', overflow: 'hidden', position: 'relative'}}>
             <div id="graph" className="graph" style={{backgroundColor: darkMode ? "rgb(30, 30, 30)" : "white"}} tabIndex={0}>
@@ -10,7 +10,7 @@ export const ReadEngine = ({darkMode, setExpand}) => {
             <SideBar />
             <ToolBox />
             <div id="transparent" className="transparent"></div>
-            <div className="center logo">s
+            <div className="center logo">
                 
                 <div className="center logo-message">
                     <div style={{height: 30, textAlign: 'center'}}>Version <span id="version" className="select">5.4.7</span></div>

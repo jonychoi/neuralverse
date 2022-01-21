@@ -1,5 +1,5 @@
 import React from 'react';
-import {SideBar} from './components';
+import SideBar from './components';
 
 export const Index = ({sideBar, setSideBar, darkMode}) => {
     return (

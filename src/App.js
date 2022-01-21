@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {ThemeEvent} from './contexts/GlobalContext';
 import Footer from './components/footer';
 import Header from './components/header';
 import Landing from './screens/landing';
@@ -14,22 +13,10 @@ import Profile from './screens/profile';
 import GenerateButton from './components/buttons/generateButton';
 import MyButton from './components/buttons/myButton';
 import SideBar from './components/sidebar';
+import Visualizer from './components/visualizer';
 
 export const App = ({}) => {
   const [route, setRoute] = useState(0);
-  const {darkMode} = ThemeEvent();
-  
-  useEffect(() => {
-    const themechanger = () => {
-      const body = document.body;
-      if (darkMode) {
-        body.style = "background-color: rgb(15, 15, 15); transition: all 500ms ease"
-      } else {
-        body.style = "background-color: white; transition: all 500ms ease"
-      }
-    }
-    themechanger();
-  }, [darkMode]);
   
   return (
       <div style={{overflowX: 'hidden'}}>
@@ -43,10 +30,11 @@ export const App = ({}) => {
         <NeuralOps route={route} />
         <Login route={route} />
         <Profile route={route}/>
-        <Footer darkMode={darkMode} />
+        <Footer />
         <GenerateButton />
         <SideBar />
         <MyButton />
+        <Visualizer />
       </div>
   )
 };

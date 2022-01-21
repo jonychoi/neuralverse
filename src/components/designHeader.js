@@ -16,14 +16,14 @@ export const DesignHeader = ({route, headerShown}) => {
                 <Flex to="cursor" padding="padding: 10px 15px 10px 15px;">
                     <Text className="light" size="12.8">COMPONENTS</Text>
                 </Flex>
-            </Row>
+            </Row> 
             <Row align="center">
                 <TrendIcon width={22} />
                 <Flex to="cursor" padding="padding: 10px 15px 10px 15px;">
                     <Text className="light" size="12.8">MY MODELS</Text>
                 </Flex>
             </Row>
-        </Row>
+        </Row>  
     )
 };
 

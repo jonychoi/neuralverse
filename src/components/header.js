@@ -6,8 +6,20 @@ import {ThemeEvent} from '../contexts/GlobalContext';
 import logo from '../imgs/logo.png';
 import DesignHeader from './designHeader';
 import OpsHeader from './opsHeader';
+import styled from 'styled-components';
 
 import me from '../imgs/me.jpeg';
+
+export const HeaderBox = styled(Row)`
+    transition: background-color .3s,color .3s,box-shadow .3s ease;
+    box-shadow: 0 0 0.1rem rgb(0 0 0 / 10%), 0 0.15rem 0.9rem rgb(0 0 0 / 10%);
+    border: 0;
+    ::-webkit-scrollbar {
+        display: none;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;
+    }
+`;
 
 export const Header = ({loggedIn = true, setRoute, route}) => {
     const [hoverModel, setHoverModel] = useState(false);
@@ -17,7 +29,7 @@ export const Header = ({loggedIn = true, setRoute, route}) => {
     const {darkMode, setDarkMode} = ThemeEvent();
     const [headerShown, setHeaderShown] = useState(false);
     return (
-        <Row position="fixed" align="center" justify="space-between" zIndex={1000} bg={darkMode ? route == 0 ?"rgba(10, 10, 10, 0.9)" : "rgba(20, 20, 20, 0.9)" : "rgba(255, 255, 255, 0.9)"} style={{width: '100vw', height:  80, top: 0, backdropFilter: 'blur(2px)'}}>
+        <HeaderBox position="fixed" align="center" justify="space-between" zIndex={1000} bg={darkMode ? "rgba(0,0,0,0)" : 'rgba(255, 255, 255, 0.9)'} style={{width: '100vw', height:  80, top: 0, backdropFilter: 'blur(2px)'}}>
             <Row flex={2}>
                 <a href="/" onClick={() => setRoute(0)}>
                     <Row to="cursor" align="center" padding="padding: 30px;" position="relative" style={{width: 300}}>
@@ -42,7 +54,7 @@ export const Header = ({loggedIn = true, setRoute, route}) => {
                     <Row align="center" hover={hoverTrend} onMouseOver={() => setHoverTrend(true)} onMouseLeave={() => setHoverTrend(false)} >
                         <TrendIcon width={22} />
                         <Flex to="cursor" padding="padding: 10px 15px 10px 15px;">
-                            <Text className="light" size="12.8">TRENDS</Text>
+                            <Text className="light" size="12.8">VERSE</Text>
                         </Flex>
                     </Row>
                 </a>
@@ -80,7 +92,10 @@ export const Header = ({loggedIn = true, setRoute, route}) => {
                 </a>
             </Row>
             {!loggedIn ? 
-                (<Row align="center" justify="flex-end" flex={1.9}>
+                (<Row align="center" justify="center" flex={1.9}>
+                    <Flex>
+                        <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+                    </Flex>
                     <a onClick={() => setRoute(5)}>
                         <Flex to="cursor" width="90px" height="30px" justify="center" align="center" style={{background: 'linear-gradient(#25A2F9, #1C8BD8)'}} br="30px">
                             <Text className="light" size="12">LOGIN</Text>
@@ -91,23 +106,20 @@ export const Header = ({loggedIn = true, setRoute, route}) => {
                             <Text className="light" size="12">SIGN UP</Text>
                         </Flex>
                     </a>
+                </Row>) :
+                (<Row align="center" justify="center" flex={1.9}>
                     <Flex>
                         <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
                     </Flex>
-                </Row>) :
-                (<Row align="center" justify="flex-end" flex={1.9}>
                     <a onClick={() => setRoute(7)}>
                         <Row align="center" to="cursor">
                             <CirclePic margin={15} size={32} image={me} />
                             <Text className="light" size="12.8">JONATHAN</Text>
                         </Row>
                     </a>
-                    <Flex>
-                        <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
-                    </Flex>
                 </Row>)
             }
-        </Row>
+        </HeaderBox>
     )
 };
 

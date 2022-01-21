@@ -110,6 +110,9 @@ export const Input = styled.input`
     line-height: ${props => props.lh}px;
     color: ${props => props.color};
     transition: all 300ms ease;
+    ::placeholder {
+        color: ${(props) => props.placeholderTextColor};
+    };
 `;
 
 export const TextArea = styled.textarea`

@@ -1,16 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import {Flex, Col, Row, Text, CirclePic, Image, Input} from '../../components/common/base';
+import {Flex, Col, Row, Text, CirclePic, Image, Input, Box} from '../../components/common/base';
 import gan from '../../imgs/gan.png';
 import Button from '../../components/buttons/button';
 import {bgStyler, hueStyler, btnStyler, blueColor, redColor, purLowColor, purColor, blueLowColor} from '../../styles';
 import {RightIcon, BenchmarkIcon, SearchIcon} from '../../icons/utilities';
-import styled from 'styled-components';
-
-const Box = styled(Col)`
-    transition: background-color .25s,color .25s,box-shadow .25s;
-    box-shadow: 0 0 0.1rem rgb(0 0 0 / 10%), 0 0.15rem 0.9rem rgb(0 0 0 / 10%);
-    border: 0;
-`;
+import { VisualizerEvent } from '../../contexts/GlobalContext';
 
 export const SearchModel = ({darkMode}) => {
     return (
@@ -23,7 +17,8 @@ export const SearchModel = ({darkMode}) => {
     )
 }
 
-export const Model = ({modelVisual, setModelVisual, darkMode}) => {
+export const Model = ({darkMode}) => {
+    const {visualizer, setVisualizer} = VisualizerEvent();
     return (
         <Box margin="margin: 30px 0px;" padding="padding: 25px" style={{flexDirection: 'row', flex: 1, height: 220}} bg={bgStyler(darkMode)} br="20px;">
             <Flex flex={1} style={{minHeight: 150, minWidth: 150}} align="center" jsutify="center">
@@ -54,14 +49,14 @@ export const Model = ({modelVisual, setModelVisual, darkMode}) => {
                 <Col flex={1} margin="margin-left: 20px;">
                     <Button color={blueLowColor} hoverColor={blueColor} width="150px" height="30px" br="20px" margin="margin: 10px 0px;" size="12.8" text="Paper" />
                     <Button color={blueLowColor} hoverColor={blueColor} width="150px" height="30px" br="20px" margin="margin: 10px 0px;" size="12.8" text="Code" />
-                    <Button color={purLowColor} func={setModelVisual} arg={!modelVisual} hoverColor={purColor} width="150px" height="30px" br="20px" margin="margin: 10px 0px;" size="12.8" text="Customize Model" />
+                    <Button color={purLowColor} func={setVisualizer} arg={!visualizer} hoverColor={purColor} width="150px" height="30px" br="20px" margin="margin: 10px 0px;" size="12.8" text="Customize Model" />
                     {/* <Flex to="cursor" align="center" justify="center"  bg={blueColor} >
                         <Text color={"white"} className="bold" size="12.8">Paper</Text>
                     </Flex>
                     <Flex to="cursor" align="center" justify="center" width="150px" height="30px" br="20px" bg={blueColor} margin="margin: 10px 0px;">
                         <Text color={"white"} className="bold" size="12.8">Code</Text>
                     </Flex>
-                    <Flex to="cursor" onClick={() => setModelVisual(!modelVisual)} align="center" justify="center" width="150px" height="30px" br="20px" bg={purColor} margin="margin: 10px 0px;">
+                    <Flex to="cursor" onClick={() => setVisualizer(!visualizer)} align="center" justify="center" width="150px" height="30px" br="20px" bg={purColor} margin="margin: 10px 0px;">
                         <Text color={"white"} className="bold" size="12.8">Customize Model</Text>
                     </Flex> */}
                 </Col>
@@ -70,18 +65,18 @@ export const Model = ({modelVisual, setModelVisual, darkMode}) => {
     )
 }
 
-export const Models = ({modelVisual, setModelVisual, darkMode, title}) => {
+export const Models = ({darkMode, title}) => {
     return (
         <Col>
-            <Text size="22" className="bold" weight="600">TRENDING MODELS</Text>
+            <Text size="20" className="bold">TRENDINGS</Text>
             <Col>
-                <Model modelVisual={modelVisual} setModelVisual={setModelVisual} darkMode={darkMode} />
-                <Model modelVisual={modelVisual} setModelVisual={setModelVisual} darkMode={darkMode} />
-                <Model modelVisual={modelVisual} setModelVisual={setModelVisual} darkMode={darkMode} />
-                <Model modelVisual={modelVisual} setModelVisual={setModelVisual} darkMode={darkMode} />
-                <Model modelVisual={modelVisual} setModelVisual={setModelVisual} darkMode={darkMode} />
-                <Model modelVisual={modelVisual} setModelVisual={setModelVisual} darkMode={darkMode} />
-                <Model modelVisual={modelVisual} setModelVisual={setModelVisual} darkMode={darkMode} />
+                <Model darkMode={darkMode} />
+                <Model darkMode={darkMode} />
+                <Model darkMode={darkMode} />
+                <Model darkMode={darkMode} />
+                <Model darkMode={darkMode} />
+                <Model darkMode={darkMode} />
+                <Model darkMode={darkMode} />
             </Col>
         </Col>
     )
@@ -128,7 +123,7 @@ export const TaskMenu = ({darkMode}) => {
     )
 }
 
-export const StateOfTheArt = ({setModelVisual, modelVisual, darkMode}) => {
+export const StateOfTheArt = ({darkMode}) => {
     return (
         <Col>
             <Row align="flex-end">
@@ -140,16 +135,16 @@ export const StateOfTheArt = ({setModelVisual, modelVisual, darkMode}) => {
             </Row>
             <TaskMenu darkMode={darkMode} />
             <Col margin="margin: 25px 0px;">
-                <Models setModelVisual={setModelVisual} modelVisual={modelVisual} darkMode={darkMode} />
+                <Models darkMode={darkMode} />
             </Col>
         </Col>
     )
 }
 
-export const Main = ({sideBar, setModelVisual, modelVisual, darkMode}) => {
+export const Main = ({visualizer, sideBar, darkMode}) => {
     return (
-        <Flex style={{paddingLeft: '15%', paddingRight: sideBar ? '30%' : '15%', paddingTop: 70, opacity: modelVisual ? 0.48 : 1, transition: 'all 300ms'}}>
-            <StateOfTheArt setModelVisual={setModelVisual} modelVisual={modelVisual} darkMode={darkMode} />
+        <Flex style={{paddingLeft: '15%', paddingRight: sideBar || visualizer ? '50%' : '15%', paddingTop: 50, transition: 'all 300ms'}}>
+            <StateOfTheArt darkMode={darkMode} />
         </Flex>
     )
 }

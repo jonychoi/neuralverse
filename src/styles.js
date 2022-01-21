@@ -13,7 +13,7 @@ export const darkBg = "rgb(30, 30, 30)"
 export const bg = "white";
 
 export const hueStyler = (darkMode) => {
-    return darkMode ? purColor : purColor;
+    return darkMode ? purColor : blueColor;
 }
 
 export const bgStyler = (darkMode) => {
@@ -22,4 +22,8 @@ export const bgStyler = (darkMode) => {
 
 export const btnStyler = (darkMode) => {
     return darkMode ? "black" : "white";
+}
+
+export const GlobalBgStyler = (darkMode) => {
+    return darkMode ? "rgb(15, 15, 15)" : "rgb(250, 250, 250)";
 }

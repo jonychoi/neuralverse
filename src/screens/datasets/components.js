@@ -1,15 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import {Flex, Col, Row, Text, CirclePic, Image, Input} from '../../components/common/base';
+import {Flex, Col, Row, Text, CirclePic, Image, Input, Box} from '../../components/common/base';
 import gan from '../../imgs/gan.png';
 import {bgStyler, hueStyler, btnStyler} from '../../styles';
 import {RightIcon, BenchmarkIcon, SearchIcon} from '../../icons/utilities';
 import styled from 'styled-components';
-
-const Box = styled(Col)`
-    transition: background-color .25s,color .25s,box-shadow .25s;
-    box-shadow: 0 0 0.1rem rgb(0 0 0 / 10%), 0 0.15rem 0.9rem rgb(0 0 0 / 10%);
-    border: 0;
-`;
 
 export const SearchDatasets = ({darkMode}) => {
     return (
@@ -69,7 +63,7 @@ export const Model = ({modelVisual, setModelVisual, darkMode}) => {
 export const Models = ({modelVisual, setModelVisual, darkMode, title}) => {
     return (
         <Col>
-            <Text size="22" className="bold" weight="600">TRENDING MODELS</Text>
+            <Text size="20" className="bold">TRENDINGS</Text>
             <Col>
                 <Model modelVisual={modelVisual} setModelVisual={setModelVisual} darkMode={darkMode} />
                 <Model modelVisual={modelVisual} setModelVisual={setModelVisual} darkMode={darkMode} />
@@ -144,7 +138,7 @@ export const Datasets = ({setModelVisual, modelVisual, darkMode}) => {
 
 export const Main = ({sideBar, setModelVisual, modelVisual, darkMode}) => {
     return (
-        <Flex style={{paddingLeft: '15%', paddingRight: sideBar ? '30%' : '15%', paddingTop: 70, opacity: modelVisual ? 0.5 : 1, transition: 'all 300ms'}}>
+        <Flex style={{paddingLeft: '15%', paddingRight: sideBar ? '30%' : '15%', paddingTop: 50, opacity: modelVisual ? 0.5 : 1, transition: 'all 300ms'}}>
             <Datasets setModelVisual={setModelVisual} modelVisual={modelVisual} darkMode={darkMode} />
         </Flex>
     )

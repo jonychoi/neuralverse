@@ -86,3 +86,5 @@ export const SideBar = ({}) => {
         </Box>
     )
 }
+
+export default SideBar;
