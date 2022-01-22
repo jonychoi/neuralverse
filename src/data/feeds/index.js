@@ -76,7 +76,7 @@ export default [
         authors: ["Shlomo Kashani", "Amir Ivry"],
         paper: "https://arxiv.org/abs/2201.00650v2",
         code: "https://github.com/BoltzmannEntropy/interviews.ai",
-        thumbnail: "https://github.com/BoltzmannEntropy/interviews.ai/blob/main/assets/cover-amazon-print2.png",
+        thumbnail: "https://raw.githubusercontent.com/BoltzmannEntropy/interviews.ai/main/assets/cover-amazon-print2.png",
         tasks: [],
         datasets: [],
         paperswithcode: "https://paperswithcode.com/paper/deep-learning-interviews-hundreds-of-fully",

@@ -1,10 +1,10 @@
-import logo from './avatars/logo.png';
+import logo from './avatars/logocircle.png';
 
 export default [
     {
         id: "team-00001",
-        teamId: "neuralverse",
-        name: "NeuralVerse",
+        userId: "neuralverse",
+        name: "Neuralverse",
         avatar: logo,
         briefIntroduction: "Beyond the State of the Arts",
         fullIntroudction: "Neuralverse's mission aims to express the infinite creativity of humans and to pursue truth within the universe.",

@@ -18,7 +18,7 @@ export const WriteFeed = ({darkMode}) => {
     const d = new Date();
     let day = String(d).split(" ")[2]
     return (
-        <Box justify="space-between" margin="margin: 0px 30px 10px 30px" padding="padding: 15px;" bg={bgStyler(darkMode)} br="10px" width="700px" height="120px">
+        <Box justify="space-between" margin="margin: 0px 30px 10px 30px" padding="padding: 15px;" bg={bgStyler(darkMode)} br="10px" width="650px" height="120px">
             <Row>
                 <CirclePic image={me} size={50} />
                 <Input 
@@ -41,7 +41,7 @@ export const WriteFeed = ({darkMode}) => {
                     <VideoIcon stroke={hueStyler(darkMode)} width={18} height={18} />
                     <Text size="11" className="light" weight="700" margin="margin-left: 10px;">VIDEO</Text>
                 </Row>
-                <Row to="cursor" align="center">
+                <Row to="cursor" align="center">    
                     <ModelIcon stroke1={hueStyler(darkMode)} stroke2={hueStyler(darkMode)} width={20} height={20} />
                     <Text size="11" className="light" weight="700" margin="margin-left: 10px;">MODEL</Text>
                 </Row>
@@ -65,7 +65,7 @@ export const WriteFeed = ({darkMode}) => {
 
 export const Bottom = ({darkMode, Components}) => {
     return (
-        <Row align="center" justify="space-between" padding="padding-top: 10px" style={{borderTopWidth: 0.3, borderTopColor: darkMode ? "rgb(50, 50, 50)" : "black", borderTopStyle: "solid"}}>
+        <Row align="center" justify="space-between" padding="padding-top: 15px" style={{borderTopWidth: 0.3, borderTopColor: darkMode ? "rgb(50, 50, 50)" : "black", borderTopStyle: "solid"}}>
             <Row to="cursor" cursorOpaFalse={true} align="center">
                 <LikeIcon stroke={darkMode ? "rgb(230, 230, 230)" : "black"} height={18} width={18} />
                 <Text margin="margin-left: 10px; margin-bottom: 3px;" size="12.8" color="rgb(230, 230, 230)" weight="500">Upvote</Text>
@@ -104,13 +104,15 @@ export const FeedTop = ({darkMode, user, Components}) => {
                 </Flex>
             </Row>
             <Row align="center" justify="space-between" margin="margin: 5px 0px">
-                <Row align="center">
-                    <CirclePic image={user.avatar} size={40} of="cover" />
-                    <Col margin="margin-left: 10px;">
-                        <Text weight="500">{user.name}</Text>
-                        <Text color={darkMode ? "rgb(200, 200, 200)" : "rgb(30, 30, 30)"} size="12">{user.briefIntroduction}</Text>
-                    </Col>
-                </Row>
+                <a href={'/'+user.userId}>
+                    <Row align="center">
+                        <CirclePic image={user.avatar} size={40} of="cover" />
+                        <Col margin="margin-left: 10px;">
+                            <Text weight="500">{user.name}</Text>
+                            <Text color={darkMode ? "rgb(200, 200, 200)" : "rgb(30, 30, 30)"} size="12">{user.briefIntroduction}</Text>
+                        </Col>
+                    </Row>
+                </a>
                 {Components}
             </Row>
         </Col>
@@ -153,8 +155,10 @@ export const ModelConfig = ({darkMode, setVisualizer, visualizer}) => {
 
 export const Hashtags = ({darkMode, hashtags}) => {
     return (
-        <Row width="500px" style={{overflow: "hidden"}}>
-            {hashtags.map(item => <Text size="14" style={{whiteSpace: "nowrap"}} key={item} color={blueColor} margin="margin-right: 8px;">#{item}</Text>)}
+        <Row width="500px" margin="margin-bottom: 5px;" style={{overflow: "hidden"}}>
+            {hashtags.map(item => <a href={'/hashtags/'+item.toLowerCase().replace(" ", "-")} style={{lineHeight: '18px'}}>
+                <Text size="14" style={{whiteSpace: "nowrap"}} key={item} color={"white"} margin="margin-right: 8px;">#{item}</Text>
+            </a>)}
         </Row>
     )
 }
@@ -162,22 +166,21 @@ export const Hashtags = ({darkMode, hashtags}) => {
 export const Model = ({content, darkMode}) => {
     const {visualizer, setVisualizer} = VisualizerEvent();
     return (
-        <Box margin="margin: 15px 30px 15px 30px" padding="padding: 10px 15px" style={{width: 700}} bg={bgStyler(darkMode)} br="20px;">
+        <Box margin="margin: 15px 30px 15px 30px" padding="padding: 10px 15px" style={{width: 650}} bg={bgStyler(darkMode)} br="20px;">
             <FeedTop user={content.writer_id} darkMode={darkMode} Components={<ModelConfig darkMode={darkMode} visualizer={visualizer} setVisualizer={setVisualizer} />} />
             <Row margin="margin: 10px 0px;">
-                <Col flex={5}>
+                <Col>
                     <Text weight="600">
                         {content.title}
                     </Text>
-                    <Text margin="margin: 10px 0px;" lh={21} size="14" style={{height: 105, overflow: 'hidden'}}>
+                    <Text margin="margin: 10px 0px;" lh={21} size="14" style={{maxHeight: 125, overflow: 'hidden'}}>
                         {content.description}
                     </Text>
-                    {content.tasks && <Hashtags darkMode={darkMode} hashtags={content.tasks} />}
                 </Col>
-                <Flex margin="margin-left: 15px;" style={{height: 150, width: 150}} align="center" justify="center">
-                    <Image src={content.thumbnail} style={{height: '100%', width: '100%'}} of="cover" />
-                </Flex>
             </Row>
+            <Flex style={{height: '100%', width: '100%', maxHeight: 619}} align="center" justify="center">
+                <Image src={content.thumbnail} style={{height: '100%', width: '100%'}} of="cover" />
+            </Flex>
             <Bottom darkMode={darkMode} />
         </Box>
     )
