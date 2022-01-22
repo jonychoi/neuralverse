@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Flex, Col, Row, Text} from '../../components/common/base';
+import {Col, Row, Flex, Text, Image, CirclePic} from '../../components/common/base';
 
 export const MyModels = ({}) => {
     return (
@@ -10,6 +10,22 @@ export const MyModels = ({}) => {
             <Col>
                 <Text className="bold">Saved Models</Text>
             </Col>
+        </Col>
+    )
+}
+
+export const ProfileTop = ({user}) => {
+    return (
+        <Col>
+            <Flex>
+                <Image src={user.bg} />
+            </Flex>
+            <Row>
+                <CirclePic image={user.avatar} size={80} />
+                <Col>
+                    <Text>{user.name}</Text>
+                </Col>
+            </Row>
         </Col>
     )
 }
