@@ -49,7 +49,7 @@ textarea, input {
 
 
 
-.graph { display: flex; height: 100%; width: 100%; overflow: auto; outline: none; touch-action: pan-x pan-y; position: relative}
+.graph { display: flex; height: 100%; width: 100%; overflow: auto; outline: none; touch-action: pan-x pan-y; position: relative;}
 .graph::-webkit-scrollbar {
   display: none;
   -ms-overflow-style: none;  /* IE and Edge */

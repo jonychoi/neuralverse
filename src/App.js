@@ -10,7 +10,6 @@ import Nfts from './screens/nfts';
 import Datasets from './screens/datasets';
 import Login from './screens/login';
 import Profile from './screens/profile';
-import GenerateButton from './components/buttons/generateButton';
 import MyButton from './components/buttons/myButton';
 import SideBar from './components/sidebar';
 import Visualizer from './components/visualizer';
@@ -31,7 +30,6 @@ export const App = ({}) => {
         <Login route={route} />
         <Profile route={route}/>
         <Footer />
-        <GenerateButton />
         <SideBar />
         <MyButton />
         <Visualizer />

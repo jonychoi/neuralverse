@@ -17,66 +17,11 @@ export const SearchModel = ({darkMode}) => {
     )
 }
 
-export const Model = ({darkMode}) => {
-    const {visualizer, setVisualizer} = VisualizerEvent();
-    return (
-        <Box margin="margin: 30px 0px;" padding="padding: 25px" style={{flexDirection: 'row', flex: 1, height: 220}} bg={bgStyler(darkMode)} br="20px;">
-            <Flex flex={1} style={{minHeight: 150, minWidth: 150}} align="center" jsutify="center">
-                <Image src={gan} style={{height: '100%', width: '100%'}} of="cover" />
-            </Flex>
-            <Row flex={4} align="center" margin="margin-left: 25px;">
-                <Col>
-                    <Text className="bold" size="17">
-                        JoJoGAN: One Shot Face Stylization
-                    </Text>
-                    <Text style={{opacity: 0.85}} className="light" weight="500" margin="margin: 10px 0px;">
-                        mchong6/JoJoGAN •  • arXiv 2021
-                    </Text>
-                    <Text margin="margin: 10px 0px;" style={{height: 80, overflow: 'hidden'}}>
-                        While there have been recent advances in few-shot image stylization, these methods
-                        fail to capture stylistic details that are obvious to humans. Details such as the shape
-                        of the eyes, the boldness of the lines, are especially difficult for a model to learn,
-                        especially so under a limited data setting. In this work, we aim to perform oneshot image stylization that gets the details right. Given a reference style image,
-                        we approximate paired real data using GAN inversion and finetune a pretrained
-                        StyleGAN using that approximate paired data. We then encourage the StyleGAN
-                        to generalize so that the learned style can be applied to all other images.                    
-                    </Text>
-                    <Row margin="margin: 10px 0px;">
-                        <Text>GAN Inversion</Text>
-                        <Text>Image Stylization</Text>
-                    </Row>
-                </Col>
-                <Col flex={1} margin="margin-left: 20px;">
-                    <Button color={blueLowColor} hoverColor={blueColor} width="150px" height="30px" br="20px" margin="margin: 10px 0px;" size="12.8" text="Paper" />
-                    <Button color={blueLowColor} hoverColor={blueColor} width="150px" height="30px" br="20px" margin="margin: 10px 0px;" size="12.8" text="Code" />
-                    <Button color={purLowColor} func={setVisualizer} arg={!visualizer} hoverColor={purColor} width="150px" height="30px" br="20px" margin="margin: 10px 0px;" size="12.8" text="Customize Model" />
-                    {/* <Flex to="cursor" align="center" justify="center"  bg={blueColor} >
-                        <Text color={"white"} className="bold" size="12.8">Paper</Text>
-                    </Flex>
-                    <Flex to="cursor" align="center" justify="center" width="150px" height="30px" br="20px" bg={blueColor} margin="margin: 10px 0px;">
-                        <Text color={"white"} className="bold" size="12.8">Code</Text>
-                    </Flex>
-                    <Flex to="cursor" onClick={() => setVisualizer(!visualizer)} align="center" justify="center" width="150px" height="30px" br="20px" bg={purColor} margin="margin: 10px 0px;">
-                        <Text color={"white"} className="bold" size="12.8">Customize Model</Text>
-                    </Flex> */}
-                </Col>
-            </Row>
-        </Box>
-    )
-}
-
 export const Models = ({darkMode, title}) => {
     return (
         <Col>
             <Text size="20" className="bold">TRENDINGS</Text>
             <Col>
-                <Model darkMode={darkMode} />
-                <Model darkMode={darkMode} />
-                <Model darkMode={darkMode} />
-                <Model darkMode={darkMode} />
-                <Model darkMode={darkMode} />
-                <Model darkMode={darkMode} />
-                <Model darkMode={darkMode} />
             </Col>
         </Col>
     )

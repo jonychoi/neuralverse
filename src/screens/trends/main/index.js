@@ -2,12 +2,14 @@ import React, {useState, useEffect} from 'react';
 import useInput from '../../../hooks/useInput';
 import {Flex, Col, Row, Text, Image, CirclePic, Input, Box} from '../../../components/common/base';
 import {ImageIcon, VideoIcon, EventIcon, DocumentIcon} from '../../../icons/createpost';
-import {LikeIcon, CommentIcon, ShareIcon} from '../../../icons/utilities';
-import {ModelIcon} from '../../../icons/headericons';
+import {LikeIcon, CommentIcon, ShareIcon, RePostIcon, PaperIcon, CodeIcon} from '../../../icons/utilities';
+import {bgStyler, hueStyler, btnStyler, blueColor, redColor, purLowColor, purColor, blueLowColor} from '../../../styles';
+import gan from '../../../imgs/gan.png';
+import {ModelIcon, DesignIcon, StudioLight} from '../../../icons/headericons';
 import me from '../../../imgs/me.jpeg';
-import {hueStyler, bgStyler} from '../../../styles';
 import Lefts from '../lefts';
 import Rights from '../rights';
+import { VisualizerEvent } from '../../../contexts/GlobalContext';
 
 //model 첨부하기
 export const WriteFeed = ({darkMode}) => {
@@ -60,10 +62,36 @@ export const WriteFeed = ({darkMode}) => {
     )
 }
 
-export const Feed = ({darkMode}) => {
+export const Bottom = ({darkMode, Components}) => {
     return (
-        <Box bg={bgStyler(darkMode)} padding="padding: 10px 15px;" margin="margin: 15px 30px 15px 30px" br="10px" style={{width: 700, maxHeight: 800, minHeight: 200}}>
-            <Row margin="margin-bottom: 10px;">
+        <Row align="center" justify="space-between" padding="padding-top: 10px" style={{borderTopWidth: 0.3, borderTopColor: darkMode ? "rgb(50, 50, 50)" : "black", borderTopStyle: "solid"}}>
+            <Row to="cursor" cursorOpaFalse={true} align="center">
+                <LikeIcon stroke={darkMode ? "rgb(230, 230, 230)" : "black"} height={18} width={18} />
+                <Text margin="margin-left: 10px; margin-bottom: 3px;" size="12.8" color="rgb(230, 230, 230)" weight="500">Upvote</Text>
+            </Row>
+            <Row to="cursor" cursorOpaFalse={true} align="center">
+                <CommentIcon stroke={darkMode ? "rgb(230, 230, 230)" : "black"} height={18} width={18} />
+                <Text margin="margin-left: 10px; margin-bottom: 3px;" size="12.8" color="rgb(230, 230, 230)" weight="500">Comment</Text>
+            </Row>
+            <Row to="cursor" cursorOpaFalse={true} align="center">
+                <RePostIcon stroke={darkMode ? "rgb(230, 230, 230)" : "black"} height={18} width={18} />
+                <Text margin="margin-left: 10px; margin-bottom: 3px;" size="12.8" color="rgb(230, 230, 230)" weight="500">Repost</Text>
+            </Row>
+            <Row to="cursor" cursorOpaFalse={true} align="center">
+                <Flex margin="margin-bottom: 2px;">
+                    <ShareIcon stroke={darkMode ? "rgb(230, 230, 230)" : "black"} height={16} width={18} />
+                </Flex>
+                <Text margin="margin-left: 10px; margin-bottom: 3px;" size="12.8" color="rgb(230, 230, 230)" weight="500">Share</Text>
+            </Row>
+            {Components}
+        </Row>
+    )
+}
+
+export const FeedTop = ({darkMode, author = "Su Hyung Choi", authorIntro = "Undergraduate Researcher @ Korea University", Components}) => {
+    return (
+        <Col>
+            <Row padding="padding-bottom: 10px;" margin="margin-bottom: 5px;" style={{borderBottomWidth: 0.3, borderBottomStyle: "solid", borderBottomColor: "rgb(50, 50, 50)"}}>
                 <Flex>
                     <Text color={darkMode ? "rgb(200, 200, 200)" : "rgb(30, 30, 30)"} size="12"><Text weight="500" size="12" margin="margin-right: 5px;">Su Hyung Choi</Text>
                     <Text size="12" margin="margin-right: 5px;">and</Text>
@@ -74,35 +102,89 @@ export const Feed = ({darkMode}) => {
                     
                 </Flex>
             </Row>
-            <Row align="center" margin="margin: 5px 0px">
+            <Row align="center" justify="space-between" margin="margin: 5px 0px">
                 <Row align="center">
                     <CirclePic image={me} size={40} />
                     <Col margin="margin-left: 10px;">
-                        <Text weight="500">Su Hyung Choi</Text>
-                        <Text color={darkMode ? "rgb(200, 200, 200)" : "rgb(30, 30, 30)"} size="12">Undergraduate Researcher @ Korea University</Text>
+                        <Text weight="500">{author}</Text>
+                        <Text color={darkMode ? "rgb(200, 200, 200)" : "rgb(30, 30, 30)"} size="12">{authorIntro}</Text>
                     </Col>
                 </Row>
+                {Components}
             </Row>
+        </Col>
+    )
+}
+
+export const Feed = ({darkMode}) => {
+    return (
+        <Box bg={bgStyler(darkMode)} padding="padding: 10px 15px;" margin="margin: 15px 30px 15px 30px" br="10px" style={{width: 700, maxHeight: 800, minHeight: 200}}>
+            <FeedTop darkMode={darkMode} />
             <Col margin="margin: 10px 0px;">
                 <Text weight="600" margin="margin-bottom: 10px">Attention Is All You Need</Text>
                 <Text lh="21" weight="400" size="14">
                     The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.
                 </Text>
             </Col>
-            <Row align="center" justify="space-between" margin="margin-top: 10px;">
-                <Row to="cursor" cursorOpaFalse={true} align="center">
-                    <LikeIcon stroke={darkMode ? "white" : "black"} height={20} width={20} />
-                    <Text margin="margin-left: 10px; margin-bottom: 3px;" size="14" weight="500">Upvote</Text>
-                </Row>
-                <Row to="cursor" cursorOpaFalse={true} align="center">
-                    <CommentIcon stroke={darkMode ? "white" : "black"} height={20} width={20} />
-                    <Text margin="margin-left: 10px; margin-bottom: 3px;" size="14" weight="500">Comment</Text>
-                </Row>
-                <Row to="cursor" cursorOpaFalse={true} align="center">
-                    <ShareIcon stroke={darkMode ? "white" : "black"} height={20} width={20} />
-                    <Text margin="margin-left: 10px; margin-bottom: 3px;" size="14" weight="500">Share</Text>
-                </Row>
+            <Bottom darkMode={darkMode} />
+        </Box>
+    )
+}
+
+export const ModelConfig = ({darkMode, setVisualizer, visualizer}) => {
+    return (
+        <Row justify="space-between" width="280px">
+            <Row bg="rgb(40, 40, 40)" br="10px" padding="padding: 3px 10px" to="cursor" cursorOpaFalse={true} align="center">
+                <PaperIcon stroke={darkMode ? "white" : "black"} height={16} width={16} />
+                <Text className="light" margin="margin-left: 10px; margin-bottom: 3px;" size="11" weight="500">Paper</Text>
             </Row>
+            <Row bg="rgb(40, 40, 40)" br="10px" padding="padding: 3px 10px" to="cursor" cursorOpaFalse={true} align="center">
+                <CodeIcon stroke={darkMode ? "white" : "black"} height={18} width={18} />
+                <Text className="light" margin="margin-left: 10px; margin-bottom: 3px;" size="11" weight="500">Code</Text>
+            </Row>
+            <Row onClick={() => setVisualizer(!visualizer)} bg="rgb(40, 40, 40)" br="10px" padding="padding: 3px 10px" to="cursor" cursorOpaFalse={true} align="center">
+                <StudioLight stroke={darkMode ? "white" : "black"} height={22} width={22} />
+                <Text className="light" margin="margin-left: 10px; margin-bottom: 3px;" size="11" weight="500">Studio</Text>
+            </Row>
+        </Row>
+    )
+}
+
+export const Hashtags = ({darkMode}) => {
+    return (
+        <Row>
+            <Text size="14"># GAN Inversion</Text>
+            <Text size="14"># Image Stylization</Text>
+        </Row>
+    )
+}
+
+export const Model = ({darkMode}) => {
+    const {visualizer, setVisualizer} = VisualizerEvent();
+    return (
+        <Box margin="margin: 15px 30px 15px 30px" padding="padding: 10px 15px" style={{width: 700}} bg={bgStyler(darkMode)} br="20px;">
+            <FeedTop author={"mchong6/JoJoGAN"} authorIntro={"arXiv 2021"} darkMode={darkMode} Components={<ModelConfig darkMode={darkMode} visualizer={visualizer} setVisualizer={setVisualizer} />} />
+            <Row margin="margin: 10px 0px;">
+                <Col flex={5}>
+                    <Text weight="600">
+                        JoJoGAN: One Shot Face Stylization
+                    </Text>
+                    <Text margin="margin: 10px 0px;" size="14" style={{height: 95, overflow: 'hidden'}}>
+                        While there have been recent advances in few-shot image stylization, these methods
+                        fail to capture stylistic details that are obvious to humans. Details such as the shape
+                        of the eyes, the boldness of the lines, are especially difficult for a model to learn,
+                        especially so under a limited data setting. In this work, we aim to perform oneshot image stylization that gets the details right. Given a reference style image,
+                        we approximate paired real data using GAN inversion and finetune a pretrained
+                        StyleGAN using that approximate paired data. We then encourage the StyleGAN
+                        to generalize so that the learned style can be applied to all other images.                    
+                    </Text>
+                    <Hashtags darkMode={darkMode} />
+                </Col>
+                <Flex margin="margin-left: 15px;" style={{height: 150, width: 150}} align="center" justify="center">
+                    <Image src={gan} style={{height: '100%', width: '100%'}} of="cover" />
+                </Flex>
+            </Row>
+            <Bottom darkMode={darkMode} />
         </Box>
     )
 }
@@ -115,10 +197,10 @@ export const Main = ({darkMode}) => {
                 <WriteFeed darkMode={darkMode} />
                 <Feed darkMode={darkMode} />
                 <Feed darkMode={darkMode} />
-                <Feed darkMode={darkMode} />
-                <Feed darkMode={darkMode} />
-                <Feed darkMode={darkMode} />
-                <Feed darkMode={darkMode} />
+                <Model darkMode={darkMode} />
+                <Model darkMode={darkMode} />
+                <Model darkMode={darkMode} />
+                <Model darkMode={darkMode} />
                 <Feed darkMode={darkMode} />
                 <Feed darkMode={darkMode} />
                 <Feed darkMode={darkMode} />

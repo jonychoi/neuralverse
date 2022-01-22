@@ -7,7 +7,7 @@ import {bgStyler} from '../../../styles';
 
 export const ProfileBox = ({darkMode}) => {
     return (
-        <Box width="250px" height="400px" margin="margin-bottom: 20px;" position="relative" bg={bgStyler(darkMode)} style={{overflow: 'hidden'}} br="10px">
+        <Box width="250px" margin="margin-bottom: 20px;" position="relative" bg={bgStyler(darkMode)} style={{overflow: 'hidden'}} br="10px">
             <Col>
                 <Flex>
                     <Image width="100%" of="cover" height="100px" src={bg} />
@@ -24,26 +24,36 @@ export const ProfileBox = ({darkMode}) => {
                     <Text size="13" weight="400">Undergraduate student researching in Artificial Intelligence, Computer Vision</Text>
                 </Flex>
             </Col>
-            <Row padding="padding: 15px;" align="center" justify="space-between">
-                <Col>
-                    <Row>
-                        <Text size="10.8" weight="500" className="light" margin="margin-right: 5px">12</Text>
-                        <Text size="10.8" weight="500" className="light">MODELS</Text>
-                    </Row>
+            <Col padding="padding: 5px 15px;" >
+                <Row align="center" justify="space-between">
+                    <Col>
+                        <Row>
+                            <Text size="10.8" weight="500" className="light" margin="margin-right: 5px">12</Text>
+                            <Text size="10.8" weight="500" className="light">MODELS</Text>
+                        </Row>
+                    </Col>
+                    <Col>
+                        <Row>
+                            <Text size="10.8" weight="500" className="light" margin="margin-right: 5px">12</Text>
+                            <Text size="10.8" weight="500" className="light">BADGES</Text>
+                        </Row>
+                    </Col>
+                    <Col>
+                        <Row>
+                            <Text size="10.8" weight="500" className="light" margin="margin-right: 5px">12</Text>
+                            <Text size="10.8" weight="500" className="light">NFTS</Text>
+                        </Row>
+                    </Col>
+                </Row>
+                <Col margin="margin: 15px 0px">
+                    <Text>To Do</Text>
+                    <Text>- Premium user have neural logo right name with circle</Text>
+                    <Text>- Trendings (Expand when click bottom)</Text>
+                    <Text>- Model section and dataset section</Text>
+                    <Text>- Paper & Code & Studio</Text>
+                    <Text>- Datasets</Text>
                 </Col>
-                <Col>
-                    <Row>
-                        <Text size="10.8" weight="500" className="light" margin="margin-right: 5px">12</Text>
-                        <Text size="10.8" weight="500" className="light">BADGES</Text>
-                    </Row>
-                </Col>
-                <Col>
-                    <Row>
-                        <Text size="10.8" weight="500" className="light" margin="margin-right: 5px">12</Text>
-                        <Text size="10.8" weight="500" className="light">NFTS</Text>
-                    </Row>
-                </Col>
-            </Row>
+            </Col>
         </Box>
     )
 }

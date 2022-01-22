@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Flex, Col, Row, Text, CirclePic, Image} from '../common/base';
+import {Flex, Col, Row, Text, CirclePic, Image, Box} from '../common/base';
 import me from '../../imgs/me.jpeg';
 import {bgStyler, btnStyler, hueStyler} from '../../styles';
 import FollowButton from '../buttons/folllowButton';
@@ -10,23 +10,9 @@ import ReadEngine from '../read_engine';
 
 import { ThemeEvent, VisualizerEvent } from '../../contexts/GlobalContext';
 
-const Box = styled(Col)`
-    transition: background-color .3,color .3,box-shadow .3;
-    box-shadow: 0 0 0.1rem rgb(0 0 0 / 10%), 0 0.15rem 0.9rem rgb(0 0 0 / 10%);
-    border: 0;
-    ::-webkit-scrollbar {
-        display: none;
-      }
-    /* Hide scrollbar for IE, Edge and Firefox */
-    {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-    }
-`;
-
 export const VisualizerModal = ({setVisualizer, visualizer, darkMode}) => {
     return (
-        <Col width="100%" style={{height: '100%', position: 'relative'}}>
+        <Box width="75%" bg={"rgba(15, 15, 15, 0.98)"} br="20px" style={{backdropFilter: 'blur(2px)', height: '100%', alignSelf: 'center', justifySelf: 'flex-end', overflowY: 'scroll', position: 'relative'}}>
             <Flex cursorOpaFalse={true} onClick={() => setVisualizer(false)} to="cursor" position="absolute" style={{right: 0, top: 0}}>
                 <CloseIcon width={30} height={30} bg="rgb(47, 47, 47)" stroke="white" />
             </Flex>
@@ -50,7 +36,7 @@ export const VisualizerModal = ({setVisualizer, visualizer, darkMode}) => {
                 <CustomizeModelBtn darkMode={darkMode} />
                 <ReadEngine darkMode={darkMode}/>
             </Col>
-        </Col>
+        </Box>
     )
 }
 
@@ -62,32 +48,26 @@ export const CustomizeModelBtn = ({darkMode}) => {
     )
 }
 
-const halfWidth = Width / 2
-const height = Height - 80;
-
 export const Visualizer = () => {
     const {visualizer, setVisualizer} = VisualizerEvent();
     const {darkMode} = ThemeEvent();
     
     return (
-        <Box 
+        <Col 
             className="visualbox" 
-            justfiy="flex-start" 
-            bg={bgStyler(darkMode)} 
+            bg={"rgba(0,0,0,0)"} 
             position="fixed" 
             style={{
-                width: '40%', 
-                top: 80,
-                height: height, 
+                width: '100%',
+                height: Height - 150,
                 overflow: 'hidden', 
-                overflowY: 'scroll', 
                 opacity: visualizer ? 1 : 0, 
-                right: visualizer ? 0 : '-40%',
+                top: visualizer ? 80 : '100%',
                 transition: 'all 300ms',
                 zIndex: 1000,
             }}>
             <VisualizerModal setVisualizer={setVisualizer} visualizer={visualizer} darkMode={darkMode} />
-        </Box>
+        </Col>
     )
 }
 

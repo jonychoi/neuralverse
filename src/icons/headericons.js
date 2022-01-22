@@ -91,3 +91,19 @@ export const DesignIcon = ({width = 477, height = 241, stroke1 = "#25A2F9", stro
         <circle cx="164.184" cy="37.086" r="23.9788" transform="rotate(37.0421 164.184 37.086)" fill={stroke3} stroke={stroke3} stroke-width="6"/>
     </svg>
 )
+
+export const StudioLight = ({width = 332, height = 241}) => (
+    <svg width={width} height={height} viewBox="0 0 332 241" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="297.144" y1="38.4917" x2="223.003" y2="205.308" stroke="#25A2F9" stroke-width="7"/>
+        <line x1="167.52" y1="35.9634" x2="223.125" y2="202.78" stroke="#25A2F9" stroke-width="7"/>
+        <line x1="296.305" y1="39.6549" x2="113.602" y2="206.471" stroke="#25A2F9" stroke-width="7"/>
+        <line x1="40.3001" y1="35.6487" x2="114.441" y2="202.465" stroke="#25A2F9" stroke-width="7"/>
+        <line x1="167.536" y1="38.1292" x2="114.578" y2="204.945" stroke="#25A2F9" stroke-width="7"/>
+        <line x1="39.4617" y1="34.4855" x2="222.165" y2="201.302" stroke="#25A2F9" stroke-width="7"/>
+        <circle cx="293.93" cy="37.086" r="23.9788" transform="rotate(37.0421 293.93 37.086)" fill="#9C15B0" stroke="#9C15B0" stroke-width="5"/>
+        <circle cx="37.0859" cy="37.086" r="23.9788" transform="rotate(37.0421 37.0859 37.086)" fill="#9C15B0" stroke="#9C15B0" stroke-width="5"/>
+        <circle cx="219.789" cy="203.902" r="23.9788" transform="rotate(37.0421 219.789 203.902)" fill="#9C15B0" stroke="#9C15B0" stroke-width="5"/>
+        <circle cx="111.227" cy="203.902" r="23.9788" transform="rotate(37.0421 111.227 203.902)" fill="#9C15B0" stroke="#9C15B0" stroke-width="5"/>
+        <circle cx="164.184" cy="37.086" r="23.9788" transform="rotate(37.0421 164.184 37.086)" fill="#9C15B0" stroke="#9C15B0" stroke-width="5"/>
+    </svg>
+)

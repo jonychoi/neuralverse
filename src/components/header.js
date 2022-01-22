@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Flex, Row, Image, Text, CirclePic, Col} from '../components/common/base';
-import {ModelIcon, DatasetIcon, TrendIcon, NftIcon, NotiIcon, DesignIcon} from '../icons/headericons';
+import {ModelIcon, DatasetIcon, TrendIcon, NftIcon, NotiIcon, DesignIcon, StudioLight} from '../icons/headericons';
 import ThemeToggle from './buttons/themeButton';
 import {ThemeEvent} from '../contexts/GlobalContext';
 import logo from '../imgs/logo.png';
@@ -29,7 +29,11 @@ export const Header = ({loggedIn = true, setRoute, route}) => {
     const {darkMode, setDarkMode} = ThemeEvent();
     const [headerShown, setHeaderShown] = useState(false);
     return (
-        <HeaderBox position="fixed" align="center" justify="space-between" zIndex={1000} bg={darkMode ? "rgba(0,0,0,0)" : 'rgba(255, 255, 255, 0.9)'} style={{width: '100vw', height:  80, top: 0, backdropFilter: 'blur(2px)'}}>
+        <HeaderBox 
+            position="fixed" align="center" justify="space-between" zIndex={1000} 
+            bg={route == 0 ? darkMode ? "rgba(0,0,0,0)" : 'rgba(255, 255, 255, 0.9)' : darkMode ? "rgba(15,15,15,0.9)" : "rgba(255, 255, 255, 0.9)"} 
+            style={{width: '100vw', height:  80, top: 0, backdropFilter: 'blur(2px)'}}
+        >
             <Row flex={2}>
                 <a href="/" onClick={() => setRoute(0)}>
                     <Row to="cursor" align="center" padding="padding: 30px;" position="relative" style={{width: 300}}>
@@ -76,9 +80,9 @@ export const Header = ({loggedIn = true, setRoute, route}) => {
                 </a>
                 <a onClick={() => setRoute(4)}>
                     <Row align="center" hover={hoverNft} onMouseOver={() => setHoverNft(true)} onMouseLeave={() => setHoverNft(false)}>
-                        <DesignIcon width={33} height={33} />
+                        <StudioLight width={25} height={25} />
                         <Flex to="cursor" padding="padding: 10px 15px 10px 15px;">
-                            <Text className="light" size="12.8">DESIGN</Text>
+                            <Text className="light" size="12.8">STUDIO</Text>
                         </Flex>
                     </Row>
                 </a>
