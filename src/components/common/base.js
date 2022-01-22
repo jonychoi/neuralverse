@@ -84,13 +84,14 @@ export const ImageWrapper = styled(Flex)`
     overflow: hidden;
     width: ${(props) => props.width}px;
     height: ${(props) => props.height}px;
+    background-color: ${(props) => props.bg};
     margin: ${(props) => props.margin ? props.margin : 0}px;
 `;
 
-export const CirclePic = ({image, size, flex, margin, of, style}) => {
+export const CirclePic = ({image, size, flex, margin, bg, of, style, scale = 1}) => {
     return (
-        <ImageWrapper style={style} margin={margin} width={size} height={size} flex={flex}>
-            <Image of={of} width={size+'px'} height={size+'px'} src={image}/>
+        <ImageWrapper style={style} bg={bg} margin={margin} width={size} height={size} flex={flex}>
+            <Image of={of} width={size+'px'} height={size+'px'} style={{transform: `scale(${scale})`}} src={image}/>
         </ImageWrapper>
     )
 }

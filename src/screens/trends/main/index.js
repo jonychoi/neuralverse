@@ -4,12 +4,13 @@ import {Flex, Col, Row, Text, Image, CirclePic, Input, Box} from '../../../compo
 import {ImageIcon, VideoIcon, EventIcon, DocumentIcon} from '../../../icons/createpost';
 import {LikeIcon, CommentIcon, ShareIcon, RePostIcon, PaperIcon, CodeIcon} from '../../../icons/utilities';
 import {bgStyler, hueStyler, btnStyler, blueColor, redColor, purLowColor, purColor, blueLowColor} from '../../../styles';
-import gan from '../../../imgs/gan.png';
 import {ModelIcon, DesignIcon, StudioLight} from '../../../icons/headericons';
 import me from '../../../imgs/me.jpeg';
 import Lefts from '../lefts';
 import Rights from '../rights';
 import { VisualizerEvent } from '../../../contexts/GlobalContext';
+
+import feeds from '../../../data/feeds';
 
 //model 첨부하기
 export const WriteFeed = ({darkMode}) => {
@@ -88,7 +89,7 @@ export const Bottom = ({darkMode, Components}) => {
     )
 }
 
-export const FeedTop = ({darkMode, author = "Su Hyung Choi", authorIntro = "Undergraduate Researcher @ Korea University", Components}) => {
+export const FeedTop = ({darkMode, user, Components}) => {
     return (
         <Col>
             <Row padding="padding-bottom: 10px;" margin="margin-bottom: 5px;" style={{borderBottomWidth: 0.3, borderBottomStyle: "solid", borderBottomColor: "rgb(50, 50, 50)"}}>
@@ -104,10 +105,10 @@ export const FeedTop = ({darkMode, author = "Su Hyung Choi", authorIntro = "Unde
             </Row>
             <Row align="center" justify="space-between" margin="margin: 5px 0px">
                 <Row align="center">
-                    <CirclePic image={me} size={40} />
+                    <CirclePic image={user.avatar} size={40} of="cover" />
                     <Col margin="margin-left: 10px;">
-                        <Text weight="500">{author}</Text>
-                        <Text color={darkMode ? "rgb(200, 200, 200)" : "rgb(30, 30, 30)"} size="12">{authorIntro}</Text>
+                        <Text weight="500">{user.name}</Text>
+                        <Text color={darkMode ? "rgb(200, 200, 200)" : "rgb(30, 30, 30)"} size="12">{user.briefIntroduction}</Text>
                     </Col>
                 </Row>
                 {Components}
@@ -116,7 +117,7 @@ export const FeedTop = ({darkMode, author = "Su Hyung Choi", authorIntro = "Unde
     )
 }
 
-export const Feed = ({darkMode}) => {
+export const Feed = ({darkMode, content}) => {
     return (
         <Box bg={bgStyler(darkMode)} padding="padding: 10px 15px;" margin="margin: 15px 30px 15px 30px" br="10px" style={{width: 700, maxHeight: 800, minHeight: 200}}>
             <FeedTop darkMode={darkMode} />
@@ -150,38 +151,31 @@ export const ModelConfig = ({darkMode, setVisualizer, visualizer}) => {
     )
 }
 
-export const Hashtags = ({darkMode}) => {
+export const Hashtags = ({darkMode, hashtags}) => {
     return (
-        <Row>
-            <Text size="14"># GAN Inversion</Text>
-            <Text size="14"># Image Stylization</Text>
+        <Row width="500px" style={{overflow: "hidden"}}>
+            {hashtags.map(item => <Text size="14" style={{whiteSpace: "nowrap"}} key={item} color={blueColor} margin="margin-right: 8px;">#{item}</Text>)}
         </Row>
     )
 }
 
-export const Model = ({darkMode}) => {
+export const Model = ({content, darkMode}) => {
     const {visualizer, setVisualizer} = VisualizerEvent();
     return (
         <Box margin="margin: 15px 30px 15px 30px" padding="padding: 10px 15px" style={{width: 700}} bg={bgStyler(darkMode)} br="20px;">
-            <FeedTop author={"mchong6/JoJoGAN"} authorIntro={"arXiv 2021"} darkMode={darkMode} Components={<ModelConfig darkMode={darkMode} visualizer={visualizer} setVisualizer={setVisualizer} />} />
+            <FeedTop user={content.writer_id} darkMode={darkMode} Components={<ModelConfig darkMode={darkMode} visualizer={visualizer} setVisualizer={setVisualizer} />} />
             <Row margin="margin: 10px 0px;">
                 <Col flex={5}>
                     <Text weight="600">
-                        JoJoGAN: One Shot Face Stylization
+                        {content.title}
                     </Text>
-                    <Text margin="margin: 10px 0px;" size="14" style={{height: 95, overflow: 'hidden'}}>
-                        While there have been recent advances in few-shot image stylization, these methods
-                        fail to capture stylistic details that are obvious to humans. Details such as the shape
-                        of the eyes, the boldness of the lines, are especially difficult for a model to learn,
-                        especially so under a limited data setting. In this work, we aim to perform oneshot image stylization that gets the details right. Given a reference style image,
-                        we approximate paired real data using GAN inversion and finetune a pretrained
-                        StyleGAN using that approximate paired data. We then encourage the StyleGAN
-                        to generalize so that the learned style can be applied to all other images.                    
+                    <Text margin="margin: 10px 0px;" lh={21} size="14" style={{height: 105, overflow: 'hidden'}}>
+                        {content.description}
                     </Text>
-                    <Hashtags darkMode={darkMode} />
+                    {content.tasks && <Hashtags darkMode={darkMode} hashtags={content.tasks} />}
                 </Col>
                 <Flex margin="margin-left: 15px;" style={{height: 150, width: 150}} align="center" justify="center">
-                    <Image src={gan} style={{height: '100%', width: '100%'}} of="cover" />
+                    <Image src={content.thumbnail} style={{height: '100%', width: '100%'}} of="cover" />
                 </Flex>
             </Row>
             <Bottom darkMode={darkMode} />
@@ -195,16 +189,7 @@ export const Main = ({darkMode}) => {
             <Lefts darkMode={darkMode} />
             <Col>
                 <WriteFeed darkMode={darkMode} />
-                <Feed darkMode={darkMode} />
-                <Feed darkMode={darkMode} />
-                <Model darkMode={darkMode} />
-                <Model darkMode={darkMode} />
-                <Model darkMode={darkMode} />
-                <Model darkMode={darkMode} />
-                <Feed darkMode={darkMode} />
-                <Feed darkMode={darkMode} />
-                <Feed darkMode={darkMode} />
-                <Feed darkMode={darkMode} />
+                {feeds.map(item => <Model key={item.title} content={item} darkMode={darkMode} />)}
             </Col>
             <Rights darkMode={darkMode} />
         </Row>

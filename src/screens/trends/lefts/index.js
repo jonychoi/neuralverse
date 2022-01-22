@@ -47,11 +47,13 @@ export const ProfileBox = ({darkMode}) => {
                 </Row>
                 <Col margin="margin: 15px 0px">
                     <Text>To Do</Text>
+                    <Text>Done minor things first and do gradually</Text>
                     <Text>- Premium user have neural logo right name with circle</Text>
                     <Text>- Trendings (Expand when click bottom)</Text>
                     <Text>- Model section and dataset section</Text>
                     <Text>- Paper & Code & Studio</Text>
                     <Text>- Datasets</Text>
+                    <Text>- get user papers from google scholar (paper click, get specific data)</Text>
                 </Col>
             </Col>
         </Box>
