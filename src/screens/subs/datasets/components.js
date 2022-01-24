@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import {Flex, Col, Row, Text, CirclePic, Image, Input, Box} from '../../components/common/base';
-import gan from '../../imgs/gan.png';
-import {bgStyler, hueStyler, btnStyler} from '../../styles';
-import {RightIcon, BenchmarkIcon, SearchIcon} from '../../icons/utilities';
-import styled from 'styled-components';
+import {Flex, Col, Row, Text, CirclePic, Image, Input, Box} from '../../../components/common/base';
+import gan from '../../../imgs/gan.png';
+import {bgStyler, hueStyler, btnStyler} from '../../../styles';
+import {RightIcon, BenchmarkIcon, SearchIcon} from '../../../icons/utilities';
 
 export const SearchDatasets = ({darkMode}) => {
     return (

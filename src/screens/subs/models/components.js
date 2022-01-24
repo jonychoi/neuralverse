@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import {Flex, Col, Row, Text, CirclePic, Image, Input, Box} from '../../components/common/base';
-import gan from '../../imgs/gan.png';
-import Button from '../../components/buttons/button';
-import {bgStyler, hueStyler, btnStyler, blueColor, redColor, purLowColor, purColor, blueLowColor} from '../../styles';
-import {RightIcon, BenchmarkIcon, SearchIcon} from '../../icons/utilities';
-import { VisualizerEvent } from '../../contexts/GlobalContext';
+import {Flex, Col, Row, Text, CirclePic, Image, Input, Box} from '../../../components/common/base';
+import gan from '../../../imgs/gan.png';
+import Button from '../../../components/buttons/button';
+import {bgStyler, hueStyler, btnStyler, blueColor, redColor, purLowColor, purColor, blueLowColor} from '../../../styles';
+import {RightIcon, BenchmarkIcon, SearchIcon} from '../../../icons/utilities';
+import { VisualizerEvent } from '../../../contexts/GlobalContext';
 
 export const SearchModel = ({darkMode}) => {
     return (

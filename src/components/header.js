@@ -38,8 +38,11 @@ export const Header = ({loggedIn = true, setRoute, route}) => {
                 <a href="/" onClick={() => setRoute(0)}>
                     <Row to="cursor" align="center" padding="padding: 30px;" position="relative" style={{width: 300}}>
                         <Image width="43px;" src={logo} />
-                        <Flex position="absolute" style={{left: 73, opacity: route != 4 && route != 5 ? 1 : 0, transition: 'all 500ms ease'}}>
+                        <Flex position="absolute" style={{left: 73, opacity: route != 4 && route !=3 && route != 5 ? 1 : 0, transition: 'all 500ms ease'}}>
                             <Text margin="margin-left: 15px;" className="bold" size="18">NEURALVERSE</Text>
+                        </Flex>
+                        <Flex position="absolute" style={{left: 73, opacity: route == 3 ? 1 : 0, transition: 'all 500ms ease'}}>
+                            <Text margin="margin-left: 15px;" className="bold" size="18">NEURAL SPACE</Text>
                         </Flex>
                         <Flex position="absolute" style={{left: 73, opacity: route == 4 ? 1 : 0, transition: 'all 500ms ease'}}>
                             <Text margin="margin-left: 15px;" className="bold" size="18">NEURAL STUDIO</Text>
@@ -58,15 +61,7 @@ export const Header = ({loggedIn = true, setRoute, route}) => {
                     <Row align="center" hover={hoverTrend} onMouseOver={() => setHoverTrend(true)} onMouseLeave={() => setHoverTrend(false)} >
                         <TrendIcon width={22} />
                         <Flex to="cursor" padding="padding: 10px 15px 10px 15px;">
-                            <Text className="light" size="12.8">VERSE</Text>
-                        </Flex>
-                    </Row>
-                </a>
-                <a onClick={() => setRoute(2)}>
-                    <Row align="center" hover={hoverModel} onMouseOver={() => setHoverModel(true)} onMouseLeave={() => setHoverModel(false)} >
-                        <ModelIcon width={19} />
-                        <Flex to="cursor" padding="padding: 10px 15px 10px 15px;">
-                            <Text className="light" size="12.8">MODELS</Text>
+                            <Text className="light" size="12.8">NEURAL VERSE</Text>
                         </Flex>
                     </Row>
                 </a>
@@ -74,7 +69,7 @@ export const Header = ({loggedIn = true, setRoute, route}) => {
                     <Row align="center" hover={hoverDataset} onMouseOver={() => setHoverDataset(true)} onMouseLeave={() => setHoverDataset(false)}>
                         <DatasetIcon width={22} />
                         <Flex to="cursor" padding="padding: 10px 15px 10px 15px;">
-                            <Text className="light" size="12.8">DATASETS</Text>
+                            <Text className="light" size="12.8">NEURAL SPACE</Text>
                         </Flex>
                     </Row>
                 </a>
@@ -82,7 +77,7 @@ export const Header = ({loggedIn = true, setRoute, route}) => {
                     <Row align="center" hover={hoverNft} onMouseOver={() => setHoverNft(true)} onMouseLeave={() => setHoverNft(false)}>
                         <StudioLight width={25} height={25} />
                         <Flex to="cursor" padding="padding: 10px 15px 10px 15px;">
-                            <Text className="light" size="12.8">STUDIO</Text>
+                            <Text className="light" size="12.8">NEURAL STUDIO</Text>
                         </Flex>
                     </Row>
                 </a>

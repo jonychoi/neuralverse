@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Col, Row, Flex, Text, Image, CirclePic} from '../../components/common/base';
+import {Col, Row, Flex, Text, Image, CirclePic} from '../../../components/common/base';
 
 export const MyModels = ({}) => {
     return (

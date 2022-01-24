@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {Col, Row} from '../../components/common/base';
+import {Col, Row} from '../../../components/common/base';
 import {SearchModel, Main} from './components';
-import {ThemeEvent, SideBarEvent, VisualizerEvent} from '../../contexts/GlobalContext';
-import { GlobalBgStyler } from '../../styles';
+import {ThemeEvent, SideBarEvent, VisualizerEvent} from '../../../contexts/GlobalContext';
+import { GlobalBgStyler } from '../../../styles';
 
 export const Models = ({route}) => {
     const {darkMode} = ThemeEvent();

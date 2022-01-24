@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {Col, Row} from '../../components/common/base';
+import {Col, Row} from '../../../components/common/base';
 import {Main} from './components';
-import {ThemeEvent, SideBarEvent} from '../../contexts/GlobalContext';
-import { GlobalBgStyler } from '../../styles';
+import {ThemeEvent, SideBarEvent} from '../../../contexts/GlobalContext';
+import { GlobalBgStyler } from '../../../styles';
 
 export const Datasets = ({route}) => {
     const {darkMode} = ThemeEvent();

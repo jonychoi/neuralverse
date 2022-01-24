@@ -27,7 +27,7 @@ export const CubeIcon = ({width = 92, height = 91, stroke="#25A2F9"}) => (
 );
 
 
-export const ModelIcon = ({width = 92, height = 126, stroke1="#ED2166", stroke2 = "#25A2F9"}) => (
+export const ModelIcon = ({width = 92, height = 126, stroke1="#25A2F9", stroke2 = "#9C15B0"}) => (
     <svg width={width} height={height} viewBox="0 0 92 126" fill="none" xmlns="http://www.w3.org/2000/svg">
         <line x1="14.4061" y1="13.0862" x2="77.4061" y2="41.0862" stroke={stroke1} stroke-width="3"/>
         <line x1="13.6838" y1="62.0513" x2="76.6838" y2="41.0513" stroke={stroke1} stroke-width="3"/>

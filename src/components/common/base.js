@@ -98,8 +98,8 @@ export const CirclePic = ({image, size, flex, margin, bg, of, style, scale = 1})
 
 export const Input = styled.input`
     ${props => props.margin};
-    width: ${props => props.size ? props.size : props.width};
-    height: ${props => props.size ? props.size : props.height};
+    width: ${props => props.width};
+    height: ${props => props.height};
     background-color: ${props => props.bg};
     ${props => props.padding};
     border-radius: ${props => props.circle ? '50%' : props.br};
