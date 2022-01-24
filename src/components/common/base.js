@@ -54,6 +54,12 @@ export const Row = styled(Flex)`
 
 export const Col = styled(Flex)`
     flex-direction: column;
+    ${(props) => props.scrollbarFalse && `
+    ::-webkit-scrollbar {
+        display: none;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;
+      }`}
 `;
 
 export const Box = styled(Col)`

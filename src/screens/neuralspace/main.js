@@ -1,11 +1,21 @@
 import React from 'react';
 import {Flex, Col, Row, Text, Image, Input, Box} from '../../components/common/base';
 import {bgStyler} from '../../styles';
+import tasks from '../../data/tasks';
+import styled from 'styled-components';
+
+export const B = styled(Box)`
+    background-color: ${(props) => props.darkMode ? props.task == props.title ? "rgba(35, 35, 35, 1)" : "rgba(35, 35, 35, 0.55)" : "white"};
+    :hover {
+        background-color: ${(props) => props.darkMode ? "rgba(35, 35, 35, 1)" : "white"};
+    }
+    cursor: pointer;
+`;
 
 export const Selector = ({darkMode, task, setTask, subTask, setSubTask}) => {
     return (
-        <Col>
-            <Text className="bold" size="30">{subTask ? subTask : task}</Text>
+        <Col margin="margin-left: 10px;">
+            <Text className="bold" size="33">{subTask ? subTask : task}</Text>
             <Row margin="margin: 20px 0px">
                 <Text className="bold" size="17">{task}</Text>
                 {subTask && 
@@ -18,36 +28,34 @@ export const Selector = ({darkMode, task, setTask, subTask, setSubTask}) => {
     )
 };
 
-export const Task = ({task}) => {
+export const Task = ({darkMode, content, task}) => {
     return (
-        <Row width="100%" height="50px">
-            <Flex width="50px;" height="100%">
-                <Image src={task.image} of="cover" />
+        <B task={task} title={content.title} br="10px;" darkMode={darkMode} style={{flexDirection: 'row', overflow: 'hidden'}} width="100%" height="70px" margin="margin: 10px 0px;">
+            <Flex align="center" justify="center" width="80px;" height="100%" style={{overflow: 'hidden'}}>
+                <Image width="108%" height="108%" src={content.img} of="cover" />
             </Flex>
-            <Col>
-                <Text>{task.title}</Text>
+            <Col margin="margin-left: 10px;" padding="padding: 10px;" >
+                <Text className="light" margin="margin-bottom: 5px;" size="14" weight="700">{content.title}</Text>
                 <Text margin="margin-top: 5px;"></Text>
             </Col>
-        </Row>
+        </B>
     )
 }
 
 export const Categories = ({darkMode, task, setTask, subTask, setSubTask}) => {
     return (
-        <Row width="100%" br="20px" height="500px" bg={bgStyler(darkMode)} style={{flexDirection: 'row'}}>
+        <Row width="100%" height="480px" margin="margin-bottom: 30px;" style={{flexDirection: 'row'}}>
             {/* <Flex>
                 <Input bg="rgba(0,0,0,0)" style={{border: 0, borderBottomWidth: 1.5, borderBottomColor: 'rgb(100, 100, 100)', borderBottomStyle: 'solid'}} height="35px;" />
             </Flex> */}
-            <Col>
-                <Text margin="margin: 15px;" className="bold">Tasks</Text>
-                <Col width="18%" style={{overflow: 'hidden', overflowY: 'scroll'}}>
-                  
+            <Col width="23%">
+                <Col padding="padding: 8px;" br="20px;" scrollbarFalse={true} style={{overflow: 'hidden', overflowY: 'scroll', display: 'block'}}>
+                    {tasks.map(item => <div onClick={() => setTask(item.title)}><Task task={task} key={item.title} content={item} darkMode={darkMode} /></div>)}
                 </Col>
             </Col>
-            <Col>
-                <Text margin="margin: 15px;" className="bold">Sub Tasks</Text>
-                <Col width="18%" style={{overflow: 'hidden', overflowY: 'scroll'}}>
-                  
+            <Col width="23%">
+                <Col padding="padding: 8px;" br="20px;" scrollbarFalse={true} style={{overflow: 'hidden', overflowY: 'scroll', display: 'block'}}>
+                    {tasks.map(item => <div onClick={() => setSubTask(item.title)}><Task subtask={subTask} key={item.title} content={item} darkMode={darkMode} /></div>)}
                 </Col>
             </Col>
         </Row>
