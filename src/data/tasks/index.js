@@ -13,6 +13,13 @@ import superresolutionimg from './imgs/super resolution.jpg';
 
 export default [
     {
+        title: "Computer Vision",
+        img: segmentationimg,
+        subtasks: [
+
+        ]
+    },
+    {
         title: 'Segmentation',
         img: segmentationimg,
         subtasks: [

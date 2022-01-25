@@ -30,11 +30,11 @@ export const Selector = ({darkMode, task, setTask, subTask, setSubTask}) => {
 
 export const Task = ({darkMode, content, task}) => {
     return (
-        <B task={task} title={content.title} br="10px;" darkMode={darkMode} style={{flexDirection: 'row', overflow: 'hidden'}} width="100%" height="70px" margin="margin: 10px 0px;">
-            <Flex align="center" justify="center" width="80px;" height="100%" style={{overflow: 'hidden'}}>
-                <Image width="108%" height="108%" src={content.img} of="cover" />
+        <B align="center" task={task} title={content.title} br="10px;" darkMode={darkMode} style={{flexDirection: 'row', overflow: 'hidden'}} width="100%" height="70px" margin="margin: 10px 0px;" padding="padding: 10px;">
+            <Flex br="10px" align="center" justify="center" width="70px;" height="80%" style={{overflow: 'hidden'}}>
+                <Image width="108%" height="108%" src={content.img} of="cover" />   
             </Flex>
-            <Col margin="margin-left: 10px;" padding="padding: 10px;" >
+            <Col margin="margin-left: 20px;">
                 <Text className="light" margin="margin-bottom: 5px;" size="14" weight="700">{content.title}</Text>
                 <Text margin="margin-top: 5px;"></Text>
             </Col>
