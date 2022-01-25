@@ -15,15 +15,30 @@ export default [
     {
         title: "Computer Vision",
         img: segmentationimg,
-        subtasks: [
-
-        ]
+        subtasks: []
     },
     {
         title: 'Segmentation',
         img: segmentationimg,
         subtasks: [
-
+            {
+                title: 'Semantic Segmentation'
+            },
+            {
+                title: 'Medical Image Segmentation'
+            },
+            {
+                title: "Panoptic Segmentation"
+            },
+            {
+                title: "3D Semantic Segmentation",
+            },
+            {
+                title: "Scene Segmentation",
+            },
+            {
+                title: "Weakly-Supervised Semantic Segmentation"
+            }
         ]
     },
     {

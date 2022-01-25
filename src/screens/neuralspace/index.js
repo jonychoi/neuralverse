@@ -10,7 +10,7 @@ export const NeuralSpace = ({route}) => {
     const [task, setTask] = useState('Computer Vision');
     const [subTask, setSubTask] = useState(null);
     return (
-        <Col padding="padding: 0% 10%;" align="center" bg={GlobalBgStyler(darkMode)} style={{display: route == 3 ? 'flex': 'none', paddingTop: 110}}>
+        <Col padding="padding: 0% 10%;" align="center" bg={GlobalBgStyler(darkMode)} style={{display: route == 3 ? 'flex': 'none', paddingTop: 150}}>
             <Main task={task} setTask={setTask} setSubTask={setSubTask} subTask={subTask} darkMode={darkMode} />
             <BenchMarks task={task} setTask={setTask} setSubTask={setSubTask} subTask={subTask} darkMode={darkMode} />
         </Col>
