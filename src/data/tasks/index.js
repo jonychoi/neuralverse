@@ -13,13 +13,17 @@ import superresolutionimg from './imgs/super resolution.jpg';
 
 export default [
     {
-        title: "Computer Vision",
+        title: "All Computer Vision",
         img: segmentationimg,
         subtasks: []
     },
     {
         title: 'Segmentation',
         img: segmentationimg,
+        benchmarksNum: 207,
+        paperswithcodeNum: 2426,
+        benchmarksNum: 207,
+        paperswithcodeNum: 2426,
         subtasks: [
             {
                 title: 'Semantic Segmentation'
@@ -44,6 +48,8 @@ export default [
     {
         title: 'Object Detection',
         img: objectdetectionimg,
+        benchmarksNum: 207,
+        paperswithcodeNum: 2426,
         subtasks: [
 
         ]
@@ -51,6 +57,8 @@ export default [
     {
         title: 'Style Transfer',
         img: styletransferimg,
+        benchmarksNum: 207,
+        paperswithcodeNum: 2426,
         subtasks: [
 
         ],
@@ -58,6 +66,8 @@ export default [
     {
         title: 'Image Classification',
         img: imageclassificationimg,
+        benchmarksNum: 207,
+        paperswithcodeNum: 2426,
         subtasks: [
 
         ]
@@ -65,6 +75,8 @@ export default [
     {
         title: 'Image Generation',
         img: imagegenerationimg,
+        benchmarksNum: 207,
+        paperswithcodeNum: 2426,
         subtasks: [
 
         ]
@@ -72,6 +84,8 @@ export default [
     {
         title: 'Domain Adaptation',
         img: domainadaptationimg,
+        benchmarksNum: 207,
+        paperswithcodeNum: 2426,
         subtasks: [
 
         ]
@@ -79,6 +93,8 @@ export default [
     {
         title: 'Pose Estimation',
         img: poseestimationimg,
+        benchmarksNum: 207,
+        paperswithcodeNum: 2426,
         subtasks: [
 
         ]
@@ -86,6 +102,8 @@ export default [
     {
         title: 'Denoising',
         img: denoisingimg,
+        benchmarksNum: 207,
+        paperswithcodeNum: 2426,
         subtasks: [
 
         ]
@@ -93,6 +111,8 @@ export default [
     {
         title: 'Depth Estimation',
         img: depthestimationimg,
+        benchmarksNum: 207,
+        paperswithcodeNum: 2426,
         subtasks: [
 
         ]
@@ -100,6 +120,8 @@ export default [
     {
         title: 'Few Shot Learning',
         img: fewshotlearningimg,
+        benchmarksNum: 207,
+        paperswithcodeNum: 2426,
         subtasks: [
 
         ]
@@ -107,6 +129,8 @@ export default [
     {
         title: 'Super Resolution',
         img: superresolutionimg,
+        benchmarksNum: 207,
+        paperswithcodeNum: 2426,
         subtasks: [
 
         ]
@@ -114,6 +138,8 @@ export default [
     {
         title: 'Face Recognition',
         img: facerecognitionimg,
+        benchmarksNum: 207,
+        paperswithcodeNum: 2426,
         subtasks: [
 
         ]
