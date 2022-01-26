@@ -91,7 +91,7 @@ export const Categories = ({darkMode, task, setTask, subTask, setSubTask}) => {
                 {tasks.map((item) => 
                 <div onClick={() => setTask(item.title)}><Task task={task} key={item.title} content={item} darkMode={darkMode} /></div>)}
             </Col>
-            <Col width="100%" height="480px" bg={bgStyler(darkMode)} 
+            <Col width="100%" height="480px" bg={bgStyler(darkMode)}
                 position="absolute" scrollbarFalse={true} 
                 margin="margin-top: 80px;"
                 style={{overflow: 'hidden', overflowY: 'scroll', display: 'block', right: '-100%', transition: 'all 300ms'}}>
