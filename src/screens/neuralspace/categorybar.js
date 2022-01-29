@@ -11,10 +11,14 @@ const CategoryWrap = styled(Col)`
     overflow: hidden;
     overflow-y: scroll;
     display: block;
-    padding-bottom: 58px;
+    padding-bottom: 100px;
+    transition: all 300ms;
 `;
 
 const TaskWrap = styled(Box)`
+    &:first-child {
+      margin-top: 0px;  
+    };
     height: 130px; 
     border-radius: 20px;
     position: relative;
@@ -29,7 +33,6 @@ const TaskWrap = styled(Box)`
 export const Task = ({darkMode, content, setTask, task, setSubTask, type}) => {
     return (
         <TaskWrap onClick={() => type == "task" ? setTask(getItem(content.title, tasks)) : setSubTask(getItem(content.title, task.subtasks))}>
-            {type == "task" && <>
             <Col justify="center" align="flex-start" position="absolute" zIndex={101} 
                 style={{left: 0, backdropFilter: 'blur(5px)', bottom: 0}}
                 padding="padding: 20px;"
@@ -37,21 +40,20 @@ export const Task = ({darkMode, content, setTask, task, setSubTask, type}) => {
                 <Text className="light" margin="margin: 10px 0px;">{content.title.toUpperCase()}</Text>
                 <Col>
                     <Row align="center">
-                        <DemoIcon stroke={darkMode ? blueColor : purColor} width={15} height={15} />
+                        <DemoIcon stroke={darkMode ? "#00B3DA" : blueColor} width={15} height={15} />
                         <Text className="light" weight="400" margin="margin-left: 10px;" size="12">20 Demos</Text>
                     </Row>
                     <Row margin="margin: 5px 0px;" align="center">
-                        <BenchMarkIcon stroke={darkMode ? blueColor : purColor} width={15} height={15} />
+                        <BenchMarkIcon stroke={darkMode ? "#00B3DA" : blueColor} width={15} height={15} />
                         <Text className="light" weight="400" margin="margin-left: 10px;" size="12">{content.benchmarkNum} Benchmarks</Text>
                     </Row>
                     <Row align="center">
-                        <PaperswithCodeIcon stroke={darkMode ? blueColor : purColor} width={15} height={15} />
+                        <PaperswithCodeIcon stroke={darkMode ? "#00B3DA" : blueColor} width={15} height={15} />
                         <Text className="light" weight="400" margin="margin-left: 10px;" size="12">{content.paperswithcodeNum} Papers with Code</Text>
                     </Row>
                 </Col>
             </Col>
-            <Image src={content.img} zIndex={100} position="absolute" of="cover" width="105%" height="105%" />
-            </>}
+            <Image src={content.img} zIndex={100} style={{marginLeft: 50}} position="absolute" of="cover" width="100%" height="100%" />
         </TaskWrap>
     )
 }
@@ -73,11 +75,11 @@ export const CategoryBar = ({task, setTask, subTask, setSubTask, categoryBar, se
             {taskselected && <Flex to="cursor" onClick={() => setTask(getItem('All Computer Vision', tasks))} position="absolute" style={{left: -5, top: 82}}>
                 <BackIcon height={20} stroke={darkMode ? "white" : "black"} />
             </Flex>}
-            <Text size="20" className='bold' margin={taskselected ? "margin: 10px 45px" : "margin: 10px 15px;"} style={{transition: 'all 300ms'}}>{taskselected ? task.title : "TASKS"}</Text>
+            <Text size="20" className='bold' margin={taskselected ? "margin: 10px 45px; margin-bottom: 20px;" : "margin: 10px 15px; margin-bottom: 20px;"} style={{transition: 'all 300ms'}}>{taskselected ? task.title : "TASKS"}</Text>
             <CategoryWrap scrollbarFalse={true}>
                 {tasks.map((item) => <Task type="task" setTask={setTask} task={task} darkMode={darkMode} key={item.title} content={item} />)}
             </CategoryWrap>
-            <CategoryWrap position="fixed" zIndex="1000" style={{width: '21%', right: taskselected ? '21%' : '-21%'}} scrollbarFalse={true}>
+            <CategoryWrap bg={darkMode ? "rgb(15, 15, 15)" : "white"} position="absolute" zIndex="1000" width="100%" style={{height: '85%', top: 124, right: taskselected ? 0 : '-100%', transition: 'all 300ms'}} scrollbarFalse={true}>
                 {task.subtasks.map((item) => <Task type="subtask" setTask={setSubTask} task={task.subtasks} darkMode={darkMode} key={item.title} content={item} />)}
             </CategoryWrap>
         </Box>

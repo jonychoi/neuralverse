@@ -1,6 +1,6 @@
 import React from 'react';
 import {Flex, Col, Row, Text, Image, Input, Box} from '../../components/common/base';
-import {BenchMarkIcon, SearchIcon} from '../../icons/utilities';
+import {BenchMarkIcon, DemoIcon, PaperswithCodeIcon, SearchIcon} from '../../icons/utilities';
 import logo from '../../imgs/logo.png';
 import {bgStyler} from '../../styles';
 import styled from 'styled-components';
@@ -57,11 +57,29 @@ export const Model = ({darkMode}) => {
 export const Models = ({darkMode, task, subTask}) => {
     return (
         <Col flex={3} margin="margin-top: 50px;">
-            <Row align="center" margin="margin-bottom: 10px;">
-                <Flex>
-                    <Image src={logo} width={43} />
-                </Flex>
-                <Text className="bold" size="22" margin="margin: 20px;">TRENDINGS ON {subTask ? subTask.title.toUpperCase() : task.title.toUpperCase()}</Text>
+            <Row align="center" margin="margin-bottom: 10px;" justify="space-between">
+                <Row align="center">
+                    <Flex>
+                        <Image src={logo} width={43} />
+                    </Flex>
+                    <Text>sticky</Text>
+                    <Text className="bold" size="22" margin="margin: 20px;">TRENDINGS ON {subTask ? subTask.title.toUpperCase() : task.title.toUpperCase()}</Text>
+                </Row>
+                <Row>
+                    <Text margin="margin-right: 15px;">Sort > </Text>
+                    <Row to="cursor" align="center">
+                        <BenchMarkIcon width={18} height={18} />
+                        <Text margin="margin-left: 7px;">Benchmarks</Text>
+                    </Row>
+                    <Row to="cursor" align="center" margin="margin: 0px 15px;">
+                        <PaperswithCodeIcon width={18} height={18} />
+                        <Text margin="margin-left: 7px;">Papers with Code</Text>
+                    </Row>
+                    <Row to="cursor" align="center">
+                        <DemoIcon width={18} height={18} />
+                        <Text margin="margin-left: 7px;">Demo Availables</Text>
+                    </Row>
+                </Row>
             </Row>
             <Row margin="margin: 12px 0px;">
                 <Model darkMode={darkMode} />
