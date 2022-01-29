@@ -22,6 +22,12 @@ export const CloseIcon = ({width = 539, height = 539, bg, stroke}) => (
     </svg>
 )
 
+export const UpDown = ({width = 108, height = 46, stroke = "white"}) => (
+    <svg width={width} height={height} viewBox="0 0 108 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 4L54 41L105 4" stroke={stroke} stroke-width="8"/>
+    </svg>
+)
+
 export const SearchIcon = ({width = 490, height = 506, stroke = "black"}) => (
     <svg width={width} height={height} viewBox="0 0 490 506" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="188" cy="188" r="173" stroke={stroke} stroke-width="40"/>

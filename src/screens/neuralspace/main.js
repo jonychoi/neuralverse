@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Flex, Col, Row, Text, Image, Input, Box} from '../../components/common/base';
-import {BenchMarkIcon, DemoIcon, PaperswithCodeIcon, SearchIcon} from '../../icons/utilities';
-import logo from '../../imgs/logo.png';
+import {BenchMarkIcon, DemoIcon, PaperswithCodeIcon, UpDown} from '../../icons/utilities';
+import ModelView from './modelview';
 import {bgStyler} from '../../styles';
 import styled from 'styled-components';
 
@@ -11,7 +11,7 @@ export const Selector = ({darkMode, task, subTask}) => {
         <Col margin="margin-bottom: 10px">
             <Text className="bold" size="33">{subTask ? subTask.title.toUpperCase() : task.title == "All Computer Vision" ? "Computer Vision".toUpperCase() : task.title.toUpperCase()}</Text>
             <Row margin="margin: 20px 0px">
-                <Text className="bold" size="17">{task.title}</Text>
+                <Text className="bold" size="17">{subTask ? subTask.title : task.title}</Text>
                 {subTask && 
                 <>
                     <Text className="bold" size="17" margin="margin: 0px 10px;">></Text>
@@ -22,95 +22,57 @@ export const Selector = ({darkMode, task, subTask}) => {
     )
 };
 
-export const TaskIntroduction = ({task, subTask}) => {
+export const TaskIntroduction = ({darkMode, task, subTask}) => {
+    const [opacity, setOpacity] = useState(1);
+    const [_task, set_Task] = useState(task);
+    const [_subTask, set_subTask] = useState(subTask);
+    useEffect(() => {
+        const opaciter = () => {
+            setOpacity(0);
+            setTimeout(() => {
+                setOpacity(1)
+                set_Task(task);
+            }, 300);
+        };
+        opaciter();
+    }, [task])
     return (
-        <Row align="center">
+        <Row align="center" opacity={opacity} style={{transition: 'all 300ms'}}>
             <Flex>
                 <Flex br="20px" width="350px;"align="center" justify="center" height="200px" style={{overflow: 'hidden'}}>
-                    <Image width="108%" height="108%" of="cover" src={task.img} />
+                    <Image width="108%" height="108%" of="cover" src={_subTask ? _subTask.img : _task.img} />
                 </Flex>
             </Flex>
-            <Flex margin="margin-left: 30px;">
+            <Col margin="margin-left: 30px;">
+                <Row margin="margin-bottom: 10px;">
+                    <Row align="center">
+                        <DemoIcon width={20} height={20} />
+                        <Text size="12.8" className="light" margin="margin: 0px 10px;">20 Demos</Text>
+                    </Row>
+                    <Row align="center" margin="margin-left: 10px;">
+                        <PaperswithCodeIcon width={20} height={20} />
+                        <Text size="12.8" className="light" margin="margin: 0px 10px;">20 Papers with Code</Text>
+                    </Row>
+                    <Row align="center" margin="margin-left: 10px;">
+                        <BenchMarkIcon width={20} height={20} />
+                        <Text size="12.8" className="light" margin="margin: 0px 10px;">20 Benchmarks</Text>
+                    </Row>
+                </Row>
                 <Text lh={25} size="15" className="light" weight="400">
-                    {task.description}
+                    {_subTask ? _subTask.description : _task.description}
                 </Text>
-            </Flex>
+            </Col>
         </Row>
     )
 }
 
-export const ModelBox = styled(Box)`
-    margin-right: 25px;
-    &:last-child {
-        margin-right: 0px;
-    }
-`;
-
-export const Model = ({darkMode}) => {
-    return (
-        <ModelBox width="33%" height="190px;" bg={bgStyler(darkMode)} br="20px" style={{overflow: 'hidden'}}>
-            
-        </ModelBox>
-    )
-}
-
-export const Models = ({darkMode, task, subTask}) => {
-    return (
-        <Col flex={3} margin="margin-top: 50px;">
-            <Row align="center" margin="margin-bottom: 10px;" justify="space-between">
-                <Row align="center">
-                    <Flex>
-                        <Image src={logo} width={43} />
-                    </Flex>
-                    <Text>sticky</Text>
-                    <Text className="bold" size="22" margin="margin: 20px;">TRENDINGS ON {subTask ? subTask.title.toUpperCase() : task.title.toUpperCase()}</Text>
-                </Row>
-                <Row>
-                    <Text margin="margin-right: 15px;">Sort > </Text>
-                    <Row to="cursor" align="center">
-                        <BenchMarkIcon width={18} height={18} />
-                        <Text margin="margin-left: 7px;">Benchmarks</Text>
-                    </Row>
-                    <Row to="cursor" align="center" margin="margin: 0px 15px;">
-                        <PaperswithCodeIcon width={18} height={18} />
-                        <Text margin="margin-left: 7px;">Papers with Code</Text>
-                    </Row>
-                    <Row to="cursor" align="center">
-                        <DemoIcon width={18} height={18} />
-                        <Text margin="margin-left: 7px;">Demo Availables</Text>
-                    </Row>
-                </Row>
-            </Row>
-            <Row margin="margin: 12px 0px;">
-                <Model darkMode={darkMode} />
-                <Model darkMode={darkMode} />
-                <Model darkMode={darkMode} />
-            </Row>
-            <Row margin="margin: 12px 0px;">
-                <Model darkMode={darkMode} />
-                <Model darkMode={darkMode} />
-                <Model darkMode={darkMode} />
-            </Row>
-            <Row margin="margin: 12px 0px;">
-                <Model darkMode={darkMode} />
-                <Model darkMode={darkMode} />
-                <Model darkMode={darkMode} />
-            </Row>
-            <Row margin="margin: 12px 0px;">
-                <Model darkMode={darkMode} />
-                <Model darkMode={darkMode} />
-                <Model darkMode={darkMode} />
-            </Row>
-        </Col>
-    )
-}
 
 export const Main = ({categoryBar, darkMode, task, setTask, subTask, setSubTask}) => {
     return (
         <Col width="100%" padding={categoryBar ? "padding: 0% 10%; padding-right: 25%; padding-bottom: 100px;" : "padding: 0% 10%; padding-bottom: 100px;"}>
             <Selector darkMode={darkMode} task={task} setTask={setTask} subTask={subTask} setSubTask={setSubTask} />
-            <TaskIntroduction task={task} subTask={subTask} />
-            <Models darkMode={darkMode} task={task} subTask={subTask} />
+            <TaskIntroduction darkMode={darkMode} task={task} subTask={subTask} />
+            <ModelView darkMode={darkMode} task={task} subTask={subTask} />
         </Col>
     )
 }

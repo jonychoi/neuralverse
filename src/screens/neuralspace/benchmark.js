@@ -1,14 +1,7 @@
 import React from 'react';
 import {Flex, Col, Row, Text, Image} from '../../components/common/base';
 import { bgStyler } from '../../styles';
-
-export const Demo = ({darkMode}) => {
-    return (
-        <Flex height="500px" width="100%" br="20px" margin="margin-bottom: 30px;" bg={bgStyler(darkMode)}>
-
-        </Flex>
-    )
-};
+import Demo from './demo';
 
 export const ModelSpecs = ({darkMode}) => {
     return (
