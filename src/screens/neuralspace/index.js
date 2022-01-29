@@ -16,6 +16,7 @@ export const NeuralSpace = ({route}) => {
         <Col align="center" bg={GlobalBgStyler(darkMode)} style={{display: route == 3 ? 'flex': 'none', paddingTop: 150}}>
             <Main categoryBar={categoryBar} setCategoryBar={setCategoryBar} task={task} setTask={setTask} setSubTask={setSubTask} subTask={subTask} darkMode={darkMode} />
             <CategoryBar task={task} setTask={setTask} setSubTask={setSubTask} subTask={subTask} darkMode={darkMode} categoryBar={categoryBar} setCategoryBar={setCategoryBar} />
+            <BenchMarks task={task} setTask={setTask} setSubTask={setSubTask} subTask={subTask} darkMode={darkMode} categoryBar={categoryBar}/>
         </Col>
     )
 };

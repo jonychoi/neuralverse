@@ -19,9 +19,9 @@ export const LeaderBoards = ({darkMode}) => {
     )
 };
 
-export const Benchmarks = ({darkMode}) => {
+export const Benchmarks = ({darkMode, categoryBar}) => {
     return (
-        <Col width="100%">
+        <Col width="100%" padding={categoryBar ? "padding: 0% 10%; padding-right: 25%; padding-bottom: 100px;" : "padding: 0% 10%; padding-bottom: 100px;"}>
             <Demo darkMode={darkMode} />
             <Row width="100%">
                 <LeaderBoards darkMode={darkMode} />

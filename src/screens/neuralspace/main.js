@@ -1,12 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import {Flex, Col, Row, Text, Image, Input, Box} from '../../components/common/base';
-import {BenchMarkIcon, DemoIcon, PaperswithCodeIcon, UpDown} from '../../icons/utilities';
+import {Flex, Col, Row, Text, Image} from '../../components/common/base';
+import {BenchMarkIcon, DemoIcon, PaperswithCodeIcon} from '../../icons/utilities';
 import ModelView from './modelview';
-import {bgStyler} from '../../styles';
-import styled from 'styled-components';
 
 export const Selector = ({darkMode, task, subTask}) => {
-    console.log(subTask, task)
     return (
         <Col margin="margin-bottom: 10px">
             <Text className="bold" size="33">{subTask ? subTask.title.toUpperCase() : task.title == "All Computer Vision" ? "Computer Vision".toUpperCase() : task.title.toUpperCase()}</Text>
@@ -43,6 +40,7 @@ export const TaskIntroduction = ({darkMode, task, subTask}) => {
                     <Image width="108%" height="108%" of="cover" src={_subTask ? _subTask.img : _task.img} />
                 </Flex>
             </Flex>
+            <Text>Add comparision between models ex) resnet의 각 분포 convnet의 각 분포</Text>
             <Col margin="margin-left: 30px;">
                 <Row margin="margin-bottom: 10px;">
                     <Row align="center">
