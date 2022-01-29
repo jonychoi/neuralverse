@@ -1,32 +1,41 @@
 import React from 'react';
 import {Flex, Col, Row, Text, Image, Input, Box} from '../../components/common/base';
-import {SearchIcon} from '../../icons/utilities';
+import {BenchMarkIcon, SearchIcon} from '../../icons/utilities';
+import logo from '../../imgs/logo.png';
 import {bgStyler} from '../../styles';
 import styled from 'styled-components';
-import segmentationimg from '../../data/tasks/imgs/segmentation.jpg'
 
-export const Selector = ({darkMode, task, setTask, subTask, setSubTask}) => {
+export const Selector = ({darkMode, task, subTask}) => {
+    console.log(subTask, task)
     return (
-        <Col>
-            <Text className="bold" size="33">{subTask ? subTask.toUpperCase() : task.toUpperCase()}</Text>
+        <Col margin="margin-bottom: 10px">
+            <Text className="bold" size="33">{subTask ? subTask.title.toUpperCase() : task.title == "All Computer Vision" ? "Computer Vision".toUpperCase() : task.title.toUpperCase()}</Text>
             <Row margin="margin: 20px 0px">
-                <Text className="bold" size="17">{task}</Text>
+                <Text className="bold" size="17">{task.title}</Text>
                 {subTask && 
                 <>
                     <Text className="bold" size="17" margin="margin: 0px 10px;">></Text>
-                    <Text className="bold" size="17">{subTask}</Text>
+                    <Text className="bold" size="17">{subTask.title}</Text>
                 </>}
             </Row>
         </Col>
     )
 };
 
-export const TaskIntroduction = ({}) => {
+export const TaskIntroduction = ({task, subTask}) => {
     return (
-        <Col flex={3} margin="margin-right: 30px;">
-            <Image width="500px" src={segmentationimg} />
-            <Text>Semantic segmentation, or image segmentation, is the task of clustering parts of an image together which belong to the same object class. It is a form of pixel-level prediction because each pixel in an image is classified according to a category. Some example benchmarks for this task are Cityscapes, PASCAL VOC and ADE20K. Models are usually evaluated with the Mean Intersection-Over-Union (Mean IoU) and Pixel Accuracy metrics.</Text>
-        </Col>
+        <Row align="center">
+            <Flex>
+                <Flex br="20px" width="350px;"align="center" justify="center" height="200px" style={{overflow: 'hidden'}}>
+                    <Image width="108%" height="108%" of="cover" src={task.img} />
+                </Flex>
+            </Flex>
+            <Flex margin="margin-left: 30px;">
+                <Text lh={25} size="15" className="light" weight="400">
+                    {task.description}
+                </Text>
+            </Flex>
+        </Row>
     )
 }
 
@@ -48,16 +57,28 @@ export const Model = ({darkMode}) => {
 export const Models = ({darkMode, task, subTask}) => {
     return (
         <Col flex={3} margin="margin-top: 50px;">
-            <Row>
-                <Text>Icon</Text>
-                <Text className="bold" size="25" margin="margin: 30px 0px;">Trendings on {subTask ? subTask : task ? task : "All Computer Vision"}</Text>
+            <Row align="center" margin="margin-bottom: 10px;">
+                <Flex>
+                    <Image src={logo} width={43} />
+                </Flex>
+                <Text className="bold" size="22" margin="margin: 20px;">TRENDINGS ON {subTask ? subTask.title.toUpperCase() : task.title.toUpperCase()}</Text>
             </Row>
-            <Row>
+            <Row margin="margin: 12px 0px;">
                 <Model darkMode={darkMode} />
                 <Model darkMode={darkMode} />
                 <Model darkMode={darkMode} />
             </Row>
-            <Row margin="margin-top: 25px;">
+            <Row margin="margin: 12px 0px;">
+                <Model darkMode={darkMode} />
+                <Model darkMode={darkMode} />
+                <Model darkMode={darkMode} />
+            </Row>
+            <Row margin="margin: 12px 0px;">
+                <Model darkMode={darkMode} />
+                <Model darkMode={darkMode} />
+                <Model darkMode={darkMode} />
+            </Row>
+            <Row margin="margin: 12px 0px;">
                 <Model darkMode={darkMode} />
                 <Model darkMode={darkMode} />
                 <Model darkMode={darkMode} />
@@ -68,11 +89,9 @@ export const Models = ({darkMode, task, subTask}) => {
 
 export const Main = ({categoryBar, darkMode, task, setTask, subTask, setSubTask}) => {
     return (
-        <Col width="100%" padding={categoryBar ? "padding: 0% 10%; padding-right: 30%" : "padding: 0% 10%;"}>
-            <Col flex={3}>
-                <Selector darkMode={darkMode} task={task} setTask={setTask} subTask={subTask} setSubTask={setSubTask} />
-                <TaskIntroduction />
-            </Col>
+        <Col width="100%" padding={categoryBar ? "padding: 0% 10%; padding-right: 25%; padding-bottom: 100px;" : "padding: 0% 10%; padding-bottom: 100px;"}>
+            <Selector darkMode={darkMode} task={task} setTask={setTask} subTask={subTask} setSubTask={setSubTask} />
+            <TaskIntroduction task={task} subTask={subTask} />
             <Models darkMode={darkMode} task={task} subTask={subTask} />
         </Col>
     )
