@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {Flex, Col, Row, Text, Image} from '../../components/common/base';
 import { bgStyler } from '../../styles';
+import {GithubIcon, PaperIcon} from '../../icons/utilities';
 import Demo from './demo';
 
 export const ModelSpecs = ({darkMode}) => {
@@ -19,9 +20,9 @@ export const LeaderBoards = ({darkMode}) => {
     )
 };
 
-export const Benchmarks = ({darkMode, categoryBar}) => {
+export const Benchmarks = ({model, darkMode}) => {
     return (
-        <Col width="100%" padding={categoryBar ? "padding: 0% 10%; padding-right: 25%; padding-bottom: 100px;" : "padding: 0% 10%; padding-bottom: 100px;"}>
+        <Col width="100%">
             <Demo darkMode={darkMode} />
             <Row width="100%">
                 <LeaderBoards darkMode={darkMode} />

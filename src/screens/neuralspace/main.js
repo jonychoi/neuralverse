@@ -1,25 +1,36 @@
 import React, {useState, useEffect} from 'react';
 import {Flex, Col, Row, Text, Image} from '../../components/common/base';
-import {BenchMarkIcon, DemoIcon, PaperswithCodeIcon} from '../../icons/utilities';
+import {BackIcon, BenchMarkIcon, DemoIcon, PaperswithCodeIcon} from '../../icons/utilities';
 import ModelView from './modelview';
+import Benchmark from './benchmark';
 
-export const Selector = ({darkMode, task, subTask}) => {
+export const Selector = ({darkMode, route, setRoute, model, task, subTask}) => {
     return (
         <Col margin="margin-bottom: 10px">
-            <Text className="bold" size="33">{subTask ? subTask.title.toUpperCase() : task.title == "All Computer Vision" ? "Computer Vision".toUpperCase() : task.title.toUpperCase()}</Text>
+            <Flex onClick={() => setRoute(2)} position="absolute" style={{left: '10%', top: 160, opacity: route == 3 ? 1 : 0, transition: 'all 300ms'}}>
+                <BackIcon width={20} height={20} stroke={darkMode ? "white" : 'black'} />
+            </Flex>
+            <Text className="bold" style={{marginLeft: route == 3 ? 10: 0, transition: 'all 300ms'}} size="33">
+                {model ? model.title : subTask ? subTask.title.toUpperCase() : task.title == "All Computer Vision" ? "Computer Vision".toUpperCase() : task.title.toUpperCase()}
+            </Text>
             <Row margin="margin: 20px 0px">
                 <Text className="bold" size="17">{subTask ? subTask.title : task.title}</Text>
                 {subTask && 
                 <>
-                    <Text className="bold" size="17" margin="margin: 0px 10px;">></Text>
+                    <Text className="bold" size="17" margin="margin: 0px 10px;">></Text>   
                     <Text className="bold" size="17">{subTask.title}</Text>
+                </>}
+                {model && 
+                <>
+                    <Text className="bold" size="17" margin="margin: 0px 10px;">></Text>
+                    <Text className="bold" size="17">{model.title}</Text>
                 </>}
             </Row>
         </Col>
     )
 };
 
-export const TaskIntroduction = ({darkMode, task, subTask}) => {
+export const TaskIntroduction = ({darkMode, model, task, subTask}) => {
     const [opacity, setOpacity] = useState(1);
     const [_task, set_Task] = useState(task);
     const [_subTask, set_subTask] = useState(subTask);
@@ -40,7 +51,6 @@ export const TaskIntroduction = ({darkMode, task, subTask}) => {
                     <Image width="108%" height="108%" of="cover" src={_subTask ? _subTask.img : _task.img} />
                 </Flex>
             </Flex>
-            <Text>Add comparision between models ex) resnet의 각 분포 convnet의 각 분포</Text>
             <Col margin="margin-left: 30px;">
                 <Row margin="margin-bottom: 10px;">
                     <Row align="center">
@@ -65,12 +75,17 @@ export const TaskIntroduction = ({darkMode, task, subTask}) => {
 }
 
 
-export const Main = ({categoryBar, darkMode, task, setTask, subTask, setSubTask}) => {
+export const Main = ({setRoute, route, model, setModel, categoryBar, darkMode, task, setTask, subTask, setSubTask}) => {
     return (
         <Col width="100%" padding={categoryBar ? "padding: 0% 10%; padding-right: 25%; padding-bottom: 100px;" : "padding: 0% 10%; padding-bottom: 100px;"}>
-            <Selector darkMode={darkMode} task={task} setTask={setTask} subTask={subTask} setSubTask={setSubTask} />
-            <TaskIntroduction darkMode={darkMode} task={task} subTask={subTask} />
-            <ModelView darkMode={darkMode} task={task} subTask={subTask} />
+            <Selector route={route} setRoute={setRoute} model={model} setModel={setModel} darkMode={darkMode} task={task} setTask={setTask} subTask={subTask} setSubTask={setSubTask} />
+            <TaskIntroduction model={model} darkMode={darkMode} task={task} subTask={subTask} />
+            {route != 3 ? <Flex style={{opacity: model ? 0 : 1, transition: 'all 300ms'}}>
+                <ModelView setModel={setModel} darkMode={darkMode} task={task} subTask={subTask} />
+            </Flex> :
+            <Flex style={{opacity: model ? 1: 0, transition: 'all 300ms'}}>
+                <Benchmark model={model} setModel={setModel} darkMode={darkMode} model={model} />
+            </Flex>}
         </Col>
     )
 }

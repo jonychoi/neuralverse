@@ -4,7 +4,7 @@ import { SearchIcon, CloseIcon, DemoIcon, PaperswithCodeIcon, BenchMarkIcon, Bac
 import {Height} from '../../hooks/getWindow';
 import tasks, {getItem} from '../../data/tasks';
 import styled from 'styled-components';
-import { bgStyler, blueColor, purColor } from '../../styles';
+import { bgStyler, blueColor } from '../../styles';
 
 const CategoryWrap = styled(Col)`
     height: 100%;
@@ -30,9 +30,9 @@ const TaskWrap = styled(Box)`
     margin: 15px;
 `;
 
-export const Task = ({darkMode, content, setTask, task, setSubTask, type}) => {
+export const Task = ({setRoute, route, darkMode, content, list, setTask}) => {
     return (
-        <TaskWrap onClick={() => type == "task" ? setTask(getItem(content.title, tasks)) : setSubTask(getItem(content.title, task.subtasks))}>
+        <TaskWrap onClick={() => {setRoute(route); setTask(getItem(content.title, list))}}>
             <Col justify="center" align="flex-start" position="absolute" zIndex={101} 
                 style={{left: 0, backdropFilter: 'blur(5px)', bottom: 0}}
                 padding="padding: 20px;"
@@ -58,8 +58,8 @@ export const Task = ({darkMode, content, setTask, task, setSubTask, type}) => {
     )
 }
 
-export const CategoryBar = ({task, setTask, subTask, setSubTask, categoryBar, setCategoryBar, darkMode}) => {
-    const taskselected = task.title !== "All Computer Vision"
+export const CategoryBar = ({route, setRoute, task, setTask, setSubTask, categoryBar, setCategoryBar, darkMode}) => {
+    const taskselected = route != 0
     return (
         <Box position="fixed" zIndex={100} width="21%;"
             height={Height - 80 + 'px'} style={{right: categoryBar ? 0 : -380, top: 80, transition: 'all 300ms'}}>
@@ -72,15 +72,15 @@ export const CategoryBar = ({task, setTask, subTask, setSubTask, categoryBar, se
             <Flex to="cursor" onClick={() => setCategoryBar(!categoryBar)} position="absolute" zIndex={100} style={{right: 15, top: 15}}>
                 <CloseIcon width={30} height={30} bg={darkMode ? "rgb(35, 35, 35)" : "rgb(245, 245, 245)"} stroke={darkMode ? "rgb(100, 100, 100)" : "rgb(120, 120, 120)"} />
             </Flex>
-            {taskselected && <Flex to="cursor" onClick={() => setTask(getItem('All Computer Vision', tasks))} position="absolute" style={{left: -5, top: 82}}>
+            {taskselected && <Flex to="cursor" onClick={() => setRoute(0)} position="absolute" style={{left: -5, top: 82}}>
                 <BackIcon height={20} stroke={darkMode ? "white" : "black"} />
             </Flex>}
             <Text size="20" className='bold' margin={taskselected ? "margin: 10px 45px; margin-bottom: 20px;" : "margin: 10px 15px; margin-bottom: 20px;"} style={{transition: 'all 300ms'}}>{taskselected ? task.title : "TASKS"}</Text>
             <CategoryWrap scrollbarFalse={true}>
-                {tasks.map((item) => <Task type="task" setTask={setTask} task={task} darkMode={darkMode} key={item.title} content={item} />)}
+                {tasks.map((item) => <Task setRoute={setRoute} route={1} setTask={setTask} list={tasks} darkMode={darkMode} key={item.title} content={item} />)}
             </CategoryWrap>
             <CategoryWrap bg={darkMode ? "rgb(15, 15, 15)" : "white"} position="absolute" zIndex="1000" width="100%" style={{height: '85%', top: 124, right: taskselected ? 0 : '-100%', transition: 'all 300ms'}} scrollbarFalse={true}>
-                {task.subtasks.map((item) => <Task type="subtask" setTask={setSubTask} task={task.subtasks} darkMode={darkMode} key={item.title} content={item} />)}
+                {task.subtasks.map((item) => <Task setRoute={setRoute} route={2} setTask={setSubTask} list={task.subtasks} darkMode={darkMode} key={item.title} content={item} />)}
             </CategoryWrap>
         </Box>
     )
