@@ -7,7 +7,7 @@ export const Demo = ({darkMode}) => {
     const [result, setResult] = useState(null);
     
     return (
-        <Flex height="500px" width="100%" br="20px" margin="margin-bottom: 30px;" bg={bgStyler(darkMode)}>
+        <Flex height="470px" width="100%" br="20px" margin="margin-bottom: 30px;" bg={bgStyler(darkMode)}>
             <div class="panels unaligned">
                 <div class="panel">
                     <div class="component_set">

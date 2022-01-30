@@ -47,6 +47,7 @@ export const Trendingsa = ({darkMode}) => {
                 <Text>- Team workspace - creating models, papers, read papers</Text>
                 <Text>- Team members' saved papers</Text>
                 <Text>Add comparision between models ex) resnet의 각 분포 convnet의 각 분포</Text>
+                <Text>Model save btn</Text>
             </Col>
             <Text className="light" margin="margin: 10px 0px;" size="12.8">View all Recommendations</Text>
         </Box>

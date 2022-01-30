@@ -21,7 +21,7 @@ export const Dataset = ({darkMode, arg}) => {
     )
 }
 
-export const ModelBox = styled(Box)`
+export const ModelBox = styled(Flex)`
     margin-right: 25px;
     &:last-child {
         margin-right: 0px;
@@ -37,9 +37,9 @@ export const ModelBox = styled(Box)`
 
 export const Model = ({setModel, darkMode, content}) => {
     return (
-        <ModelBox width="33%" height="190px;" bg={bgStyler(darkMode)} br="20px" style={{overflow: 'hidden'}}>
-            <Flex align="center" justify="center" width="100%" height="100%" position="absolute" zIndex={100} bg={darkMode ? "rgba(0,0,0,0.55)" : "rgba(255, 255, 255, 0.55)"}>
-                <Text title="light" size="20" weight="500">{content.title}</Text>
+        <ModelBox onClick={() => setModel(content)} shadow={true} width="33%" height="190px;" bg={bgStyler(darkMode)} br="20px" style={{overflow: 'hidden'}}>
+            <Flex align="center" justify="center" width="100%" height="100%" position="absolute" zIndex={100} bg={darkMode ? "rgba(0,0,0,0.25)" : "rgba(0,0,0,0.15)"}>
+                <Text color="white" title="light" size="20" weight="500">{content.title}</Text>
             </Flex>
             <Image src={content.img} of="cover" position="absolute" width="108%" height="108%" />
         </ModelBox>
@@ -115,12 +115,12 @@ export const ModelView = ({setModel, darkMode, task, subTask}) => {
             <ModelViewTop task={task} subTask={subTask} options={options} setOptions={setOptions} datasetBtn={datasetBtn} setDatasetBtn={setDatasetBtn} darkMode={darkMode} />
             <Col opacity={opacity}>
                 <Row margin="margin: 12px 0px;">
-                    {task.data && task.data.map(item => <Model darkMode={darkMode} setModel={setModel} content={item} key={item.title}/>)}
+                    {task.models && task.models.map(item => <Model darkMode={darkMode} setModel={setModel} content={item} key={item.title}/>)}
                 </Row>
                 {/* <Row margin="margin: 12px 0px;">
                     <Model darkMode={darkMode} />
                     <Model darkMode={darkMode} />
-                    <Model darkMode={darkMode} />
+                    <Model darkMode={darkMode} /> 
                 </Row>
                 <Row margin="margin: 12px 0px;">
                     <Model darkMode={darkMode} />

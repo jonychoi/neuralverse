@@ -44,22 +44,23 @@ export const Flex = styled.div`
         span {
             opacity: ${(props) => props.to && !props.cursorOpaFalse ? 0.85 : 1}
         }
-    }
-`;
-
-export const Row = styled(Flex)`
-    flex-direction: row;
-    }
-`;
-
-export const Col = styled(Flex)`
-    flex-direction: column;
+    };
+    ${(props) => props.shadow && `transition: background-color .3s,color .3s,box-shadow .3s;`}
+    ${(props) => props.shadow && `box-shadow: 0 0 0.1rem rgb(0 0 0 / 10%), 0 0.15rem 0.9rem rgb(0 0 0 / 10%);`};
     ${(props) => props.scrollbarFalse && `
     ::-webkit-scrollbar {
         display: none;
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;
       }`}
+`;
+
+export const Row = styled(Flex)`
+    flex-direction: row;
+`;
+
+export const Col = styled(Flex)`
+    flex-direction: column;
 `;
 
 export const Box = styled(Col)`

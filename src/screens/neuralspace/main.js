@@ -4,14 +4,14 @@ import {BackIcon, BenchMarkIcon, DemoIcon, PaperswithCodeIcon} from '../../icons
 import ModelView from './modelview';
 import Benchmark from './benchmark';
 
-export const Selector = ({darkMode, route, setRoute, model, task, subTask}) => {
+export const Selector = ({darkMode, setModel, model, task, subTask}) => {
     return (
         <Col margin="margin-bottom: 10px">
-            <Flex onClick={() => setRoute(2)} position="absolute" style={{left: '10%', top: 160, opacity: route == 3 ? 1 : 0, transition: 'all 300ms'}}>
+            <Flex onClick={() => setModel(null)} position="absolute" style={{left: '10%', top: 160, opacity: model ? 1 : 0, transition: 'all 300ms'}}>
                 <BackIcon width={20} height={20} stroke={darkMode ? "white" : 'black'} />
             </Flex>
-            <Text className="bold" style={{marginLeft: route == 3 ? 10: 0, transition: 'all 300ms'}} size="33">
-                {model ? model.title : subTask ? subTask.title.toUpperCase() : task.title == "All Computer Vision" ? "Computer Vision".toUpperCase() : task.title.toUpperCase()}
+            <Text className="bold" style={{marginLeft: model ? 30: 0, transition: 'all 300ms'}} size="33">
+                {model ? model.title : subTask ? subTask.title.toUpperCase() : task ? task.title.toUpperCase() : "Computer Vision".toUpperCase()}
             </Text>
             <Row margin="margin: 20px 0px">
                 <Text className="bold" size="17">{subTask ? subTask.title : task.title}</Text>
@@ -33,22 +33,25 @@ export const Selector = ({darkMode, route, setRoute, model, task, subTask}) => {
 export const TaskIntroduction = ({darkMode, model, task, subTask}) => {
     const [opacity, setOpacity] = useState(1);
     const [_task, set_Task] = useState(task);
-    const [_subTask, set_subTask] = useState(subTask);
+    const [_subTask, set_SubTask] = useState(subTask);
+    const [_model, set_Model] = useState(model);
     useEffect(() => {
         const opaciter = () => {
             setOpacity(0);
             setTimeout(() => {
-                setOpacity(1)
                 set_Task(task);
+                set_SubTask(subTask);
+                set_Model(model);
+                setOpacity(1)
             }, 300);
         };
         opaciter();
-    }, [task])
+    }, [task, subTask, model])
     return (
         <Row align="center" opacity={opacity} style={{transition: 'all 300ms'}}>
             <Flex>
                 <Flex br="20px" width="350px;"align="center" justify="center" height="200px" style={{overflow: 'hidden'}}>
-                    <Image width="108%" height="108%" of="cover" src={_subTask ? _subTask.img : _task.img} />
+                    <Image width="108%" height="108%" of="cover" src={_model ? _model.img : _subTask ? _subTask.img : _task.img} />
                 </Flex>
             </Flex>
             <Col margin="margin-left: 30px;">
@@ -67,7 +70,7 @@ export const TaskIntroduction = ({darkMode, model, task, subTask}) => {
                     </Row>
                 </Row>
                 <Text lh={25} size="15" className="light" weight="400">
-                    {_subTask ? _subTask.description : _task.description}
+                    {_model ? _model.description : _subTask ? _subTask.description : _task.description}
                 </Text>
             </Col>
         </Row>
@@ -75,17 +78,14 @@ export const TaskIntroduction = ({darkMode, model, task, subTask}) => {
 }
 
 
-export const Main = ({setRoute, route, model, setModel, categoryBar, darkMode, task, setTask, subTask, setSubTask}) => {
+export const Main = ({model, setModel, categoryBar, darkMode, task, setTask, subTask, setSubTask}) => {
     return (
         <Col width="100%" padding={categoryBar ? "padding: 0% 10%; padding-right: 25%; padding-bottom: 100px;" : "padding: 0% 10%; padding-bottom: 100px;"}>
-            <Selector route={route} setRoute={setRoute} model={model} setModel={setModel} darkMode={darkMode} task={task} setTask={setTask} subTask={subTask} setSubTask={setSubTask} />
+            <Selector model={model} setModel={setModel} darkMode={darkMode} task={task} setTask={setTask} subTask={subTask} setSubTask={setSubTask} />
             <TaskIntroduction model={model} darkMode={darkMode} task={task} subTask={subTask} />
-            {route != 3 ? <Flex style={{opacity: model ? 0 : 1, transition: 'all 300ms'}}>
-                <ModelView setModel={setModel} darkMode={darkMode} task={task} subTask={subTask} />
-            </Flex> :
-            <Flex style={{opacity: model ? 1: 0, transition: 'all 300ms'}}>
-                <Benchmark model={model} setModel={setModel} darkMode={darkMode} model={model} />
-            </Flex>}
+            <Text>----------------접기------------------</Text>
+            {model ? <Benchmark model={model} setModel={setModel} darkMode={darkMode} model={model} /> : 
+            <ModelView setModel={setModel} darkMode={darkMode} task={task} subTask={subTask} />}
         </Col>
     )
 }

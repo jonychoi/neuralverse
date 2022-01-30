@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Flex, Row, Col, Text, Image, Box, Input} from '../../components/common/base';
 import { SearchIcon, CloseIcon, DemoIcon, PaperswithCodeIcon, BenchMarkIcon, BackIcon } from '../../icons/utilities';
 import {Height} from '../../hooks/getWindow';
-import tasks, {getItem} from '../../data/tasks';
+import tasks from '../../data/tasks';
 import styled from 'styled-components';
 import { bgStyler, blueColor } from '../../styles';
 
@@ -30,9 +30,9 @@ const TaskWrap = styled(Box)`
     margin: 15px;
 `;
 
-export const Task = ({setRoute, route, darkMode, content, list, setTask}) => {
+export const Task = ({setAbove, darkMode, content, setTask}) => {
     return (
-        <TaskWrap onClick={() => {setRoute(route); setTask(getItem(content.title, list))}}>
+        <TaskWrap onClick={() => {setAbove(true); setTask(content)}}>
             <Col justify="center" align="flex-start" position="absolute" zIndex={101} 
                 style={{left: 0, backdropFilter: 'blur(5px)', bottom: 0}}
                 padding="padding: 20px;"
@@ -58,8 +58,8 @@ export const Task = ({setRoute, route, darkMode, content, list, setTask}) => {
     )
 }
 
-export const CategoryBar = ({route, setRoute, task, setTask, setSubTask, categoryBar, setCategoryBar, darkMode}) => {
-    const taskselected = route != 0
+export const CategoryBar = ({task, setTask, setSubTask, categoryBar, setCategoryBar, darkMode}) => {
+    const [above, setAbove] = useState(false);
     return (
         <Box position="fixed" zIndex={100} width="21%;"
             height={Height - 80 + 'px'} style={{right: categoryBar ? 0 : -380, top: 80, transition: 'all 300ms'}}>
@@ -72,15 +72,15 @@ export const CategoryBar = ({route, setRoute, task, setTask, setSubTask, categor
             <Flex to="cursor" onClick={() => setCategoryBar(!categoryBar)} position="absolute" zIndex={100} style={{right: 15, top: 15}}>
                 <CloseIcon width={30} height={30} bg={darkMode ? "rgb(35, 35, 35)" : "rgb(245, 245, 245)"} stroke={darkMode ? "rgb(100, 100, 100)" : "rgb(120, 120, 120)"} />
             </Flex>
-            {taskselected && <Flex to="cursor" onClick={() => setRoute(0)} position="absolute" style={{left: -5, top: 82}}>
+            {above && <Flex to="cursor" onClick={() => setAbove(false)} position="absolute" style={{left: -5, top: 82}}>
                 <BackIcon height={20} stroke={darkMode ? "white" : "black"} />
             </Flex>}
-            <Text size="20" className='bold' margin={taskselected ? "margin: 10px 45px; margin-bottom: 20px;" : "margin: 10px 15px; margin-bottom: 20px;"} style={{transition: 'all 300ms'}}>{taskselected ? task.title : "TASKS"}</Text>
+            <Text size="20" className='bold' margin={above ? "margin: 10px 45px; margin-bottom: 20px;" : "margin: 10px 15px; margin-bottom: 20px;"} style={{transition: 'all 300ms'}}>{above ? task.title : "TASKS"}</Text>
             <CategoryWrap scrollbarFalse={true}>
-                {tasks.map((item) => <Task setRoute={setRoute} route={1} setTask={setTask} list={tasks} darkMode={darkMode} key={item.title} content={item} />)}
+                {tasks.map((item) => <Task setAbove={setAbove} setTask={setTask} darkMode={darkMode} key={item.title} content={item} />)}
             </CategoryWrap>
-            <CategoryWrap bg={darkMode ? "rgb(15, 15, 15)" : "white"} position="absolute" zIndex="1000" width="100%" style={{height: '85%', top: 124, right: taskselected ? 0 : '-100%', transition: 'all 300ms'}} scrollbarFalse={true}>
-                {task.subtasks.map((item) => <Task setRoute={setRoute} route={2} setTask={setSubTask} list={task.subtasks} darkMode={darkMode} key={item.title} content={item} />)}
+            <CategoryWrap bg={darkMode ? "rgb(15, 15, 15)" : "white"} position="absolute" zIndex="1000" width="100%" style={{height: '85%', top: 124, right: above ? 0 : '-100%', transition: 'all 300ms'}} scrollbarFalse={true}>
+                {task.subtasks.map((item) => <Task setAbove={setAbove} setTask={setSubTask} darkMode={darkMode} key={item.title} content={item} />)}
             </CategoryWrap>
         </Box>
     )

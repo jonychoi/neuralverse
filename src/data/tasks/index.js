@@ -59,7 +59,7 @@ export const data = [
     {
         title: 'Object Detection',
         img: objectdetectionimg,
-        data: objectdetections,
+        models: objectdetections,
         description: "Object detection is the task of detecting instances of objects of a certain class within an image. The state-of-the-art methods can be categorized into two main types: one-stage methods and two stage-methods. One-stage methods prioritize inference speed, and example models include YOLO, SSD and RetinaNet. Two-stage methods prioritize detection accuracy, and example models include Faster R-CNN, Mask R-CNN and Cascade R-CNN. The most popular benchmark is the MSCOCO dataset. Models are typically evaluated according to a Mean Average Precision metric.",
         datasets: ["COCO", "KITTI", "Visual Genome", "nuScenes", "MPII", "SUN RGB-D", "PASCAL VOC", "PASCAL3D+", "DAVIS 2016", "LabelMe"],
         subtasks: [
@@ -324,14 +324,5 @@ export const data = [
         ]
     },
 ]
-
-export const getItem = (title, data) => {
-    console.log(title, data);
-    for (let i = 0; i < data.length; i ++){
-        if (title == data[i].title){
-            return data[i];
-        }
-    }
-}
 
 export default data;

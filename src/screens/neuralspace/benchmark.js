@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Flex, Col, Row, Text, Image} from '../../components/common/base';
 import { bgStyler } from '../../styles';
 import {GithubIcon, PaperIcon} from '../../icons/utilities';
@@ -21,8 +21,20 @@ export const LeaderBoards = ({darkMode}) => {
 };
 
 export const Benchmarks = ({model, darkMode}) => {
+    const [opacity, setOpacity] = useState(1);
+    const [_model, set_Model] = useState(model);
+    useEffect(() => {
+        const opaciter = () => {
+            setOpacity(0);
+            setTimeout(() => {
+                set_Model(model);
+                setOpacity(1)
+            }, 300);
+        };
+        opaciter();
+    }, [model])
     return (
-        <Col width="100%">
+        <Col width="100%" margin="margin-top: 30px;" style={{opacity: opacity, transition: 'all 300ms'}}>
             <Demo darkMode={darkMode} />
             <Row width="100%">
                 <LeaderBoards darkMode={darkMode} />
