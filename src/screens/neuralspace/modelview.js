@@ -105,17 +105,17 @@ export const ModelView = ({setModel, darkMode, task, subTask}) => {
             setTimeout(() => {
                 setOpacity(1)
                 set_Task(task);
+                set_subTask(subTask);
             }, 300);
         };
         opaciter();
-    }, [task])
-
+    }, [task, subTask])
     return (
         <Col flex={3} margin="margin-top: 50px;">
             <ModelViewTop task={task} subTask={subTask} options={options} setOptions={setOptions} datasetBtn={datasetBtn} setDatasetBtn={setDatasetBtn} darkMode={darkMode} />
             <Col opacity={opacity}>
                 <Row margin="margin: 12px 0px;">
-                    {task.models && task.models.map(item => <Model darkMode={darkMode} setModel={setModel} content={item} key={item.title}/>)}
+                    {_subTask != undefined && _subTask.models && _subTask.models.map(item => <Model darkMode={darkMode} setModel={setModel} content={item} key={item.title}/>)}
                 </Row>
                 {/* <Row margin="margin: 12px 0px;">
                     <Model darkMode={darkMode} />

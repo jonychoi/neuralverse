@@ -30,8 +30,9 @@ const TaskWrap = styled(Box)`
     margin: 15px;
 `;
 
-export const Task = ({setAbove, darkMode, content, setTask, setSubTask, type}) => {
+export const Task = ({setAbove, darkMode, content, setTask, setSubTask, type, setModel}) => {
     const tasker = () => {
+        setModel(null);
         if (type == "task"){
             if (content.subtasks.length > 0){
                 setAbove(true);
@@ -70,7 +71,7 @@ export const Task = ({setAbove, darkMode, content, setTask, setSubTask, type}) =
     )
 }
 
-export const CategoryBar = ({task, setTask, setSubTask, categoryBar, setCategoryBar, darkMode}) => {
+export const CategoryBar = ({setModel, task, setTask, setSubTask, categoryBar, setCategoryBar, darkMode}) => {
     const [above, setAbove] = useState(false);
     return (
         <Box position="fixed" zIndex={100} width="21%;"
@@ -89,10 +90,11 @@ export const CategoryBar = ({task, setTask, setSubTask, categoryBar, setCategory
             </Flex>}
             <Text size="20" className='bold' margin={above ? "margin: 10px 45px; margin-bottom: 20px;" : "margin: 10px 15px; margin-bottom: 20px;"} style={{transition: 'all 300ms'}}>{above ? task.title : "TASKS"}</Text>
             <CategoryWrap scrollbarFalse={true}>
-                {tasks.map((item) => <Task type="task" setAbove={setAbove} setSubTask={setSubTask} setTask={setTask} darkMode={darkMode} key={item.title} content={item} />)}
+                {tasks.map((item) => <Task type="task" setAbove={setAbove} setModel={setModel} setSubTask={setSubTask} setTask={setTask} darkMode={darkMode} key={item.title} content={item} />)}
             </CategoryWrap>
             <CategoryWrap bg={darkMode ? "rgb(15, 15, 15)" : "white"} position="absolute" zIndex="1000" width="100%" style={{height: '85%', top: 124, right: above ? 0 : '-100%', transition: 'all 300ms'}} scrollbarFalse={true}>
-                {task.subtasks.map((item) => <Task type="subtask" setAbove={setAbove} setSubTask={setSubTask} darkMode={darkMode} key={item.title} content={item} />)}
+                <Task type="subtask" setAbove={setAbove} setModel={setModel} setSubTask={setSubTask} darkMode={darkMode} content={task} />
+                {task.subtasks.map((item) => <Task type="subtask" setAbove={setAbove} setSubTask={setSubTask} setModel={setModel} darkMode={darkMode} key={item.title} content={item} />)}
             </CategoryWrap>
         </Box>
     )

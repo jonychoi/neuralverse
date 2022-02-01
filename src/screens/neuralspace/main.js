@@ -14,8 +14,8 @@ export const Selector = ({darkMode, setModel, model, task, subTask}) => {
                 {model ? model.title : subTask ? subTask.title.toUpperCase() : task ? task.title.toUpperCase() : "Computer Vision".toUpperCase()}
             </Text>
             <Row margin="margin: 20px 0px">
-                <Text className="bold" size="17">{subTask ? subTask.title : task.title}</Text>
-                {subTask && 
+                <Text className="bold" size="17">{task.title}</Text>
+                {subTask && task.title != subTask.title && 
                 <>
                     <Text className="bold" size="17" margin="margin: 0px 10px;">></Text>   
                     <Text className="bold" size="17">{subTask.title}</Text>
@@ -48,7 +48,7 @@ export const TaskIntroduction = ({darkMode, model, task, subTask}) => {
         opaciter();
     }, [task, subTask, model])
     return (
-        <Row opacity={opacity} style={{transition: 'all 300ms'}}>
+        <Row align="center" opacity={opacity} style={{transition: 'all 300ms'}}>
             <Flex>
                 <Flex br="20px" width="350px;"align="center" justify="center" height="200px" style={{overflow: 'hidden'}}>
                     <Image width="108%" height="108%" of="cover" src={_model ? _model.img : _subTask ? _subTask.img : _task.img} />
@@ -71,6 +71,8 @@ export const TaskIntroduction = ({darkMode, model, task, subTask}) => {
                 </Row>
                 <Text lh={25} size="15" className="light" weight="400">
                     {_model ? _model.description : _subTask ? _subTask.description : _task.description}
+                    <Col>
+                    </Col>
                 </Text>
             </Col>
         </Row>

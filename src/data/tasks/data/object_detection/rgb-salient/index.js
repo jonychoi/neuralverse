@@ -1,5 +1,5 @@
 export const RGBSalient = {
-    title: 'RGB Salient Object Detection',
+    title: 'RGB-D Salient Object Detection',
     img: "https://production-media.paperswithcode.com/thumbnails/task/task-0000000742-bab03b67.jpg",
     imgcredit: {
         name: "Attentive Feedback Network for Boundary-Aware Salient Object Detection",

@@ -14,12 +14,18 @@ import NeuralSpace from './screens/neuralspace';
 import NeuralVerse from './screens/neuralverse';
 import NeuralStudio from './screens/neuralstudio';
 import NeuralOps from './screens/neuralops';
+import GlobalStyle from './globalStyles';
+
+import { ThemeEvent } from './contexts/GlobalContext';
+
 
 export const App = ({}) => {
   const [route, setRoute] = useState(0);
+  const {darkMode} = ThemeEvent();
   
   return (
       <div style={{overflowX: 'hidden'}}>
+        <GlobalStyle darkMode={darkMode} />
         <Header route={route} setRoute={setRoute} />
         <Landing route={route} />
         <Nfts route={route}/>
