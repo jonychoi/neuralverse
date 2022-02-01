@@ -48,7 +48,7 @@ export const TaskIntroduction = ({darkMode, model, task, subTask}) => {
         opaciter();
     }, [task, subTask, model])
     return (
-        <Row align="center" opacity={opacity} style={{transition: 'all 300ms'}}>
+        <Row opacity={opacity} style={{transition: 'all 300ms'}}>
             <Flex>
                 <Flex br="20px" width="350px;"align="center" justify="center" height="200px" style={{overflow: 'hidden'}}>
                     <Image width="108%" height="108%" of="cover" src={_model ? _model.img : _subTask ? _subTask.img : _task.img} />

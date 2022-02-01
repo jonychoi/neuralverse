@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import Footer from './components/footer';
 import Header from './components/header';
 import Models from './screens/subs/models';
 import Nfts from './screens/subs/nfts';
