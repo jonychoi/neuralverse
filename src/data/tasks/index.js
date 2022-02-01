@@ -29,20 +29,20 @@ export const data = [
             url: "https://medium.com/mlearning-ai/open-cv-computer-vision-ai-how-does-it-work-801d4cdec462",
         },
         description: "Computer vision is a field of artificial intelligence (AI) that enables computers and systems to derive meaningful information from digital images, videos and other visual inputs — and take actions or make recommendations based on that information. If AI enables computers to think, computer vision enables them to see, observe and understand.",
-        datasets: ["Cityscapes", "KITTI", "ShapeNet", "NYUv2", "ScanNet", "ADE20K", "DAVIS", "SYNTHIA", "SUN RGB-D", "GTA5"],
+        datasets: ["Cityscapes", "KITTI", "ShapeNet", "NYUv2", "ScanNet", "ADE20K", "DAVIS", "SYNTHIA", "SUN RGB-D", "GTA5"],  
         subtasks: [
            
         ]
     },
     imageClassification,
-    semanticsegmentation,
+    semanticsegmentation, 
     objectDetection,
     imageGeneration,
     styleTransfer,
     selfSupervisedLearning,
-    domainAdaptation,
     depthEstimation,
     fewShotLearning,
+    domainAdaptation,
     superResolution,
     denoising,
 ]
