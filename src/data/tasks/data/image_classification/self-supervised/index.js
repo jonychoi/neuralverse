@@ -4,7 +4,7 @@ export const SelfSupervised = {
     description: <p>
         This is the task of image classification using representations learnt with self-supervised learning. Self-supervised methods generally involve a pretext task that is solved to learn a good representation and a loss function to learn with. One example of a loss function is an autoencoder based loss where the goal is reconstruction of an image pixel-by-pixel. A more popular recent example is a contrastive loss, which measure the similarity of sample pairs in a representation space, and where there can be a varying target instead of a fixed target to reconstruct (as in the case of autoencoders).
         <br></br>
-        A common evaluation protocol is to train a linear classifier on top of (frozen) representations learnt by self-supervised methods. The leaderboards for the linear evaluation protocol can be found below. In practice, it is more common to fine-tune features on a downstream task. An alternative evaluation protocol therefore uses semi-supervised learning and finetunes on a % of the labels. The leaderboards for the finetuning protocol can be accessed <a href="https://www.neuralverse.us/neuralspace/semi-supervised-image-classification">here</a>.
+        {/* A common evaluation protocol is to train a linear classifier on top of (frozen) representations learnt by self-supervised methods. The leaderboards for the linear evaluation protocol can be found below. In practice, it is more common to fine-tune features on a downstream task. An alternative evaluation protocol therefore uses semi-supervised learning and finetunes on a % of the labels. The leaderboards for the finetuning protocol can be accessed <a href="https://www.neuralverse.us/neuralspace/semi-supervised-image-classification">here</a>.
         <br></br>
         You may want to read some blog posts before reading the papers and checking the leaderboards:
 
@@ -28,7 +28,7 @@ export const SelfSupervised = {
                 </a> - Lilian Weng
             </li>
         </ul>
-        There is also Yann LeCun's talk at AAAI-20 which you can watch <a href="https://vimeo.com/390347111">here</a> (35:00+).
+        There is also Yann LeCun's talk at AAAI-20 which you can watch <a href="https://vimeo.com/390347111">here</a> (35:00+). */}
     </p>,
     datasets: ["ImageNet"],
     models: [

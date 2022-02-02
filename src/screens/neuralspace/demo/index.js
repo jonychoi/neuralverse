@@ -1,12 +1,18 @@
 import React, {useState, useEffect} from 'react';
-import {bgStyler} from '../../styles';
-import {Col, Row, Flex, Image, Text} from '../../components/common/base';
-import {postRequest} from './inference';
+import {bgStyler} from '../../../styles';
+import {Col, Row, Flex, Image, Text} from '../../../components/common/base';
+import {postRequest} from '../inference';
+import { DemoIcon } from '../../../icons/utilities';
 
-export const Demo = ({darkMode}) => {
+export const Demo = ({model, darkMode}) => {
     const [result, setResult] = useState(null);
     
     return (
+        <>
+        <Row align="center" margin="margin-bottom: 30px; margin-left: 20px;">
+            <DemoIcon width={23} height={23} />
+            <Text className='bold' size="22" margin="margin-left: 12px;">{model.title} Demo</Text>
+        </Row>
         <Flex height="470px" width="100%" br="20px" margin="margin-bottom: 30px;" bg={bgStyler(darkMode)}>
             <div class="panels unaligned">
                 <div class="panel">
@@ -45,6 +51,7 @@ export const Demo = ({darkMode}) => {
                 </div>
             </div>
         </Flex>
+        </>
     )
 };
 

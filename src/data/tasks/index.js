@@ -19,7 +19,7 @@ import domainAdaptation from './data/domain_adaptation';
 
 export const data = [
     {
-        title: "All Computer Vision",
+        title: "Computer Vision",
         demoNum: 20,
         benchmarkNum: 100,
         paperswithcodeNum: 100,

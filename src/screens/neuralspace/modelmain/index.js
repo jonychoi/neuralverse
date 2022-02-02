@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import {Flex, Col, Row, Text, Image} from '../../components/common/base';
-import { bgStyler } from '../../styles';
-import {GithubIcon, PaperIcon} from '../../icons/utilities';
-import Demo from './demo';
+import {Flex, Col, Row, Text, Image} from '../../../components/common/base';
+import { bgStyler } from '../../../styles';
+import Demo from '../demo';
 
 export const ModelSpecs = ({darkMode}) => {
     return (
@@ -20,7 +19,7 @@ export const LeaderBoards = ({darkMode}) => {
     )
 };
 
-export const Benchmarks = ({model, darkMode}) => {
+export const ModelMain = ({model, darkMode}) => {
     const [opacity, setOpacity] = useState(1);
     const [_model, set_Model] = useState(model);
     useEffect(() => {
@@ -34,8 +33,8 @@ export const Benchmarks = ({model, darkMode}) => {
         opaciter();
     }, [model])
     return (
-        <Col width="100%" margin="margin-top: 30px;" style={{opacity: opacity, transition: 'all 300ms'}}>
-            <Demo darkMode={darkMode} />
+        <Col width="100%" margin="margin-top: 35px;" style={{opacity: opacity, transition: 'all 300ms'}}>
+            <Demo model={model} darkMode={darkMode} />
             <Row width="100%">
                 <LeaderBoards darkMode={darkMode} />
                 <ModelSpecs darkMode={darkMode} />
@@ -44,4 +43,4 @@ export const Benchmarks = ({model, darkMode}) => {
     )
 };
 
-export default Benchmarks;
+export default ModelMain;

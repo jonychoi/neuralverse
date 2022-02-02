@@ -12,6 +12,8 @@ export const purLowColor = "#9E35AD"
 export const darkBg = "rgb(30, 30, 30)"
 export const bg = "white";
 
+export const hueBlue = "#00B3DA";
+
 export const hueStyler = (darkMode) => {
     return darkMode ? purColor : blueColor;
 }

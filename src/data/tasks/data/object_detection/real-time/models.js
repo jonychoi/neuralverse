@@ -5,6 +5,7 @@ export const models = [
         title: "YOLOv3",
         subtitle: "An Incremental Improvement",
         img: yolov3img,
+        demo: true,
         benchmark: false,
         studio: false,
         paper: {
