@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {Col} from '../../components/common/base';
-import Top from './top';
+import Main from './main';
 import CategoryBar from './categorybar';
 import { GlobalBgStyler } from '../../styles';
 import { ThemeEvent } from '../../contexts/GlobalContext';
@@ -14,7 +14,7 @@ export const NeuralSpace = ({route}) => {
     const [categoryBar, setCategoryBar] = useState(true);
     return (
         <Col align="center" bg={GlobalBgStyler(darkMode)} style={{display: route == 3 ? 'flex': 'none', paddingTop: 170}}>
-            <Top model={model} setModel={setModel} categoryBar={categoryBar} setCategoryBar={setCategoryBar} task={task} setTask={setTask} setSubTask={setSubTask} subTask={subTask} darkMode={darkMode} />
+            <Main model={model} setModel={setModel} categoryBar={categoryBar} setCategoryBar={setCategoryBar} task={task} setTask={setTask} setSubTask={setSubTask} subTask={subTask} darkMode={darkMode} />
             <CategoryBar task={task} setTask={setTask} setSubTask={setSubTask} subTask={subTask} setModel={setModel} darkMode={darkMode} categoryBar={categoryBar} setCategoryBar={setCategoryBar} />
         </Col>
     )

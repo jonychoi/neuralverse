@@ -7,6 +7,8 @@ import rgbdsalient from './rgb-d_sailent';
 import video from './video';
 import _3d from './3d';
 
+import models from './models';
+
 export const ObjectDetection = {
     title: 'Object Detection',
     img: objectdetectionimg,
@@ -19,7 +21,15 @@ export const ObjectDetection = {
         rgbsailent, 
         rgbdsalient,
         video,
-    ]
+    ],
+    models: models.concat(
+        real_time.models,
+        _3d.models,
+        fewshot.models,
+        rgbsailent.models,
+        rgbdsalient.models,
+        video.models,
+    )
 }
 
 export default ObjectDetection;

@@ -7,6 +7,8 @@ import finegrained from './finegrained';
 import smalldata from './smallData';
 import fewshot from './few-shot';
 
+import models from './models';
+
 
 export const ImageClassification = {
     title: 'Image Classification',
@@ -21,7 +23,16 @@ export const ImageClassification = {
         finegrained,
         smalldata,
         fewshot,
-    ]
+    ],
+    models: models.concat(
+        knowledgeDistillation.models,
+        selfsupervised.models,
+        sequentail.models,
+        semisupervised.models,
+        finegrained.models,
+        smalldata.models,
+        fewshot.models,
+    )
 }
 
 export default ImageClassification;

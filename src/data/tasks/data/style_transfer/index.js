@@ -1,4 +1,5 @@
 import styletransferimg from './imgs/style transfer.jpg';
+import models from './models';
 
 export const StyleTransfer =  {
     title: 'Style Transfer',
@@ -12,6 +13,7 @@ export const StyleTransfer =  {
     subtasks: [
         
     ],
+    models: models
 }
 
 export default StyleTransfer;

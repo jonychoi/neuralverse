@@ -41,24 +41,24 @@ export const ModelBox = styled(Flex)`
 
 export const ModelConfig = ({model, darkMode}) => {
     return (
-        <Row justify="space-around" width="100%">
+        <Row justify="space-between" margin="margin-top: 10px;">
             <Row padding="padding: 3px" align="center">
                 <Flex margin="margin-bottom: 2px;">
-                    <PaperIcon stroke={hueBlue} height={15} width={15} />
+                    <PaperIcon stroke={hueBlue} height={12.8} width={12.8} />
                 </Flex>
-                <Text color="white" className="light" margin="margin-left: 10px;" size="11" weight="500">Paper</Text>
+                <Text className="light" margin="margin-left: 10px;" size="10" weight="600">PAPER</Text>
             </Row>
             <Row padding="padding: 3px" align="center">
-                <CodeIcon stroke={hueBlue} height={18} width={18} />
-                <Text color="white" className="light" margin="margin-left: 10px;" size="11" weight="500">Code</Text>
+                <CodeIcon stroke={hueBlue} height={15} width={15} />
+                <Text className="light" margin="margin-left: 10px;" size="10" weight="600">CODE</Text>
             </Row>
             <Row padding="padding: 3px" align="center">
-                <StudioLight stroke1={hueBlue} stroke2={hueBlue} height={18} width={18} />
-                <Text color="white" className="light" margin="margin-left: 10px;" size="11" weight="500">Studio</Text>
+                <StudioLight stroke1={hueBlue} stroke2={hueBlue} height={15} width={15} />
+                <Text className="light" margin="margin-left: 10px;" size="10" weight="600">STUDIO</Text>
             </Row>
             {model.demo && <Row padding="padding: 3px" align="center">
-                <DemoIcon stroke1={hueBlue} stroke2={hueBlue} height={18} width={18} />
-                <Text color="white" className="light" margin="margin-left: 10px;" size="11" weight="500">Demo</Text>
+                <DemoIcon stroke1={hueBlue} stroke2={hueBlue} height={15} width={15} />
+                <Text className="light" margin="margin-left: 10px;" size="10" weight="600">DEMO</Text>
             </Row>}
         </Row>
     )
@@ -66,18 +66,16 @@ export const ModelConfig = ({model, darkMode}) => {
 
 export const Model = ({setModel, darkMode, content}) => {
     return (
-        <ModelBox onClick={() => setModel(content)} shadow={true} bg={bgStyler(darkMode)} br="20px" style={{overflow: 'hidden'}}>
-            <Col align="center" justify="center" width="100%" height="100%" position="absolute" zIndex={100} bg={darkMode ? "rgba(0,0,0,0.25)" : "rgba(100,100,100,0.15)"}>
-                <Text color="white" title="light" size="20" weight="500" style={{width: '100%', textAlign: 'center'}} margin="margin-bottom: 5px;">
+        <ModelBox onClick={() => setModel(content)} shadow={true} bg={bgStyler(darkMode)} position="relative" br="20px" style={{overflow: 'hidden'}}>
+            <Col padding="padding: 0px 15px;" width="100%" height="50%" position="absolute" justify="center" zIndex={100} style={{bottom: -1, backdropFilter: 'blur(2px)'}} bg={darkMode ? "rgba(0,0,0,0.8)" : "rgba(255, 255, 255, 0.95)"}>
+                <Text className="light" size="17" weight="700" margin="margin: 5px 0px;">
                     {content.title}
                 </Text>
-                <Text color="white" title="light" size="14" margin="margin-bottom: 5px;" weight="400" style={{width: '100%', textAlign: 'center'}}>
+                <Text className="light" size="12.8" weight="600">
                     {content.subtitle}
                 </Text>
-            </Col>
-            <Row width="100%" height="20%" position="absolute" zIndex={10} style={{bottom: 0}}>
                 <ModelConfig model={content} darkMode={darkMode} />
-            </Row>
+            </Col>
             <Image src={content.img} of="cover" position="absolute" width="108%" height="108%" />
         </ModelBox>
     )

@@ -1,6 +1,8 @@
 import image from './image';
 import saltandpepper from './saltandpepper';
 
+import models from './models';
+
 export const Denoising = {
     title: 'Denoising',
     img: "https://production-media.paperswithcode.com/thumbnails/task/task-0000000813-398eae41_lgoZLWN.jpg",
@@ -13,7 +15,11 @@ export const Denoising = {
     subtasks: [
         image,
         saltandpepper,
-    ]
+    ],
+    models: models.concat(
+      image.models,
+      saltandpepper.models,
+    )
 }
 
 export default Denoising;

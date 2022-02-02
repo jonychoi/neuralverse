@@ -4,6 +4,8 @@ import fewshotimageclassification from './few-shot image classification';
 import fewshotsemanticsegmentation from './few-shot semantic segmentation';
 import oneshotlearning from './one-shot learning';
 
+import models from './models';
+
 
 export const FewShotLearning = {
     title: 'Few Shot Learning',
@@ -22,7 +24,12 @@ export const FewShotLearning = {
         fewshotimageclassification,
         fewshotsemanticsegmentation,
         oneshotlearning,
-    ]
+    ],
+    models: models.concat(
+        fewshotimageclassification.models,
+        fewshotsemanticsegmentation.models,
+        oneshotlearning.models,
+    )
 }
 
 export default FewShotLearning;

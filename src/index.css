@@ -33,6 +33,10 @@ div {
   font-weight: 700;
 }
 
+.sans {
+  font-family: 'Work Sans', sans-serif;
+}
+
 textarea:focus, input:focus{
   outline: none;
   box-shadow: none !important;

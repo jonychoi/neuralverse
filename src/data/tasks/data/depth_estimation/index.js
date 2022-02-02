@@ -4,6 +4,8 @@ import monocular from './monocular';
 import stereo from './stereo';
 import stereolidar from './stereolidar';
 
+import models from './models';
+
 export const DepthEstimation = {
     title: 'Depth Estimation',
     img: "https://production-media.paperswithcode.com/thumbnails/task/task-0000000605-d9849a91.jpg",
@@ -19,7 +21,14 @@ export const DepthEstimation = {
         _3d,
         cameramotion,
         stereolidar,
-    ]
+    ],
+    models: models.concat(
+        stereo.models,
+        monocular.models,
+        _3d.models,
+        cameramotion.models,
+        stereolidar.models,
+    )
 }
 
 export default DepthEstimation;

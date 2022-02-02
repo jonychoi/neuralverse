@@ -4,6 +4,8 @@ import image from './image';
 import video from './video';
 import _3dObject from './3dobject';
 
+import models from './models';
+
 export const SuperResolution = {
     title: 'Super Resolution',
     img: superresolutionimg,
@@ -17,7 +19,12 @@ export const SuperResolution = {
        image,
        video,
       _3dObject, 
-    ]
+    ],
+    models: models.concat(
+        image.models,
+        video.models,
+        _3dObject.models,
+    )
 }
 
 export default SuperResolution;

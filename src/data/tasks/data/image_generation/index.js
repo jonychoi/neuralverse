@@ -4,6 +4,8 @@ import imagetoimagetranslation from "./imagetoimagetranslation";
 import texttoimage from './texttoimage';
 import imageinpaiting from './image_inpainting';
 
+import models from './models';
+
 export const ImageGeneration = {
     title: 'Image Generation',
     img: "https://raw.githubusercontent.com/openai/pixel-cnn/master/data/pixelcnn_samples.png",
@@ -24,7 +26,14 @@ export const ImageGeneration = {
         conditional,
         face,
         texttoimage
-    ]
+    ],
+    models: models.concat(
+        imagetoimagetranslation.models,
+        imageinpaiting.models,
+        conditional.models,
+        face.models,
+        texttoimage.models
+    )
 }
 
 export default ImageGeneration;

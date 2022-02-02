@@ -4,7 +4,7 @@ export const models = [
         title: "U-Net",
         subtitle: "Convolutional Networks for Biomedical Image Segmentation",
         img: "https://www.researchgate.net/profile/Yanfeng-Liu-5/publication/338531111/figure/fig3/AS:846138370433024@1578746516002/Semantic-segmentation-on-a-street-view-in-the-CityScape-dataset-3.jpg",
-        demo: true,
+        demo: false,
         benchmark: true,
         studio: true,
         paper: {
@@ -21,7 +21,7 @@ export const models = [
             official: false
         },
         task: {
-            feautred: "Ranked #1 on Colorectal Gland Segmentation: on CRAG (DiceOC metric)",
+            featured: "Ranked #1 on Colorectal Gland Segmentation: on CRAG (DiceOC metric)",
             tasks: ["Cell Segmentation", "Medical Image Segmentation", "Multi-tissue Nucleus Segmentation", "Pancreas Segmentation", "Retinal Vessel Segmentation", "Semantic Segmentation", "Skin Cancer Segmentation"],
             datasets: ["DRIVE", "STARE", "LUNA", "Kvasir-SEG", "CHASE_DB1", "Kvasir", "CVC-ClinicDB", "Kumar", "Kvasir-Instrument", "RITE", "PhC-U373"],
             paperswithcode: "https://paperswithcode.com/paper/u-net-convolutional-networks-for-biomedical",

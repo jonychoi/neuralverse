@@ -2,6 +2,8 @@ import generalization from './generalization';
 import unsupervised from './unsupervised';
 import partial from './partial'
 
+import models from './models';
+
 export const DomainAdaptation = {
     title: 'Domain Adaptation',
     img: "https://production-media.paperswithcode.com/thumbnails/task/task-0000000588-823db955.jpg",
@@ -15,7 +17,12 @@ export const DomainAdaptation = {
         unsupervised,
         generalization,
         partial,
-    ]
+    ],
+    models: models.concat(
+        unsupervised.models,
+        generalization.models,
+        partial.models,
+    )
 }
 
 export default DomainAdaptation;
