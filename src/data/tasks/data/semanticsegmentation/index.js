@@ -5,6 +5,8 @@ import scenesegmentation from './scene';
 import medicalsegmentation from './medical';
 import weaklysegmentation from './weakly-supervised';
 
+import models from './models';
+
 export const SemanticSegmentation = {
     title: 'Semantic Segmentation',
     img: segmentationimg,
@@ -16,7 +18,13 @@ export const SemanticSegmentation = {
         scenesegmentation,
         medicalsegmentation, 
         weaklysegmentation,
-    ]
+    ],
+    models: models.concat(
+        _3dSegmentation.models,
+        panopticsegmentation.models,
+        scenesegmentation.models,
+        medicalsegmentation.models,
+        weaklysegmentation.models)
 }
 
 export default SemanticSegmentation;

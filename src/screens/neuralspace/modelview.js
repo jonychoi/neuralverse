@@ -22,12 +22,15 @@ export const Dataset = ({darkMode, arg}) => {
 }
 
 export const ModelBox = styled(Flex)`
-    margin-right: 25px;
+    margin: 10px 12.8px;
     &:last-child {
         margin-right: 0px;
     };
     position: relative;
     cursor: pointer;
+    display: inline-block;
+    width: 31%;
+    height: 190px;
     bottom: 0px;
     :hover {
         bottom: 5px;
@@ -37,10 +40,11 @@ export const ModelBox = styled(Flex)`
 
 export const Model = ({setModel, darkMode, content}) => {
     return (
-        <ModelBox onClick={() => setModel(content)} shadow={true} width="33%" height="190px;" bg={bgStyler(darkMode)} br="20px" style={{overflow: 'hidden'}}>
-            <Flex align="center" justify="center" width="100%" height="100%" position="absolute" zIndex={100} bg={darkMode ? "rgba(0,0,0,0.25)" : "rgba(0,0,0,0.15)"}>
-                <Text color="white" title="light" size="20" weight="500">{content.title}</Text>
-            </Flex>
+        <ModelBox onClick={() => setModel(content)} shadow={true} bg={bgStyler(darkMode)} br="20px" style={{overflow: 'hidden'}}>
+            <Col align="center" justify="center" width="100%" height="100%" position="absolute" zIndex={100} bg={darkMode ? "rgba(0,0,0,0.25)" : "rgba(0,0,0,0.15)"}>
+                <Text color="white" title="light" size="20" weight="500" style={{width: '100%', textAlign: 'center'}} margin="margin-bottom: 5px;">{content.title}</Text>
+                <Text color="white" title="light" size="15" weight="500" style={{width: '100%', textAlign: 'center'}}>{content.subtitle}</Text>
+            </Col>
             <Image src={content.img} of="cover" position="absolute" width="108%" height="108%" />
         </ModelBox>
     )
@@ -111,27 +115,15 @@ export const ModelView = ({setModel, darkMode, task, subTask}) => {
         opaciter();
     }, [task, subTask])
     return (
-        <Col flex={3} margin="margin-top: 50px;">
+        <Col flex={3} margin="margin-top: 50px;">   
             <ModelViewTop task={task} subTask={subTask} options={options} setOptions={setOptions} datasetBtn={datasetBtn} setDatasetBtn={setDatasetBtn} darkMode={darkMode} />
-            <Col opacity={opacity}>
-                <Row margin="margin: 12px 0px;">
-                    {_subTask != undefined && _subTask.models && _subTask.models.map(item => <Model darkMode={darkMode} setModel={setModel} content={item} key={item.title}/>)}
-                </Row>
-                {/* <Row margin="margin: 12px 0px;">
-                    <Model darkMode={darkMode} />
-                    <Model darkMode={darkMode} />
-                    <Model darkMode={darkMode} /> 
-                </Row>
-                <Row margin="margin: 12px 0px;">
-                    <Model darkMode={darkMode} />
-                    <Model darkMode={darkMode} />
-                    <Model darkMode={darkMode} />
-                </Row>
-                <Row margin="margin: 12px 0px;">
-                    <Model darkMode={darkMode} />
-                    <Model darkMode={darkMode} />
-                    <Model darkMode={darkMode} />
-                </Row> */}
+            <Col opacity={opacity} position="relative" style={{left: -15, width: 'calc(100% + 30px)'}}>
+                <Flex margin="margin: 12px 0px;" style={{display: 'block'}}>
+                    {_subTask != undefined && _subTask.models ?
+                    _subTask.models.map(item => <Model darkMode={darkMode} setModel={setModel} content={item} key={item.title}/>)
+                    : 
+                    _task != undefined && _task.models && _task.models.map(item => <Model darkMode={darkMode} setModel={setModel} content={item} key={item.title}/>)}
+                </Flex>
             </Col>
         </Col>
     )
