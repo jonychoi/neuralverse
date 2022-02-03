@@ -12,6 +12,9 @@ export const purLowColor = "#9E35AD"
 export const darkBg = "rgb(30, 30, 30)"
 export const bg = "white";
 
+export const darkBgopa = (opa) => `rgba(30, 30, 30, ${opa})`
+export const bgopa = (opa) => `rgba(255, 255, 255, ${opa})`
+
 export const hueBlue = "#00B3DA";
 
 export const extremehueBlue = "#00ccff";
@@ -20,8 +23,8 @@ export const hueStyler = (darkMode) => {
     return darkMode ? purColor : blueColor;
 }
 
-export const bgStyler = (darkMode) => {
-    return darkMode ? darkBg : bg;
+export const bgStyler = (darkMode, opa) => {
+    return opa ? darkMode ? darkBgopa(opa) : bgopa(opa) : darkMode ? darkBg : bg;
 }
 
 export const btnStyler = (darkMode) => {
