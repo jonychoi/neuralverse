@@ -46,7 +46,7 @@ export const Directory = ({darkMode, model, subTask, task}) => {
                             {model.paper.published_date}
                         </Text>
                         <Text margin="margin: 0px 5px;" size="14">  ·  </Text>
-                        {model.paper.authors.map((item, index) => index !==0 ? <Text  size="14">{',  ' + item}</Text> : <Text  size="14">{item}</Text>)}
+                        {model.paper.authors.map((item, index) => index !==0 ? <Text key={index} size="14">{',  ' + item}</Text> : <Text key={index} size="14">{item}</Text>)}
                     </Text>
                     {model.task.featured && <Text size="15" color={darkMode ? extremehueBlue : blueLowColor} className="bold" margin="margin: 10px 0px; margin-top: 10px;" weight="600">{model.task.featured}</Text>}
                 </Col>}

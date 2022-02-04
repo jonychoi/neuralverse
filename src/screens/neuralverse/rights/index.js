@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react';
 import useInput from '../../../hooks/useInput';
 import {Flex, Col, Row, Text, Image, CirclePic, Input, Box} from '../../../components/common/base';
 import { SearchIcon } from '../../../icons/utilities';
-import {bgStyler} from '../../../styles';
+import {bgStyler, blueLowColor, extremehueBlue} from '../../../styles';
+import styled from 'styled-components';
 
 export const Search = ({darkMode}) => {
     return (
@@ -15,12 +16,38 @@ export const Search = ({darkMode}) => {
     )
 }
 
+const data = [
+    "StyleGAN3",
+    "VRT",
+    "moolib",
+    "Objectron",
+    "A ConvNet for the 2020s",
+    "Learning Super-Features for Image Retrieval",
+    "Instant Neural Graphics Primitives",
+]
+
+const Hashtag = styled(Flex)`
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px 15px;
+    padding-bottom: 7px;
+    border-radius: 20px;
+    background-color: ${props => props.darkMode ? "rgb(18, 18, 18)" : "rgb(255, 255, 255)"}
+`;
+
 export const Trendings = ({darkMode}) => {
     return (
-        <Box width="280px" padding="padding: 15px;" margin="margin-bottom: 10px;" height="600px" bg={bgStyler(darkMode)} style={{overflow: 'hidden'}} br="10px">
-            <Text className="bold" weigh="500" size="14">Trendings</Text>
+        <Box width="280px" padding="padding: 15px;" margin="margin-bottom: 10px;" bg={bgStyler(darkMode)} style={{overflow: 'hidden'}} br="10px">
+            <Text className="bold" size="15">Trendings</Text>
             <Search darkMode={darkMode} />
-            <Text className="light" weigh="500" margin="margin: 10px 0px;" size="12.8">View all trendings</Text>
+            <Flex style={{display: 'block'}} margin="margin-top: 15px;">
+                {data.map(item => <Hashtag shadow={true} darkMode={darkMode}>
+                    <Text size="13" className="light" weight="500"># {item}</Text>
+                </Hashtag>)}
+            </Flex>
+            <Text className="light" weight="600" margin="margin: 10px 0px;" size="12.8">View all trendings</Text>
         </Box>
     )
 }
@@ -60,7 +87,6 @@ export const Rights = ({darkMode}) => {
         <Col width="280px">
             <Col>
                 <Trendings darkMode={darkMode} />
-                <Trendingsa darkMode={darkMode} />
             </Col>
         </Col>
     )

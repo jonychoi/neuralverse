@@ -17,7 +17,7 @@ export const bgopa = (opa) => `rgba(255, 255, 255, ${opa})`
 
 export const hueBlue = "#00B3DA";
 
-export const extremehueBlue = "#00ccff";
+export const extremehueBlue = "#00dcff";
 
 export const hueStyler = (darkMode) => {
     return darkMode ? purColor : blueColor;

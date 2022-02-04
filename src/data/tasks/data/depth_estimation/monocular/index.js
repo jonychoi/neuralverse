@@ -9,7 +9,10 @@ export const Moncular = {
     datasets: ["KITTI", "NYUv2", "Make3D", "Middlebury 2014", "DIODE", "ReDWeb", "MannequinChallenge", "IBims-1", "WSVD", "3D60"],
     subtasks: [
 
-    ]
+    ],
+    models: [
+
+    ],
 }
 
 export default Moncular;

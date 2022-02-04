@@ -32,7 +32,19 @@ export const data = [
         datasets: ["Cityscapes", "KITTI", "ShapeNet", "NYUv2", "ScanNet", "ADE20K", "DAVIS", "SYNTHIA", "SUN RGB-D", "GTA5"],  
         subtasks: [
            
-        ]
+        ],
+        models: imageClassification.models.concat(
+                semanticsegmentation.models, 
+                objectDetection.models,
+                imageGeneration.models,
+                styleTransfer.models,
+                selfSupervisedLearning.models,
+                depthEstimation.models,
+                fewShotLearning.models,
+                domainAdaptation.models,
+                superResolution.models,
+                denoising.models,
+            )
     },
     imageClassification,
     semanticsegmentation, 

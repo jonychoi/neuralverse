@@ -24,7 +24,8 @@ export const SemanticSegmentation = {
         panopticsegmentation.models,
         scenesegmentation.models,
         medicalsegmentation.models,
-        weaklysegmentation.models)
+        weaklysegmentation.models
+    )
 }
 
 export default SemanticSegmentation;

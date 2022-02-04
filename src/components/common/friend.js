@@ -21,7 +21,7 @@ export const Friend = ({user}) => {
                         </Flex>
                     </Row>
                     <a href={'/'+user.userId} style={{lineHeight: 1}}>
-                        <Text weight="400" size="11" style={{overflow: 'hidden', letterSpacing: 0.5, maxHeight: 47}}>
+                        <Text weight="400" size="11" style={{overflow: 'hidden', maxHeight: 47}}>
                             {user.briefIntroduction}
                         </Text>
                     </a>

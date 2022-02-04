@@ -6,18 +6,26 @@ import {StudioLight} from '../../../icons/headericons';
 import { VisualizerEvent } from '../../../contexts/GlobalContext';
 import {Bottom, FeedTop} from './common'
 
-export const ModelConfig = ({darkMode, setVisualizer, visualizer}) => {
+export const ModelConfig = ({model, darkMode, setVisualizer, visualizer}) => {
     return (
         <Row justify="space-between" width="230px">
             <Row padding="padding: 3px" to="cursor" cursorOpaFalse={true} align="center">
                 <Flex margin="margin-bottom: 2px;">
                     <PaperIcon stroke={darkMode ? "white" : "black"} height={15} width={15} />
                 </Flex>
-                <Text className="light" margin="margin-left: 10px; margin-bottom: 3px;" size="11" weight="500">Paper</Text>
+                <Text className="light" margin="margin-left: 10px; margin-bottom: 3px;" size="11" weight="500">
+                    <a href={model.paper} target="_blank">
+                        Paper
+                    </a>
+                </Text>
             </Row>
             <Row padding="padding: 3px" to="cursor" cursorOpaFalse={true} align="center">
                 <CodeIcon stroke={darkMode ? "white" : "black"} height={18} width={18} />
-                <Text className="light" margin="margin-left: 10px; margin-bottom: 3px;" size="11" weight="500">Code</Text>
+                <Text className="light" margin="margin-left: 10px; margin-bottom: 3px;" size="11" weight="500">
+                    <a href={model.code} target="_blank">
+                        Code
+                    </a>
+                </Text>
             </Row>
             <Row onClick={() => setVisualizer(!visualizer)} padding="padding: 3px" to="cursor" cursorOpaFalse={true} align="center">
                 <StudioLight stroke1={darkMode ? "white" : "black"} stroke2={darkMode ? "white" : "black"} height={18} width={18} />
@@ -41,7 +49,7 @@ export const Model = ({content, darkMode}) => {
     const {visualizer, setVisualizer} = VisualizerEvent();
     return (
         <Box margin="margin: 15px 30px 15px 30px" padding="padding: 10px 15px" style={{width: 650}} bg={bgStyler(darkMode)} br="20px;">
-            <FeedTop user={content.writer_id} darkMode={darkMode} Components={<ModelConfig darkMode={darkMode} visualizer={visualizer} setVisualizer={setVisualizer} />} />
+            <FeedTop user={content.writer_id} darkMode={darkMode} Components={<ModelConfig model={content} darkMode={darkMode} visualizer={visualizer} setVisualizer={setVisualizer} />} />
             <Row margin="margin: 10px 0px;">
                 <Col>
                     <Text weight="600">

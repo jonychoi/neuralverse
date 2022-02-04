@@ -9,7 +9,6 @@ import Generator from './generator';
 import Detector from './detector';
 
 export const Demo = ({model, darkMode}) => {
-    const [result, setResult] = useState(null);
     const [open, setOpen] = useState(true);
     
     return (
@@ -19,7 +18,7 @@ export const Demo = ({model, darkMode}) => {
                 <Text className='bold' size="22" margin="margin-left: 12px;">{model.title} Demo</Text>
             </Row>
             <Flex shadow={true} height="470px" width="100%" margin="margin-bottom: 30px;" br="20px" bg={darkMode ? "rgba(30, 30, 30, 0.5)" : "rgba(255, 255, 255, 0.5)"} style={{overflow: 'hidden'}}>
-                <Generator model={model} open={open} setOpen={setOpen} darkMode={darkMode} />
+                <Classifier model={model} open={open} setOpen={setOpen} darkMode={darkMode} />
             </Flex>
         </Col>
     )

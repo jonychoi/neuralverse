@@ -2,24 +2,12 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import {Flex, Col, Row, Text, Image, Box} from '../../../components/common/base';
 import { bgStyler } from '../../../styles';
-import { postRequest } from '../inference';
+
 import city from './imgs/city.jpg';
 import elephant from './imgs/elephants.jpg';
 import zebra from './imgs/zebras.jpg';
 
-const imgs = [
-    city,
-    elephant,
-    zebra,
-]
-
-export const DragAndDrop = ({darkMode, img, api, setResult}) => {
-    useEffect(() => {
-        const run = () => {
-            setResult(postRequest(img, api))
-        }
-        run();
-    }, [img])
+export const DragAndDrop = ({darkMode, img, setImg}) => {
     return (
         <Flex margin="margin-bottom: 10px;" to="cursor">
             <form>
@@ -54,23 +42,43 @@ const ImgWrap = styled(Flex)`
         opacity: 1
     };
     cursor: pointer;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    height: 100px;
+    margin: 10px 0px;
 `;
 
-export const Examples = ({setImg, img, imgs}) => {
+const imgs = [
+    {
+        name: "city",
+        src: city,
+    },
+    {
+        name: "elephant",
+        src: elephant,
+    },
+    {
+        name: "zebra",
+        src: zebra,
+    }
+]
+
+export const Examples = ({run, displayImage}) => {
     return (
         <Col>
-            {imgs.map((item) => <ImgWrap onClick={() => setImg(item)} img={img} item={item} br="20px" style={{overflow: 'hidden'}} width="100%" height="100px" margin="margin: 10px 0px;">
-                <Image width="100%" height="100px" of="cover" src={item} />
+            {imgs.map((item, index) => <ImgWrap onClick={() => run(item.name)} img={displayImage} item={item.name} key={index}>
+                <Image width="100%" height="100px" of="cover" src={item.src} />
             </ImgWrap>)}
         </Col>
     )
 };
 
-export const InputBar = ({api, setResult, open, img, setImg, setOpen, darkMode}) => {
+export const InputBar = ({run, displayImage, api, open, setOpen, darkMode}) => {
     return (
         <Box width="20%" height="100%" padding="padding: 15px;" position="absolute" bg={bgStyler(darkMode)} style={{left: open ? 0 : '-25%', overflow: 'hidden', overflowY: 'scroll'}}>
-            <DragAndDrop api={api} setResult={setResult} setImg={setImg} img={img} darkMode={darkMode} />
-            <Examples setImg={setImg} img={img} imgs={imgs} />
+            <DragAndDrop darkMode={darkMode} />
+            <Examples displayImage={displayImage} run={run} />
         </Box>
     )
 }

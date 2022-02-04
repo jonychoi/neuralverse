@@ -4,7 +4,7 @@ import { Flex } from '../common/base';
 export const ReadEngine = ({darkMode}) => {
     return (
         <Flex style={{width: '100%', overflow: 'hidden', position: 'relative'}}>
-            <div id="graph" className="graph" style={{backgroundColor: darkMode ? "rgb(30, 30, 30)" : "white"}} tabIndex={0}>
+            <div id="graph" className="graph" tabIndex={0}>
                 <svg id="canvas" className="canvas" preserveAspectRatio="xMidYMid meet" width="100%" height="100%"></svg>
             </div>
             <SideBar />
@@ -12,7 +12,7 @@ export const ReadEngine = ({darkMode}) => {
             <div id="transparent" className="transparent"></div>
             <div className="center logo">
                 
-                <div className="center logo-message">
+                <div className="center logo-message" style={{display: 'none'}}>
                     <div style={{height: 30, textAlign: 'center'}}>Version <span id="version" className="select">5.4.7</span></div>
                     <div style={{height: 30, textAlign: 'center'}}>Copyright © <a href="https://www.lutzroeder.com/" target="blank_">Lutz Roeder</a></div>
                 </div>

@@ -82,7 +82,8 @@ export const ModelView = ({setModel, darkMode, task, subTask}) => {
             }, 300);
         };
         opaciter();
-    }, [task, subTask])
+    }, [task, subTask]);
+    console.log(task);
     
     return (
         <Col flex={3} margin="margin-top: 50px;">   
@@ -94,9 +95,10 @@ export const ModelView = ({setModel, darkMode, task, subTask}) => {
                     _subTask.models.map(item => 
                         <Model darkMode={darkMode} setModel={setModel} content={item} key={item.title}/>)
                     : 
+                    //change the key later
                     (_task != undefined && _task.models) && 
-                    _task.models.map(item => 
-                        <Model darkMode={darkMode} setModel={setModel} content={item} key={item.title}/>)}
+                    _task.models.map((item , index) => 
+                        <Model darkMode={darkMode} setModel={setModel} content={item} key={index}/>)}
                 
                 </Flex>
             </Col>

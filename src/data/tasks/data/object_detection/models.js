@@ -8,7 +8,9 @@ export const models = [
             name: "DETR: End-to-End Object Detection With Transformers",
             url: "https://alcinos.github.io/detr_page/",
         },
-        demo: true,
+        demo: {
+            api: "https://hf.space/gradioiframe/akhaliq/DETR/+/api/predict/",
+        },
         benchmark: true,
         studio: true,
         paper: {

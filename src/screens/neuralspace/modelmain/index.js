@@ -31,13 +31,13 @@ export const Task = ({model, darkMode}) => {
                 <Text size="22" className="bold" margin="margin-bottom: 15px;">
                     Tasks
                 </Text>
-                <Flex style={{display: 'block'}}>{model.task.tasks.map((item) => <Text margin="margin-right: 10px;">{item}</Text>)}</Flex>
+                <Flex style={{display: 'block'}}>{model.task.tasks.map((item) => <Text margin="margin-right: 10px;" key={item}>{item}</Text>)}</Flex>
             </Col>
             <Col flex={1} margin="margin-left: 25px;">
                 <Text size="22" className="bold" margin="margin-bottom: 15px;">
                     Datasets
                 </Text>
-                <Flex style={{display: 'block'}}>{model.task.datasets.map((item) => <Text margin="margin-right: 10px;">{item}</Text>)}</Flex>
+                <Flex style={{display: 'block'}}>{model.task.datasets.map((item) => <Text margin="margin-right: 10px;" key={item}>{item}</Text>)}</Flex>
             </Col>
         </Row>
     )
