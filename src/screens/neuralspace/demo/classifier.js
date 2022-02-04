@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Flex, Col, Row, Text, Image} from '../../../components/common/base';
-import { Loading } from '../../../components/common/loading';
+import { Loading, Timer } from '../../../components/common/loading';
 import { bgStyler } from '../../../styles';
 import { postRequest } from '../inference';
 import { InputBar } from './components';
@@ -21,7 +21,6 @@ export const Classifier = ({model, open, setOpen, darkMode}) => {
     const [_displayImage, _setDisplayImage] = useState();
     const [displayImage, setDisplayImage] = useState();
     const [isLoading, setIsLoading] = useState(false);
-    const [time, setTime] = useState(0);
 
     const toDataURL = url => fetch(url)
         .then(response => response.blob())
@@ -73,9 +72,9 @@ export const Classifier = ({model, open, setOpen, darkMode}) => {
                 {/* <Col flex={1} width="100%" height="100%" align="center" justify="center">
                     
                 </Col> */}
-                <Flex position="absolute" style={{right: 10, top: 10}} zIndex={1000}>
-                    <Text> / 5 sec</Text>
-                </Flex>
+                {isLoading && <Flex position="absolute" style={{right: 10, top: 10}} zIndex={1000}>
+                    <Timer defaultSec={3} />
+                </Flex>}
             </Row>
 
         </Col>
