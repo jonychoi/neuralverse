@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import {Flex, Col, Row, Text, Image} from '../../../components/common/base';
+import {Flex, Col, Row, Text, Image} from '../../../../components/common/base';
 import { InputBar } from './components';
-import city from './imgs/city.jpg';
+import city from '../imgs/city.jpg';
 
 export const Classifier = ({model, open, setOpen, darkMode}) => {
     const [img, setImg] = useState(city);

@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react';
-import {Flex, Col, Row, Text, Image} from '../../../components/common/base';
-import { Loading, Timer } from '../../../components/common/loading';
-import { bgStyler } from '../../../styles';
-import { postRequest } from '../inference';
+import {Flex, Col, Row, Text, Image} from '../../../../components/common/base';
+import { Loading, Timer } from '../../../../components/common/loading';
+import { bgStyler } from '../../../../styles';
+import { postRequest } from '../../inference';
 import { InputBar } from './components';
 
-import city from './imgs/city.jpg';
-import elephant from './imgs/elephants.jpg';
-import zebra from './imgs/zebras.jpg';
+import city from '../imgs/city.jpg';
+import elephant from '../imgs/elephants.jpg';
+import zebra from '../imgs/zebras.jpg';
 
 const api = "https://hf.space/gradioiframe/akhaliq/DETR/+/api/predict/"
 
@@ -26,16 +26,18 @@ export const Detector = ({model, open, setOpen, darkMode}) => {
         .then(response => response.blob())
         .then(blob => new Promise((resolve, reject) => {
             const reader = new FileReader()
-                reader.onloadend = () => resolve(reader.result)
-                reader.onerror = reject
-                reader.readAsDataURL(blob)
-            }))
+            reader.onloadend = () => resolve(reader.result)
+            reader.onerror = reject
+            reader.readAsDataURL(blob)
+            }
+        )
+    )
 
     const run = (name) => {     
-        setDisplayImage(name);        
+        setDisplayImage(name); 
+        setIsLoading(true);       
         toDataURL(imgs[name])
         .then(dataUrl => {
-            setIsLoading(true);
             postRequest(dataUrl, model.demo.api, setResult);
             _setDisplayImage(name);
         })
@@ -69,9 +71,6 @@ export const Detector = ({model, open, setOpen, darkMode}) => {
                     {displayImage ? !isLoading ? <Image width="100%" height="100%" of="cover" src={imgs[displayImage]} /> : <Loading /> : <InputAnyImage />}
                 </Col>
 
-                {/* <Col flex={1} width="100%" height="100%" align="center" justify="center">
-                    
-                </Col> */}
                 {isLoading && <Flex position="absolute" style={{right: 10, top: 10}} zIndex={1000}>
                     <Timer defaultSec={3} />
                 </Flex>}

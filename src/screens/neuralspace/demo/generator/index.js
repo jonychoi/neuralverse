@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import {Flex, Col, Row, Text, Image} from '../../../components/common/base';
-import { ConvertIcon } from '../../../icons/utilities';
-import { bgStyler } from '../../../styles';
+import {Flex, Col, Row, Text, Image} from '../../../../components/common/base';
+import { ConvertIcon } from '../../../../icons/utilities';
+import { bgStyler } from '../../../../styles';
 import { InputBar } from './components';
-import city from './imgs/city.jpg';
+import city from '../imgs/city.jpg';
 
 export const Generator = ({model, open, setOpen, darkMode}) => {
     const [img, setImg] = useState(city);

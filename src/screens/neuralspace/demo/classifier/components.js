@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import {Flex, Col, Row, Text, Image, Box} from '../../../components/common/base';
-import { bgStyler } from '../../../styles';
+import {Flex, Col, Row, Text, Image, Box} from '../../../../components/common/base';
+import { bgStyler } from '../../../../styles';
 
-import city from './imgs/city.jpg';
-import elephant from './imgs/elephants.jpg';
-import zebra from './imgs/zebras.jpg';
-import mountain from './imgs/mountain.jpeg';
-import monc from './imgs/monc.jpeg';
+import city from '../imgs/city.jpg';
+import elephant from '../imgs/elephants.jpg';
+import zebra from '../imgs/zebras.jpg';
+import mountain from '../imgs/mountain.jpeg';
+import monc from '../imgs/monc.jpeg';
 
 export const DragAndDrop = ({darkMode, img, setImg}) => {
     return (

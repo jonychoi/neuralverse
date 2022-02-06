@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {bgStyler} from '../../../styles';
 import {Col, Row, Flex, Image, Text} from '../../../components/common/base';
 import {postRequest} from '../inference';
 import { DemoIcon } from '../../../icons/utilities';
