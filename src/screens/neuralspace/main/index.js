@@ -38,7 +38,7 @@ export const Directory = ({darkMode, model, subTask, task}) => {
             {model && 
                 <Col>
                     <Text style={{opacity: 0.8}} className="light" margin="margin-bottom: 10px;" weight="500">
-                        {model.paper.conference.name && <>
+                        {model.paper.conference && model.paper.conference.name != null && <>
                             <Text size="14">{model.paper.conference.name}</Text>
                             <Text margin="margin: 0px 5px;" size="14">  ·  </Text>
                         </>}
@@ -68,7 +68,7 @@ export const Buttons = ({model, darkMode, subTask, task}) => {
                         </Row>
                     </a>
                     <a href={model.paper.paper} target="_blank">
-                        <Row shadow={true} align="center" margin="margin-left: 10px;" padding="padding: 10px 15px;" br="10px" bg={bgStyler(darkMode)}>
+                        <Row shadow={true} align="center" margin="margin-left: 18px;" padding="padding: 10px 18px;" br="10px" bg={bgStyler(darkMode)}>
                             <PaperIcon stroke={hueBlue} width={20} height={20} />
                             <Text size="12" className="light" weight="600" margin="margin: 0px 10px;">
                                 Abstract
@@ -77,7 +77,7 @@ export const Buttons = ({model, darkMode, subTask, task}) => {
                     </a>
                     {model.paper.conference && <>
                         <a href={model.paper.conference.paper} target="_blank">
-                            <Row shadow={true} align="center" margin="margin-left: 10px;" padding="padding: 10px 15px;" br="10px" bg={bgStyler(darkMode)}>
+                            <Row shadow={true} align="center" margin="margin-left: 18px;" padding="padding: 10px 18px;" br="10px" bg={bgStyler(darkMode)}>
                                 <PdfIcon stroke={hueBlue} width={20} height={20} />
                                 <Text size="12" className="light" weight="600" margin="margin: 0px 10px;">
                                     {model.paper.conference.name} Paper
@@ -85,7 +85,7 @@ export const Buttons = ({model, darkMode, subTask, task}) => {
                             </Row>
                         </a>
                         <a href={model.paper.conference.abstract} target="_blank">
-                            <Row shadow={true} align="center" margin="margin-left: 10px;" padding="padding: 10px 15px;" br="10px" bg={bgStyler(darkMode)}>
+                            <Row shadow={true} align="center" margin="margin-left: 18px;" padding="padding: 10px 18px;" br="10px" bg={bgStyler(darkMode)}>
                                 <PaperIcon stroke={hueBlue} width={20} height={20} />
                                 <Text size="12" className="light" weight="600" margin="margin: 0px 10px;">
                                     {model.paper.conference.name} Abstract
@@ -94,7 +94,7 @@ export const Buttons = ({model, darkMode, subTask, task}) => {
                         </a>
                     </>}
                     <a href={model.code.url} target="_blank">
-                        <Row shadow={true} align="center" margin="margin-left: 10px;" padding="padding: 10px 15px;" br="10px" bg={bgStyler(darkMode)}>
+                        <Row shadow={true} align="center" margin="margin-left: 18px;" padding="padding: 10px 18px;" br="10px" bg={bgStyler(darkMode)}>
                             <GithubIcon stroke={hueBlue} width={20} height={20} />
                             <Text size="12" className="light" weight="600" margin="margin: 0px 10px;">
                                 Code
@@ -103,7 +103,7 @@ export const Buttons = ({model, darkMode, subTask, task}) => {
                     </a>
                     {model.code.colab && 
                         <a href={model.code.colab} target="_blank">
-                            <Row shadow={true} align="center" margin="margin-left: 10px;" padding="padding: 10px 15px;" br="10px" bg={bgStyler(darkMode)}>
+                            <Row shadow={true} align="center" margin="margin-left: 18px;" padding="padding: 10px 18px;" br="10px" bg={bgStyler(darkMode)}>
                                 <ColabIcon stroke={hueBlue} width={20} height={20} />
                                 <Text size="12" className="light" weight="600" margin="margin: 0px 10px;">
                                     Colab

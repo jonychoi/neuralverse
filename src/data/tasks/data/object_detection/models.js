@@ -11,6 +11,7 @@ export const models = [
         demo: {
             type: "object-detection",
             api: "https://hf.space/gradioiframe/akhaliq/DETR/+/api/predict/",
+            defaultSec: 3,
         },
         benchmark: true,
         studio: true,

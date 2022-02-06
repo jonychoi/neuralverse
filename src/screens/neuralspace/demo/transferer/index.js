@@ -54,7 +54,7 @@ export const Transferer = ({model, open, setOpen, darkMode}) => {
                 </Col>
 
                 {isLoading && <Flex position="absolute" style={{right: 10, top: 10}} zIndex={1000}>
-                    <Timer defaultSec={3} />
+                    <Timer defaultSec={model.demo.defaultSec ? model.demo.defaultSec : 8} />
                 </Flex>}
             </Row>
 

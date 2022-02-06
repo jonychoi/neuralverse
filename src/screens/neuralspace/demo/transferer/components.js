@@ -46,16 +46,6 @@ const imgs = [
     [mountain, monc],
 ]
 
-export const InputBar = ({run, displayImage, open, setOpen, darkMode, type}) => {
-    return (
-        <Box width="20%" height="100%" padding="padding: 15px;" position="absolute" bg={bgStyler(darkMode)} style={{left: open ? 0 : '-25%', overflow: 'hidden', overflowY: 'scroll'}}>
-            <DragAndDrop darkMode={darkMode} />
-            <TransferExamples run={run} displayImage={displayImage} />
-        </Box>
-    )
-}
-
-
 export const TransferExamples = ({run, displayImage}) => {
     return (
         <Col>
@@ -67,3 +57,12 @@ export const TransferExamples = ({run, displayImage}) => {
         </Col>
     )
 };
+
+export const InputBar = ({run, displayImage, open, setOpen, darkMode, type}) => {
+    return (
+        <Box width="20%" height="100%" padding="padding: 15px;" position="absolute" bg={bgStyler(darkMode)} style={{left: open ? 0 : '-25%', overflow: 'hidden', overflowY: 'scroll'}}>
+            <DragAndDrop darkMode={darkMode} />
+            <TransferExamples run={run} displayImage={displayImage} />
+        </Box>
+    )
+}

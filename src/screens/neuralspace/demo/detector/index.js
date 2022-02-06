@@ -14,7 +14,7 @@ export const Detector = ({model, open, setOpen, darkMode}) => {
     const run = (img) => {     
         setIsLoading(true); 
         toDataURL(img)
-        .then(dataUrl => {
+        .then(dataUrl =>   {
             postRequest(dataUrl, model.demo.api, setResult);
         })
     };

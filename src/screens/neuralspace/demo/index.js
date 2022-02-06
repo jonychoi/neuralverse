@@ -20,7 +20,7 @@ export const Demo = ({model, darkMode}) => {
                 {model.demo.type == "classification" && <Classifier model={model} open={open} setOpen={setOpen} darkMode={darkMode} />}
                 {model.demo.type == "object-detection" && <Detector model={model} open={open} setOpen={setOpen} darkMode={darkMode} />}
                 {model.demo.type == "style-transfer" && <Transferer model={model} open={open} setOpen={setOpen} darkMode={darkMode} />}
-                {model.demo.type == "generation" && <Generator model={model} open={open} setOpen={setOpen} darkMode={darkMode} />}
+                {model.demo.type == "image-generation" && <Generator model={model} open={open} setOpen={setOpen} darkMode={darkMode} />}
             </Flex>
         </Col>
     )

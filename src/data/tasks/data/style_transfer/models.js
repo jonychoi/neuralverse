@@ -11,6 +11,7 @@ export const models = [
         demo: {
             type: "style-transfer",
             api: "https://hf.space/gradioiframe/aravinds1811/neural-style-transfer/+/api/predict/",
+            defaultSec: 10,
         },
         benchmark: true,
         studio: true,

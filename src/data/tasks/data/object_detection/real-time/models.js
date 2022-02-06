@@ -5,7 +5,11 @@ export const models = [
         title: "YOLOv3",
         subtitle: "An Incremental Improvement",
         img: yolov3img,
-        demo: true,
+        demo: {
+            type: "object-detection",
+            api: "https://hf.space/gradioiframe/akhaliq/yolov3/+/api/predict/",
+            defaultSec: 5,
+        },
         benchmark: false,
         studio: false,
         paper: {
