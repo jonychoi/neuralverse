@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {Text} from './base';
+import {Text, Flex} from './base';
 import './style/loading.css';
 
 export const Loading = () => {
@@ -16,13 +16,23 @@ export const Loading = () => {
     )
 }
 
+
+export const InputAnyImage = () => (
+    <Flex>
+        <Text>Please Input Any Image to Model 😊</Text>
+    </Flex>
+)
+
 export const Timer = ({defaultSec}) => {
     const [time, setTime] = useState(0);
     useEffect(() => {
-        let _time = time + 1;
-        setInterval(() => setTime(_time), 1000);
+        setInterval(() => {
+            let _time = time;
+            _time = _time + 1;
+            setTime(_time);
+        }, 1000);
     });
     return (
-        <Text>{time}. / {defaultSec} Sec</Text>
+        <Text style={{opacity: 0.7}}>{time}.0 / {defaultSec}.0s</Text>
     )
 }

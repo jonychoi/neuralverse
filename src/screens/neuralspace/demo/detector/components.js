@@ -34,26 +34,16 @@ const ImgWrap = styled(Flex)`
 `;
 
 const imgs = [
-    {
-        name: "city",
-        src: city,
-    },
-    {
-        name: "elephant",
-        src: elephant,
-    },
-    {
-        name: "zebra",
-        src: zebra,
-    }
-
+    city,
+    elephant,
+    zebra,
 ]
 
 export const Examples = ({run, displayImage}) => {
     return (
         <Col>
-            {imgs.map((item, index) => <ImgWrap onClick={() => run(item.name)} img={displayImage} item={item.name} key={index}>
-                <Image width="100%" height="100px" of="cover" src={item.src} />
+            {imgs.map((item, index) => <ImgWrap onClick={() => run(item)} img={displayImage} item={item} key={index}>
+                <Image width="100%" height="100px" of="cover" src={item} />
             </ImgWrap>)}
         </Col>
     )
