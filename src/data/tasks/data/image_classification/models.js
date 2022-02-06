@@ -1,40 +1,43 @@
 export const models = [
     {
         writer_id: 'Neuralverse',
-        title: "DETR",
-        subtitle: "End-to-End Object Detection with Transformers",
-        img: "https://alcinos.github.io/detr_page/assets/elephants.png",
+        title: "ViT",
+        subtitle: "Transformers for Image Recognition at Scale",
+        img: "https://production-media.paperswithcode.com/methods/Screen_Shot_2021-01-26_at_9.43.31_PM_uI4jjMq.png",
         imgcredit: {
-            name: "DETR: End-to-End Object Detection With Transformers",
-            url: "https://alcinos.github.io/detr_page/",
+            name: "Vision Transformer",
+            url: "https://paperswithcode.com/method/vision-transformer",
         },
-        demo: true,
+        demo: {
+            type: "classification",
+            api: "https://hf.space/gradioiframe/abidlabs/vision-transformer/+/api/predict/",
+        },
         benchmark: true,
         studio: true,
         paper: {
-            name: "End-to-End Object Detection with Transformers",
-            img: "https://alcinos.github.io/detr_page/assets/overview.jpg",
-            description: "We present a new method that views object detection as a direct set prediction problem. Our approach streamlines the detection pipeline, effectively removing the need for many hand-designed components like a non-maximum suppression procedure or anchor generation that explicitly encode our prior knowledge about the task. The main ingredients of the new framework, called DEtection TRansformer or DETR, are a set-based global loss that forces unique predictions via bipartite matching, and a transformer encoder-decoder architecture. Given a fixed small set of learned object queries, DETR reasons about the relations of the objects and the global image context to directly output the final set of predictions in parallel. The new model is conceptually simple and does not require a specialized library, unlike many other modern detectors. DETR demonstrates accuracy and run-time performance on par with the well-established and highly-optimized Faster RCNN baseline on the challenging COCO object detection dataset. Moreover, DETR can be easily generalized to produce panoptic segmentation in a unified manner. We show that it significantly outperforms competitive baselines. Training code and pretrained models are available at https://github.com/facebookresearch/detr.",
-            authors: ["Nicolas Carion", "Francisco Massa", "Gabriel Synnaeve", "Nicolas Usunier", "Alexander Kirillov, Sergey Zagoruyko"],
-            paper: "https://arxiv.org/abs/2005.12872v3",
-            published_date: "28 May 2020",
+            name: "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+            img: "https://production-media.paperswithcode.com/methods/Screen_Shot_2021-01-26_at_9.43.31_PM_uI4jjMq.png",
+            description: "While the Transformer architecture has become the de-facto standard for natural language processing tasks, its applications to computer vision remain limited. In vision, attention is either applied in conjunction with convolutional networks, or used to replace certain components of convolutional networks while keeping their overall structure in place. We show that this reliance on CNNs is not necessary and a pure transformer applied directly to sequences of image patches can perform very well on image classification tasks. When pre-trained on large amounts of data and transferred to multiple mid-sized or small image recognition benchmarks (ImageNet, CIFAR-100, VTAB, etc.), Vision Transformer (ViT) attains excellent results compared to state-of-the-art convolutional networks while requiring substantially fewer computational resources to train.",
+            authors: ["Alexey Dosovitskiy", "Lucas Beyer", "Alexander Kolesnikov", "Dirk Weissenborn", "Xiaohua Zhai", "Thomas Unterthiner", "Mostafa Dehghani", "Matthias Minderer", "Georg Heigold", "Sylvain Gelly", "Jakob Uszkoreit, Neil Houlsby"],
+            paper: "https://arxiv.org/abs/2010.11929v2",
+            published_date: "22 Oct 2020",
             conference: {
-                name: "ECCV 2020",
-                paper: "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123460205.pdf",
-                abstract: "https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/832_ECCV_2020_paper.php",
+                name: "ICLR 2021",
+                paper: "https://openreview.net/pdf?id=YicbFdNTTy",
+                abstract: "https://openreview.net/forum?id=YicbFdNTTy",
             }
         },
         code: {
-            url: "https://github.com/facebookresearch/detr",
-            lib: "torch",
+            url: "https://github.com/google-research/vision_transformer",
+            lib: "tensorflow",
             official: true,
-            colab: "https://colab.research.google.com/github/facebookresearch/detr/blob/colab/notebooks/detr_demo.ipynb",
+            colab: "https://colab.research.google.com/github/google-research/vision_transformer/blob/master/vit_jax.ipynb",
         },
         task: {
-            featured: "Ranked #7 on Panoptic Segmentation on COCO minival",
-            tasks: ["Object Detection", "Panoptic Segmentation"],
-            datasets: ["COCO"],
-            paperswithcode: "https://paperswithcode.com/paper/end-to-end-object-detection-with-transformers",
+            featured: "Ranked #1 on Fine-Grained Image Classification on Oxford 102 Flowers (Top 1 Accuracy metric, using extra training data)",
+            tasks: ["Document Image Classification", "Fine-Grained Image Classification", "Image Classification"],
+            datasets: ["CIFAR-10", "ImageNet", "CIFAR-100", "Oxford 102 Flower", "Tiny ImageNet", "JFT-300M", "Oxford-IIIT Pets"],
+            paperswithcode: "https://paperswithcode.com/paper/an-image-is-worth-16x16-words-transformers-1",
         }
     }
 ]

@@ -6,6 +6,8 @@ import { bgStyler } from '../../../styles';
 import city from './imgs/city.jpg';
 import elephant from './imgs/elephants.jpg';
 import zebra from './imgs/zebras.jpg';
+import mountain from './imgs/mountain.jpeg';
+import monc from './imgs/monc.jpeg';
 
 export const DragAndDrop = ({darkMode, img, setImg}) => {
     return (
@@ -49,6 +51,15 @@ const ImgWrap = styled(Flex)`
     margin: 10px 0px;
 `;
 
+const ImgWraps = styled(Flex)`
+    cursor: pointer;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    height: 100px;
+    margin: 10px 0px;
+`;
+
 const imgs = [
     {
         name: "city",
@@ -62,7 +73,24 @@ const imgs = [
         name: "zebra",
         src: zebra,
     }
+
 ]
+
+export const TransferExamples = ({run}) => {
+    return (
+        <Col onClick={() => run()}>
+            <Text>Content Image</Text>
+            <ImgWraps>
+                <Image width="100%" height="100px" of="cover" src={mountain} />
+            </ImgWraps>
+            <Text>Style Image</Text>
+            <ImgWraps>
+                <Image width="100%" height="100px" of="cover" src={monc} />
+            </ImgWraps>
+        </Col>
+    )
+};
+
 
 export const Examples = ({run, displayImage}) => {
     return (
@@ -74,11 +102,11 @@ export const Examples = ({run, displayImage}) => {
     )
 };
 
-export const InputBar = ({run, displayImage, api, open, setOpen, darkMode}) => {
+export const InputBar = ({run, displayImage, api, open, setOpen, darkMode, type}) => {
     return (
         <Box width="20%" height="100%" padding="padding: 15px;" position="absolute" bg={bgStyler(darkMode)} style={{left: open ? 0 : '-25%', overflow: 'hidden', overflowY: 'scroll'}}>
             <DragAndDrop darkMode={darkMode} />
-            <Examples displayImage={displayImage} run={run} />
+            {type == "style-transfer" ? <TransferExamples run={run} /> : <Examples displayImage={displayImage} run={run} />}
         </Box>
     )
 }

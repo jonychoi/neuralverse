@@ -33,16 +33,16 @@ export const data = [
         subtasks: [
            
         ],
-        models: imageClassification.models.concat(
-                semanticsegmentation.models, 
+        models: superResolution.models.concat(
                 objectDetection.models,
-                imageGeneration.models,
                 styleTransfer.models,
+                imageClassification.models,
+                imageGeneration.models,
+                semanticsegmentation.models, 
                 selfSupervisedLearning.models,
                 depthEstimation.models,
                 fewShotLearning.models,
                 domainAdaptation.models,
-                superResolution.models,
                 denoising.models,
             )
     },

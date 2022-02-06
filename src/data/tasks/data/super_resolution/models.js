@@ -1,40 +1,36 @@
 export const models = [
     {
         writer_id: 'Neuralverse',
-        title: "DETR",
-        subtitle: "End-to-End Object Detection with Transformers",
-        img: "https://alcinos.github.io/detr_page/assets/elephants.png",
+        title: "VRT",
+        subtitle: "A Video Restoration Transformer",
+        img: "https://production-media.paperswithcode.com/thumbnails/papergithubrepo/b012d908-8a55-4b67-8fb4-9215663651d6.gif",
         imgcredit: {
-            name: "DETR: End-to-End Object Detection With Transformers",
-            url: "https://alcinos.github.io/detr_page/",
+            name: "VRT: A Video Restoration Transformer",
+            url: "https://paperswithcode.com/paper/vrt-a-video-restoration-transformer",
         },
-        demo: true,
+        demo: false,
         benchmark: true,
         studio: true,
         paper: {
-            name: "End-to-End Object Detection with Transformers",
-            img: "https://alcinos.github.io/detr_page/assets/overview.jpg",
-            description: "We present a new method that views object detection as a direct set prediction problem. Our approach streamlines the detection pipeline, effectively removing the need for many hand-designed components like a non-maximum suppression procedure or anchor generation that explicitly encode our prior knowledge about the task. The main ingredients of the new framework, called DEtection TRansformer or DETR, are a set-based global loss that forces unique predictions via bipartite matching, and a transformer encoder-decoder architecture. Given a fixed small set of learned object queries, DETR reasons about the relations of the objects and the global image context to directly output the final set of predictions in parallel. The new model is conceptually simple and does not require a specialized library, unlike many other modern detectors. DETR demonstrates accuracy and run-time performance on par with the well-established and highly-optimized Faster RCNN baseline on the challenging COCO object detection dataset. Moreover, DETR can be easily generalized to produce panoptic segmentation in a unified manner. We show that it significantly outperforms competitive baselines. Training code and pretrained models are available at https://github.com/facebookresearch/detr.",
-            authors: ["Nicolas Carion", "Francisco Massa", "Gabriel Synnaeve", "Nicolas Usunier", "Alexander Kirillov, Sergey Zagoruyko"],
+            name: "VRT: A Video Restoration Transformer",
+            img: "https://raw.githubusercontent.com/JingyunLiang/VRT/main/assets/framework.jpeg",
+            description: "Video restoration (e.g., video super-resolution) aims to restore high-quality frames from low-quality frames. Different from single image restoration, video restoration generally requires to utilize temporal information from multiple adjacent but usually misaligned video frames. Existing deep methods generally tackle with this by exploiting a sliding window strategy or a recurrent architecture, which either is restricted by frame-by-frame restoration or lacks long-range modelling ability. In this paper, we propose a Video Restoration Transformer (VRT) with parallel frame prediction and long-range temporal dependency modelling abilities. More specifically, VRT is composed of multiple scales, each of which consists of two kinds of modules: temporal mutual self attention (TMSA) and parallel warping. TMSA divides the video into small clips, on which mutual attention is applied for joint motion estimation, feature alignment and feature fusion, while self attention is used for feature extraction. To enable cross-clip interactions, the video sequence is shifted for every other layer. Besides, parallel warping is used to further fuse information from neighboring frames by parallel feature warping. Experimental results on three tasks, including video super-resolution, video deblurring and video denoising, demonstrate that VRT outperforms the state-of-the-art methods by large margins () on nine benchmark datasets.",
+            authors: ["Jingyun Liang", "JieZhang Cao", "Yuchen Fan", "Kai Zhang", "Rakesh Ranjan", "Yawei Li", "Radu Timofte", "Luc van Gool"],
             paper: "https://arxiv.org/abs/2005.12872v3",
-            published_date: "28 May 2020",
-            conference: {
-                name: "ECCV 2020",
-                paper: "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123460205.pdf",
-                abstract: "https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/832_ECCV_2020_paper.php",
-            }
+            published_date: "28 Jan 2022",
+            conference: {}
         },
         code: {
-            url: "https://github.com/facebookresearch/detr",
+            url: "https://github.com/jingyunliang/vrt",
             lib: "torch",
             official: true,
-            colab: "https://colab.research.google.com/github/facebookresearch/detr/blob/colab/notebooks/detr_demo.ipynb",
+            colab: "https://colab.research.google.com/gist/JingyunLiang/deb335792768ad9eb73854a8efca4fe0#file-vrt-demo-on-video-restoration-ipynb=",
         },
         task: {
             featured: "Ranked #7 on Panoptic Segmentation on COCO minival",
-            tasks: ["Object Detection", "Panoptic Segmentation"],
-            datasets: ["COCO"],
-            paperswithcode: "https://paperswithcode.com/paper/end-to-end-object-detection-with-transformers",
+            tasks: ["Deblurring", "Denoising", "Image Restoration", "Motion Estimation", "Super-Resolution", "Video Denoising", "Video Restoration", "Video Super-Resolution"],
+            datasets: ["GoPro"],
+            paperswithcode: "https://paperswithcode.com/paper/vrt-a-video-restoration-transformer",
         }
     }
 ]

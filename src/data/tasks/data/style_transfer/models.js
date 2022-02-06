@@ -1,40 +1,43 @@
 export const models = [
     {
         writer_id: 'Neuralverse',
-        title: "DETR",
-        subtitle: "End-to-End Object Detection with Transformers",
-        img: "https://alcinos.github.io/detr_page/assets/elephants.png",
+        title: "Adain",
+        subtitle: "Real-time with Adaptive Instance Normalization",
+        img: "https://miro.medium.com/max/1050/1*-O7XstBEW-miUNtPGsKw7A.png",
         imgcredit: {
-            name: "DETR: End-to-End Object Detection With Transformers",
-            url: "https://alcinos.github.io/detr_page/",
+            name: "Adain : A Machine Learning Model for Style Transfer",
+            url: "https://medium.com/axinc-ai/adain-a-machine-learning-model-for-style-transfer-341b242c554b",
         },
-        demo: true,
+        demo: {
+            type: "style-transfer",
+            api: "https://hf.space/gradioiframe/aravinds1811/neural-style-transfer/+/api/predict/",
+        },
         benchmark: true,
         studio: true,
         paper: {
-            name: "End-to-End Object Detection with Transformers",
-            img: "https://alcinos.github.io/detr_page/assets/overview.jpg",
-            description: "We present a new method that views object detection as a direct set prediction problem. Our approach streamlines the detection pipeline, effectively removing the need for many hand-designed components like a non-maximum suppression procedure or anchor generation that explicitly encode our prior knowledge about the task. The main ingredients of the new framework, called DEtection TRansformer or DETR, are a set-based global loss that forces unique predictions via bipartite matching, and a transformer encoder-decoder architecture. Given a fixed small set of learned object queries, DETR reasons about the relations of the objects and the global image context to directly output the final set of predictions in parallel. The new model is conceptually simple and does not require a specialized library, unlike many other modern detectors. DETR demonstrates accuracy and run-time performance on par with the well-established and highly-optimized Faster RCNN baseline on the challenging COCO object detection dataset. Moreover, DETR can be easily generalized to produce panoptic segmentation in a unified manner. We show that it significantly outperforms competitive baselines. Training code and pretrained models are available at https://github.com/facebookresearch/detr.",
-            authors: ["Nicolas Carion", "Francisco Massa", "Gabriel Synnaeve", "Nicolas Usunier", "Alexander Kirillov, Sergey Zagoruyko"],
-            paper: "https://arxiv.org/abs/2005.12872v3",
-            published_date: "28 May 2020",
+            name: "Arbitrary Style Transfer in Real-time with Adaptive Instance Normalization",
+            img: "https://medium.com/axinc-ai/adain-a-machine-learning-model-for-style-transfer-341b242c554b",
+            description: "Gatys et al. recently introduced a neural algorithm that renders a content image in the style of another image, achieving so-called style transfer. However, their framework requires a slow iterative optimization process, which limits its practical application. Fast approximations with feed-forward neural networks have been proposed to speed up neural style transfer. Unfortunately, the speed improvement comes at a cost: the network is usually tied to a fixed set of styles and cannot adapt to arbitrary new styles. In this paper, we present a simple yet effective approach that for the first time enables arbitrary style transfer in real-time. At the heart of our method is a novel adaptive instance normalization (AdaIN) layer that aligns the mean and variance of the content features with those of the style features. Our method achieves speed comparable to the fastest existing approach, without the restriction to a pre-defined set of styles. In addition, our approach allows flexible user controls such as content-style trade-off, style interpolation, color & spatial controls, all using a single feed-forward neural network.",
+            authors: ["Xun Huang", "Serge Belongie"],
+            paper: "https://arxiv.org/abs/1703.06868v2",
+            published_date: "20 Mar 2017",
             conference: {
-                name: "ECCV 2020",
-                paper: "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123460205.pdf",
-                abstract: "https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/832_ECCV_2020_paper.php",
+                name: "ICCV 2017",
+                paper: "https://openaccess.thecvf.com/content_ICCV_2017/papers/Huang_Arbitrary_Style_Transfer_ICCV_2017_paper.pdf",
+                abstract: "https://openaccess.thecvf.com/content_iccv_2017/html/Huang_Arbitrary_Style_Transfer_ICCV_2017_paper.html",
             }
         },
         code: {
-            url: "https://github.com/facebookresearch/detr",
+            url: "https://github.com/xunhuang1995/AdaIN-style",
             lib: "torch",
             official: true,
-            colab: "https://colab.research.google.com/github/facebookresearch/detr/blob/colab/notebooks/detr_demo.ipynb",
+            colab: "",
         },
         task: {
-            featured: "Ranked #7 on Panoptic Segmentation on COCO minival",
-            tasks: ["Object Detection", "Panoptic Segmentation"],
+            featured: "",
+            tasks: ["Style Transfer"],
             datasets: ["COCO"],
-            paperswithcode: "https://paperswithcode.com/paper/end-to-end-object-detection-with-transformers",
+            paperswithcode: "https://paperswithcode.com/paper/arbitrary-style-transfer-in-real-time-with",
         }
     }
 ]

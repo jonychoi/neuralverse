@@ -9,6 +9,7 @@ export const models = [
             url: "https://alcinos.github.io/detr_page/",
         },
         demo: {
+            type: "object-detection",
             api: "https://hf.space/gradioiframe/akhaliq/DETR/+/api/predict/",
         },
         benchmark: true,
