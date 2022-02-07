@@ -42,10 +42,12 @@ export const Directory = ({darkMode, model, subTask, task}) => {
                             <Text size="14">{model.paper.conference.name}</Text>
                             <Text margin="margin: 0px 5px;" size="14">  ·  </Text>
                         </>}
-                        <Text  size="14">
-                            {model.paper.published_date}
-                        </Text>
-                        <Text margin="margin: 0px 5px;" size="14">  ·  </Text>
+                        {model.paper.published_date && <>
+                            <Text size="14">
+                                {model.paper.published_date}
+                            </Text>
+                            <Text margin="margin: 0px 5px;" size="14">  ·  </Text>
+                        </>}
                         {model.paper.authors.map((item, index) => index !==0 ? <Text key={index} size="14">{',  ' + item}</Text> : <Text key={index} size="14">{item}</Text>)}
                     </Text>
                     {model.task.featured && <Text size="15" color={darkMode ? extremehueBlue : blueLowColor} className="bold" margin="margin: 10px 0px; margin-top: 10px;" weight="600">{model.task.featured}</Text>}
@@ -59,25 +61,27 @@ export const Buttons = ({model, darkMode, subTask, task}) => {
         <>
          {model ? 
                 <Row margin="margin-top: 30px;">
-                    <a href={`${model.paper.paper.replace('abs', 'pdf')}` + '.pdf'} target="_blank">
-                        <Row shadow={true} align="center" padding="padding: 10px 15px;" br="10px" bg={bgStyler(darkMode)}>
-                            <PdfIcon stroke={hueBlue} width={20} height={20} />
-                            <Text size="12" className="light" weight="600" margin="margin: 0px 10px;">
-                                Paper
-                            </Text>
-                        </Row>
-                    </a>
-                    <a href={model.paper.paper} target="_blank">
-                        <Row shadow={true} align="center" margin="margin-left: 18px;" padding="padding: 10px 18px;" br="10px" bg={bgStyler(darkMode)}>
-                            <PaperIcon stroke={hueBlue} width={20} height={20} />
-                            <Text size="12" className="light" weight="600" margin="margin: 0px 10px;">
-                                Abstract
-                            </Text>
-                        </Row>
-                    </a>
+                    {model.paper.url && <>
+                        <a href={`${model.paper.paper.replace('abs', 'pdf')}` + '.pdf'} target="_blank">
+                            <Row shadow={true} align="center" margin="margin-right: 18px;" padding="padding: 10px 15px;" br="10px" bg={bgStyler(darkMode)}>
+                                <PdfIcon stroke={hueBlue} width={20} height={20} />
+                                <Text size="12" className="light" weight="600" margin="margin: 0px 10px;">
+                                    Paper
+                                </Text>
+                            </Row>
+                        </a>
+                        <a href={model.paper.paper} target="_blank">
+                            <Row shadow={true} align="center" margin="margin-right: 18px;" padding="padding: 10px 18px;" br="10px" bg={bgStyler(darkMode)}>
+                                <PaperIcon stroke={hueBlue} width={20} height={20} />
+                                <Text size="12" className="light" weight="600" margin="margin: 0px 10px;">
+                                    Abstract
+                                </Text>
+                            </Row>
+                        </a>
+                    </>}
                     {model.paper.conference && <>
                         <a href={model.paper.conference.paper} target="_blank">
-                            <Row shadow={true} align="center" margin="margin-left: 18px;" padding="padding: 10px 18px;" br="10px" bg={bgStyler(darkMode)}>
+                            <Row shadow={true} align="center" margin="margin-right: 18px;" padding="padding: 10px 18px;" br="10px" bg={bgStyler(darkMode)}>
                                 <PdfIcon stroke={hueBlue} width={20} height={20} />
                                 <Text size="12" className="light" weight="600" margin="margin: 0px 10px;">
                                     {model.paper.conference.name} Paper
@@ -85,7 +89,7 @@ export const Buttons = ({model, darkMode, subTask, task}) => {
                             </Row>
                         </a>
                         <a href={model.paper.conference.abstract} target="_blank">
-                            <Row shadow={true} align="center" margin="margin-left: 18px;" padding="padding: 10px 18px;" br="10px" bg={bgStyler(darkMode)}>
+                            <Row shadow={true} align="center" margin="margin-right: 18px;" padding="padding: 10px 18px;" br="10px" bg={bgStyler(darkMode)}>
                                 <PaperIcon stroke={hueBlue} width={20} height={20} />
                                 <Text size="12" className="light" weight="600" margin="margin: 0px 10px;">
                                     {model.paper.conference.name} Abstract
@@ -94,7 +98,7 @@ export const Buttons = ({model, darkMode, subTask, task}) => {
                         </a>
                     </>}
                     <a href={model.code.url} target="_blank">
-                        <Row shadow={true} align="center" margin="margin-left: 18px;" padding="padding: 10px 18px;" br="10px" bg={bgStyler(darkMode)}>
+                        <Row shadow={true} align="center" margin="margin-right: 18px;" padding="padding: 10px 18px;" br="10px" bg={bgStyler(darkMode)}>
                             <GithubIcon stroke={hueBlue} width={20} height={20} />
                             <Text size="12" className="light" weight="600" margin="margin: 0px 10px;">
                                 Code
@@ -103,7 +107,7 @@ export const Buttons = ({model, darkMode, subTask, task}) => {
                     </a>
                     {model.code.colab && 
                         <a href={model.code.colab} target="_blank">
-                            <Row shadow={true} align="center" margin="margin-left: 18px;" padding="padding: 10px 18px;" br="10px" bg={bgStyler(darkMode)}>
+                            <Row shadow={true} align="center" margin="margin-right: 18px;" padding="padding: 10px 18px;" br="10px" bg={bgStyler(darkMode)}>
                                 <ColabIcon stroke={hueBlue} width={20} height={20} />
                                 <Text size="12" className="light" weight="600" margin="margin: 0px 10px;">
                                     Colab
@@ -137,23 +141,6 @@ export const Buttons = ({model, darkMode, subTask, task}) => {
 }
 
 export const TitleDescription = ({darkMode, setModel, setTask,  model, setSubTask, task, subTask}) => {
-    // const [opacity, setOpacity] = useState(1);
-    // const [_task, set_Task] = useState(task);
-    // const [_subTask, set_SubTask] = useState(subTask);
-    // const [_model, set_Model] = useState(model);
-    // useEffect(() => {
-    //     const opaciter = () => {
-    //         setOpacity(0.7);
-    //         set_Task(task);
-    //         set_SubTask(subTask);
-    //         set_Model(model);
-    //         setTimeout(() => {
-
-    //             setOpacity(1)
-    //         }, 200);
-    //     };
-    //     opaciter();
-    // }, [task, subTask, model])
     return (
         <Col>
             <Title model={model} setModel={setModel} darkMode={darkMode} task={task} setTask={setTask} subTask={subTask} setSubTask={setSubTask} />

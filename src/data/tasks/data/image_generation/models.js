@@ -3,6 +3,39 @@ import jojo from './imgs/jojo.png';
 export const models = [
     {
         writer_id: 'Neuralverse',
+        title: "ArcaneGAN",
+        img: "https://user-images.githubusercontent.com/11751592/144984243-6387263b-0827-478a-ac1e-1ee93f9ddec6.jpg",
+        imgcredit: {
+            name: "https://github.com/Sxela/ArcaneGAN",
+            url: "https://github.com/Sxela/ArcaneGAN",
+        },
+        demo: {
+            type: "image-generation",
+            api: "https://hf.space/gradioiframe/akhaliq/ArcaneGAN/+/api/predict/",
+            defaultSec: 10,
+            models: ['version 0.2', 'version 0.3', 'version 0.4']
+        },
+        paper: {
+            type: "nopaper",
+            name: "ArcaneGAN",
+            description: "",
+            authors: ["Alex Spirin"],
+        },
+        benchmark: false,
+        studio: false,
+        code: {
+            url: "https://github.com/Sxela/ArcaneGAN",
+            lib: "pytorch",
+            official: true,
+            colab: "https://colab.research.google.com/drive/1r1hhciakk5wHaUn1eJk7TP58fV9mjy_W",
+        },
+        task: {
+            tasks: ["Image Generation"],
+            datasets: [],
+        }
+    },
+    {
+        writer_id: 'Neuralverse',
         title: "JoJoGAN",
         subtitle: "One Shot Face Stylization",
         img: jojo,

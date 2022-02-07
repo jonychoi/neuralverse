@@ -1,6 +1,42 @@
 export const models = [
     {
         writer_id: 'Neuralverse',
+        title: "ConvNeXt",
+        subtitle: "A ConvNet for the 2020s",
+        img: "https://production-media.paperswithcode.com/thumbnails/papergithubrepo/f50e5cde-ed50-4c24-96c0-656a1abb227a.jpg",
+        demo: {
+            type: "classification",
+            api: "https://hf.space/gradioiframe/akhaliq/convnext/+/api/predict/",
+            defaultSec: 3,
+        },
+        benchmark: true,
+        studio: true,
+        paper: {
+            name: "A ConvNet for the 2020s",
+            img: "https://production-media.paperswithcode.com/thumbnails/papergithubrepo/f50e5cde-ed50-4c24-96c0-656a1abb227a.jpg",
+            description: 'The "Roaring 20s" of visual recognition began with the introduction of Vision Transformers (ViTs), which quickly superseded ConvNets as the state-of-the-art image classification model. A vanilla ViT, on the other hand, faces difficulties when applied to general computer vision tasks such as object detection and semantic segmentation. It is the hierarchical Transformers (e.g., Swin Transformers) that reintroduced several ConvNet priors, making Transformers practically viable as a generic vision backbone and demonstrating remarkable performance on a wide variety of vision tasks. However, the effectiveness of such hybrid approaches is still largely credited to the intrinsic superiority of Transformers, rather than the inherent inductive biases of convolutions. In this work, we reexamine the design spaces and test the limits of what a pure ConvNet can achieve. We gradually "modernize" a standard ResNet toward the design of a vision Transformer, and discover several key components that contribute to the performance difference along the way. The outcome of this exploration is a family of pure ConvNet models dubbed ConvNeXt. Constructed entirely from standard ConvNet modules, ConvNeXts compete favorably with Transformers in terms of accuracy and scalability, achieving 87.8% ImageNet top-1 accuracy and outperforming Swin Transformers on COCO detection and ADE20K segmentation, while maintaining the simplicity and efficiency of standard ConvNets.',
+            authors: ["Zhuang Liu", "Hanzi Mao", "Chao-yuan Wu", "Christoph Feichtenhofer", "Trevor Darrell", "Saining Xie"],
+            paper: "https://arxiv.org/abs/2201.03545v1",
+            published_date: "10 Jan 2022",
+            conference: {
+               
+            }
+        },
+        code: {
+            url: "https://github.com/facebookresearch/ConvNeXt",
+            lib: "pytorch",
+            official: true,
+            colab: "https://colab.research.google.com/drive/1CBYTIZ4tBMsVL5cqu9N_-Q3TBprqsfEO?usp=sharing",
+        },
+        task: {
+            featured: "Ranked #1 on Domain Generalization on ImageNet-Sketch (using extra training data)",
+            tasks: ["Domain Generalization", "Image Classification", "Object Detection", "Semantic Segmentation"],
+            datasets: ["ImageNet", "COCO", "ADE20K", "ImageNet-C", "ImageNet-A", "ImageNet-R", "ImageNet-Sketch"],
+            paperswithcode: "https://paperswithcode.com/paper/a-convnet-for-the-2020s",
+        }
+    },
+    {
+        writer_id: 'Neuralverse',
         title: "ViT",
         subtitle: "Transformers for Image Recognition at Scale",
         img: "https://1.bp.blogspot.com/-_mnVfmzvJWc/X8gMzhZ7SkI/AAAAAAAAG24/8gW2AHEoqUQrBwOqjhYB37A7OOjNyKuNgCLcBGAsYHQ/s1600/image1.gif",
@@ -11,6 +47,7 @@ export const models = [
         demo: {
             type: "classification",
             api: "https://hf.space/gradioiframe/abidlabs/vision-transformer/+/api/predict/",
+            defaultSec: 3,
         },
         benchmark: true,
         studio: true,

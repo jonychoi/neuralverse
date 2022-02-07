@@ -4,16 +4,13 @@ import { Loading, Timer, InputAnyImage } from '../../../../components/common/loa
 import { postRequest } from '../../inference';
 import { InputBar } from './components';
 import {toDataURL} from '../utilities';
-import { bgStyler, blueLowColor, extremehueBlue } from '../../../../styles';
+import { bgStyler, extremehueBlue } from '../../../../styles';
 import styled from 'styled-components';
 
 const SelectBtn = styled(Flex)`
     opacity: 0.8;
     :hover {
         opacity: 1;
-        span {
-            font-weight: 500;
-        }
     };
     transition: all 300ms;
     cursor: pointer;
@@ -59,14 +56,21 @@ export const Generator = ({model, open, setOpen, darkMode}) => {
                     <Timer defaultSec={3} />
                 </Flex>}
             </Row>
-            {model.demo.models && <Col position="absolute" shadow={true} onClick={() => setModelSelect(!modelSelect)} style={{width: 250, height: modelSelect ? 45 * model.demo.models.length : 45, left: '22%', bottom: 0}} br="20px">
-                <Text color={darkMode ? extremehueBlue : blueLowColor} to="cursor" padding="padding: 10px 15px;">Model Selected: {_model}</Text>
-                {model.demo.models.map(item => <SelectBtn 
-                    padding="padding: 10px 15px;"
-                    to="cursor"
-                    key={item} onClick={() => set_Model(item)}><Text color={darkMode ? extremehueBlue : blueLowColor}>{item}</Text></SelectBtn>)}
+            {model.demo.models && !isLoading &&
+            <Col position="absolute" shadow={true} 
+                onClick={() => setModelSelect(!modelSelect)}
+                bg={bgStyler(darkMode)}
+                padding="padding: 0px 5px"
+                style={{width: 'auto', height: modelSelect ? 45 * model.demo.models.length : 40, transition: 'all 300ms', right: 10, top: 10, overflow: 'hidden'}} 
+                br="20px">
+                <Text color={darkMode ? extremehueBlue : "black"} to="cursor" size="14" weight="600" padding="padding: 10px 15px;">Model Selected: {_model}</Text>
+                {model.demo.models.map(item => 
+                    <SelectBtn 
+                        padding="padding: 10px 15px;"
+                        to="cursor"
+                        key={item} onClick={() => set_Model(item)}><Text size="14" color={darkMode ? extremehueBlue : "black"}>{item}</Text>
+                    </SelectBtn>)}
             </Col>}
-
         </Col>
     )
 };

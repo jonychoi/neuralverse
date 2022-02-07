@@ -83,7 +83,6 @@ export const ModelView = ({setModel, darkMode, task, subTask}) => {
         };
         opaciter();
     }, [task, subTask]);
-    console.log(task);
     
     return (
         <Col flex={3} margin="margin-top: 50px;">   
