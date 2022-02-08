@@ -3,6 +3,7 @@ import {Flex, Col, Row, Text, Image} from '../../../components/common/base';
 import { bgStyler } from '../../../styles';
 import Demo from '../demo';
 import Example from './example';
+import Articles from './articles';
 
 export const ModelSpecs = ({model, darkMode}) => {
     return (
@@ -59,6 +60,7 @@ export const ModelMain = ({model, darkMode}) => {
     return (
         <Col width="100%" margin="margin-top: 35px;">
             {model.demo && <Demo model={model} darkMode={darkMode} />}
+            {model.articles && <Articles model={model} darkMode={darkMode} />}
             <Task model={model} />
             <Row width="100%">
                 <LeaderBoards darkMode={darkMode} />

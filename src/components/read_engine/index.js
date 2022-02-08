@@ -12,10 +12,10 @@ export const ReadEngine = ({darkMode}) => {
             <div id="transparent" className="transparent"></div>
             <div className="center logo">
                 
-                <div className="center logo-message" style={{display: 'none'}}>
+                {/* <div className="center logo-message" style={{display: 'none'}}>
                     <div style={{height: 30, textAlign: 'center'}}>Version <span id="version" className="select">5.4.7</span></div>
                     <div style={{height: 30, textAlign: 'center'}}>Copyright © <a href="https://www.lutzroeder.com/" target="blank_">Lutz Roeder</a></div>
-                </div>
+                </div> */}
                 
                 <span className="center consent-message">This app uses cookies to report errors and anonymous usage information.</span>
                 <button id="consent-accept-button" className="center consent-accept-button">Accept</button>
