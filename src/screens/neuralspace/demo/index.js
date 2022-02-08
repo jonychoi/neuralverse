@@ -14,7 +14,7 @@ export const Demo = ({model, darkMode}) => {
         <Col>
             <Row align="center" margin="margin-bottom: 30px; margin-left: 20px;">
                 <DemoIcon width={23} height={23} />
-                <Text className='bold' size="22" margin="margin-left: 12px;">{model.title} Demo</Text>
+                <Text className='bold' size="22" margin="margin-left: 12px;">{model.demo.title ? model.demo.title : model.title} Demo</Text>
             </Row>
             <Flex shadow={true} height="470px" width="100%" margin="margin-bottom: 30px;" br="20px" bg={darkMode ? "rgba(30, 30, 30, 0.5)" : "rgba(255, 255, 255, 0.5)"} style={{overflow: 'hidden'}}>
                 {model.demo.type == "classification" && <Classifier model={model} open={open} setOpen={setOpen} darkMode={darkMode} />}

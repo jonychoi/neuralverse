@@ -34,10 +34,10 @@ export const data = [
            
         ],
         models: superResolution.models.concat(
+                imageGeneration.models,
+                imageClassification.models,
                 objectDetection.models,
                 styleTransfer.models,
-                imageClassification.models,
-                imageGeneration.models,
                 semanticsegmentation.models, 
                 selfSupervisedLearning.models,
                 depthEstimation.models,
