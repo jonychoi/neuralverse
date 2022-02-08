@@ -12,14 +12,14 @@ export const ReadEngine = ({darkMode}) => {
             <div id="transparent" className="transparent"></div>
             <div className="center logo">
                 
-                {/* <div className="center logo-message" style={{display: 'none'}}>
+                <div className="center logo-message" style={{display: 'none'}}>
                     <div style={{height: 30, textAlign: 'center'}}>Version <span id="version" className="select">5.4.7</span></div>
                     <div style={{height: 30, textAlign: 'center'}}>Copyright © <a href="https://www.lutzroeder.com/" target="blank_">Lutz Roeder</a></div>
-                </div> */}
+                </div>
                 
-                {/* <span className="center consent-message">This app uses cookies to report errors and anonymous usage information.</span>
+                <span className="center consent-message">This app uses cookies to report errors and anonymous usage information.</span>
                 <button id="consent-accept-button" className="center consent-accept-button">Accept</button>
-                <button id="open-file-button" className="center open-file-button">Open Model…</button> */}
+                <button id="open-file-button" className="center open-file-button">Open Model…</button>
                 <input type="file" id="open-file-dialog" className="open-file-dialog" multiple={false} accept=".onnx, .pb, .meta, .tflite, .lite, .tfl, .keras, .h5, .hd5, .hdf5, .json, .model, .mar, .params, .param, .armnn, .mnn, .ncnn, .tnnproto, .tmfile, .ms, .om, .nn, .uff, .rknn, .xmodel, .paddle, .pdmodel, .pdparams, .nb, .dnn, .cmf, .mlmodel, .mlpackage, .caffemodel, .pbtxt, .prototxt, .pkl, .pt, .pth, .ptl, .t7, .joblib, .cfg, .xml, .zip, .tar" />
             </div>
         </Flex>
