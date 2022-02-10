@@ -1,3 +1,5 @@
+import articles from './articles';
+
 export const models = [
     {
         writer_id: 'Neuralverse',
@@ -35,7 +37,8 @@ export const models = [
         task: {
             tasks: ["Image Generation", "Text-to-Image Generation", "Zero-Shot Text-to-Image Generation"],
             datasets: ["ImageNet", "COCO", "Conceptual Captions", "YFCC100M"],
-        }
+        },
+        articles: articles,
     },
 ]
 
