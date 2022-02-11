@@ -32,7 +32,7 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://jonychoi.github.io/neuralverse",
+  "homepage": "",
   "browserslist": {
     "production": [
       ">0.2%",

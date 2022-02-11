@@ -117,6 +117,8 @@ export const Input = styled.input`
     font-size: ${props => props.size ? props.size : 15}px;
     line-height: ${props => props.lh}px;
     color: ${props => props.color};
+    border: 0;
+    color: ${(props) => props.color ? props.color : (ThemeEvent().darkMode ? "white" : "black")};
     transition: all 300ms ease;
     ::placeholder {
         color: ${(props) => props.placeholderTextColor};
@@ -125,8 +127,8 @@ export const Input = styled.input`
 
 export const TextArea = styled.textarea`
     ${props => props.margin};
-    width: ${props => props.size ? props.size : props.width};
-    height: ${props => props.size ? props.size : props.height};
+    width: ${props => props.width};
+    height: ${props => props.height};
     background-color: ${props => props.bg};
     ${props => props.padding};
     border-radius: ${props => props.circle ? '50%' : props.br};
@@ -137,5 +139,14 @@ export const TextArea = styled.textarea`
     font-size: ${props => props.size ? props.size : 15}px;
     line-height: ${props => props.lh}px;
     color: ${props => props.color};
+    border: 0;
+    color: ${(props) => props.color ? props.color : (ThemeEvent().darkMode ? "white" : "black")};
     transition: all 300ms ease;
+    ::placeholder {
+        color: ${(props) => props.placeholderTextColor};
+    };
+    resize: none;
+    ::-webkit-scrollbar {
+        display: none;
+    }
 `;

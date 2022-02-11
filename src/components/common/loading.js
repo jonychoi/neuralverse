@@ -17,9 +17,9 @@ export const Loading = () => {
 }
 
 
-export const InputAnyImage = () => (
+export const InputAnyImage = ({text}) => (
     <Flex>
-        <Text>Please Input Any Image to Model 😊</Text>
+        <Text>{text ? text : "Please Input Any Image to Model 😊"}</Text>
     </Flex>
 )
 

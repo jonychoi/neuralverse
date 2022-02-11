@@ -37,7 +37,7 @@ export const Directory = ({darkMode, model, subTask, task}) => {
             </Row>
             {model && 
                 <Col>
-                    <Text style={{opacity: 0.8}} className="light" margin="margin-bottom: 10px;" weight="500">
+                    <Text style={{opacity: 0.8}} lh={20} className="light" margin="margin-bottom: 10px;" weight="500">
                         {model.paper.conference && model.paper.conference.name != null && <>
                             <Text size="14">{model.paper.conference.name}</Text>
                             <Text margin="margin: 0px 5px;" size="14">  ·  </Text>

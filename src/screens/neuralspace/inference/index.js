@@ -17,7 +17,32 @@ export const postRequest = (img, api_url, setResult, arg) => {
         body: JSON.stringify(data),
         headers: { "Content-Type": "application/json" }
     }).then(function (response) {
-        if (response.status == 200) {
+        if (response.status === 200) {
+            console.log("hi", response);
+            return response.json();
+        }
+        else {
+            console.log(response)
+        }
+    }).then(function (json_response) {
+        console.log("output", json_response)
+        setResult(json_response);
+        return json_response;
+    })
+}
+
+export const textPostRequest = (text, api_url, setResult) => {
+
+    let data = {"data": [text]};
+
+    console.log(data);
+
+    fetch(api_url, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" }
+    }).then(function (response) {
+        if (response.status === 200) {
             console.log("hi", response);
             return response.json();
         }

@@ -58,11 +58,11 @@ export const Task = ({setAbove, darkMode, content, setTask, setSubTask, type, se
                     </Row>
                     <Row margin="margin: 5px 0px;" align="center">
                         <BenchMarkIcon stroke={darkMode ? "#00B3DA" : blueColor} width={12.8} height={12.8} />
-                        <Text className="light" weight="400" margin="margin-left: 10px;" size="11">{content.benchmarkNum}100 Benchmarks</Text>
+                        <Text className="light" weight="400" margin="margin-left: 10px;" size="11">{content.benchmarkNum} Benchmarks</Text>
                     </Row>
                     <Row align="center">
                         <PaperswithCodeIcon stroke={darkMode ? "#00B3DA" : blueColor} width={12.8} height={12.8} />
-                        <Text className="light" weight="400" margin="margin-left: 10px;" size="11">{content.paperswithcodeNum}100 Papers with Code</Text>
+                        <Text className="light" weight="400" margin="margin-left: 10px;" size="11">{content.paperswithcodeNum} Papers with Code</Text>
                     </Row>
                 </Col>
             </Col>

@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import {Flex, Col, Row, Text, Image} from '../../../../components/common/base';
-import { Loading, Timer, InputAnyImage } from '../../../../components/common/loading';
-import { postRequest } from '../../inference';
+import {Flex, Col, Row, Text, Image} from '../../../../../components/common/base';
+import { Loading, Timer, InputAnyImage } from '../../../../../components/common/loading';
+import { textPostRequest } from '../../../inference';
 import { InputBar } from './components';
-import {toDataURL} from '../utilities';
-import { bgStyler, extremehueBlue } from '../../../../styles';
+import { bgStyler, extremehueBlue } from '../../../../../styles';
 import styled from 'styled-components';
 
 const SelectBtn = styled(Flex)`
@@ -17,19 +16,24 @@ const SelectBtn = styled(Flex)`
 `;
 
 
-export const Generator = ({model, open, setOpen, darkMode}) => {
+export const TextToImage = ({model, open, setOpen, darkMode}) => {
     const [displayImage, setDisplayImage] = useState();
     const [result, setResult] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
+    // if models exists
+    const [modelSelect, setModelSelect] = useState(false);
+    const [_model, set_Model] = useState(null);
 
-    // if model._models exist
-    const [modelSelect, setModelSelect] = useState(false);    
-    const [_model, set_Model] = useState(model.demo.models[0])
+    useEffect(() => {
+        if (model.demo.models){
+            set_Model(model.demo.models[0]);
+        };
+    }, [])
 
     const run = (text) => {     
         setIsLoading(true); 
-        postRequest(text, model.demo.api, setResult, _model);
+        textPostRequest(text, model.demo.api, setResult, _model);
     };
 
     useEffect(() => {
@@ -48,13 +52,14 @@ export const Generator = ({model, open, setOpen, darkMode}) => {
             <Row align="center" justify="center" width="100%" height="100%" padding={`padding-left: ${open ? '20%' : 0}`}>
         
                 <Col flex={3} width="100%" height="100%" align="center" justify="center">
-                    {displayImage ? !isLoading ? <Image width="100%" height="100%" of="cover" src={displayImage} /> : <Loading /> : isLoading ? <Loading /> : <InputAnyImage />}
+                    {displayImage ? !isLoading ? <Image width="100%" height="100%" of="cover" src={displayImage} /> : <Loading /> : isLoading ? <Loading /> : <InputAnyImage text="Please Input Any words or sentences to Model 😊" />}
                 </Col>
 
                 {isLoading && <Flex position="absolute" style={{right: 10, top: 10}} zIndex={1000}>
                     <Timer defaultSec={3} />
                 </Flex>}
             </Row>
+
             {model.demo.models && !isLoading &&
             <Col position="absolute" shadow={true} 
                 onClick={() => setModelSelect(!modelSelect)}
@@ -69,9 +74,10 @@ export const Generator = ({model, open, setOpen, darkMode}) => {
                         to="cursor"
                         key={item} onClick={() => set_Model(item)}><Text size="14" color={darkMode ? extremehueBlue : "black"}>{item}</Text>
                     </SelectBtn>)}
-            </Col>}d
+            </Col>}
+            
         </Col>
     )
 };
 
-export default Generator;
+export default TextToImage;

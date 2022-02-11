@@ -14,7 +14,7 @@ export const ModelConfig = ({model, darkMode, setVisualizer, visualizer}) => {
                     <PaperIcon stroke={darkMode ? "white" : "black"} height={15} width={15} />
                 </Flex>
                 <Text className="light" margin="margin-left: 10px; margin-bottom: 3px;" size="11" weight="500">
-                    <a href={model.paper} target="_blank">
+                    <a style={{color: darkMode ? "white" : "black"}} href={model.paper} target="_blank">
                         Paper
                     </a>
                 </Text>
@@ -22,7 +22,7 @@ export const ModelConfig = ({model, darkMode, setVisualizer, visualizer}) => {
             <Row padding="padding: 3px" to="cursor" cursorOpaFalse={true} align="center">
                 <CodeIcon stroke={darkMode ? "white" : "black"} height={18} width={18} />
                 <Text className="light" margin="margin-left: 10px; margin-bottom: 3px;" size="11" weight="500">
-                    <a href={model.code} target="_blank">
+                    <a style={{color: darkMode ? "white" : "black"}} href={model.code} target="_blank">
                         Code
                     </a>
                 </Text>
