@@ -12,12 +12,12 @@ import { ThemeEvent } from '../../contexts/GlobalContext';
 import { Flex } from '../../components/common/base';
 
 
-export const Landing = ({route}) => {
+export const Landing = ({route, setRoute}) => {
     const {darkMode} = ThemeEvent();
     return (
         <Flex style={{display: route == 0 ? 'block': 'none', backgroundColor: darkMode ? "black" : "white"}}>
             <Landing1 darkMode={darkMode} />
-            <Landing8 />
+            <Landing8 setRoute={setRoute}/>
             <Landing2 />
             <Landing3 />
             <Landing4 />

@@ -27,7 +27,7 @@ export const App = ({}) => {
       <div style={{overflowX: 'hidden'}}>
         <GlobalStyle darkMode={darkMode} />
         <Header route={route} setRoute={setRoute} />
-        <Landing route={route} />
+        <Landing route={route} setRoute={setRoute} />
         <Nfts route={route}/>
         <Login route={route} />
         <Profile route={route}/>

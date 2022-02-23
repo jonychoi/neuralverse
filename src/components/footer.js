@@ -26,20 +26,20 @@ const textstyle = (darkMode) => {
 
 export const Footer = ({darkMode}) => {
     return (
-        <Row height="300px;" justify="space-between" padding="padding: 55px;" bg={bgStyler(darkMode)}>
+        <Row height="300px;" align="center" justify="space-between" padding="padding: 55px;" bg={bgStyler(darkMode)}>
             <Col align="center">
                 <Row align="center">
                     <Image height="25px" src={logo} />
                 </Row>
-                <Text style={textstyle(darkMode)} className="light" margin="margin-top: 20px;">© 2022 Neuralverse. All right reserved.</Text>
+                <Text style={textstyle(darkMode)} className="light" margin="margin-top: 20px;">© 2022 Neural Lab. All right reserved.</Text>
                 <Text style={textstyle(darkMode)} className="light" margin="margin-top: 10px;">Powered By Computer Vision Laboratory</Text>
                 <Row margin="margin-top: 30px;">
                     <Text style={textstyle(darkMode)} className="light">Technical Supports:</Text>
-                    <Text style={textstyle(darkMode)} className="light" margin="margin-left: 5px;">support@neuralverse.us</Text>
+                    <Text style={textstyle(darkMode)} className="light" margin="margin-left: 5px;">support@neurallab.us</Text>
                 </Row>
                 <Row margin="margin-top: 10px;">
                     <Text style={textstyle(darkMode)} className="light">Other Supports:</Text>
-                    <Text style={textstyle(darkMode)} className="light" margin="margin-left: 5px;">team@neuralverse.us</Text>
+                    <Text style={textstyle(darkMode)} className="light" margin="margin-left: 5px;">team@neurallab.us</Text>
                 </Row>
             </Col>            
             <Col align="center">
@@ -69,6 +69,7 @@ export const Footer = ({darkMode}) => {
                     <Text style={textstyle(darkMode)} margin="margin-top: 15px;" className="light">Contact Us</Text>
                     <Text style={textstyle(darkMode)} margin="margin-top: 15px;" className="light">Terms of Service</Text>
                     <Text style={textstyle(darkMode)} margin="margin-top: 15px;" className="light">Privacy Policy</Text>
+                    <Text style={textstyle(darkMode)} margin="margin-top: 15px;" className="light">Github</Text>
                 </Col>
             </Col>
             <Col align="center">
@@ -78,7 +79,7 @@ export const Footer = ({darkMode}) => {
                 <Text style={textstyle(darkMode)} lh={26} className='light'>Dept. of Computer Science & Engineering</Text>
                 <Text margin="margin-top: 5px;" style={textstyle(darkMode)} className="light">College of Informatics, Korea University</Text>
                 <Text style={textstyle(darkMode)} lh={26} className="light" margin="margin-top: 20px;">309C (309D, 404C), Science Library, Korea University,</Text>
-                <Text style={textstyle(darkMode)} className="light" margin="margin-top: 10px;">145 Anam-ro, Seongbuk-gu, Seoul, 02841, Korea</Text>
+                <Text style={textstyle(darkMode)} className="light" margin="margin-top: 5px;">145 Anam-ro, Seongbuk-gu, Seoul, 02841, Korea</Text>
             </Col>
         </Row>
     )

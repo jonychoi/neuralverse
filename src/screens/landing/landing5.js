@@ -7,7 +7,7 @@ import logo from '../../imgs/logo.png';
 export const Index = ({}) => {
     return (
         <Row align="center" justify="center" style={{height: '70vh'}} padding="padding: 10%" position="relative">
-            <Row align="center" position="absolute" style={{left: '5%', top: '5%'}}>
+            <Row align="center" position="absolute" style={{left: '15%', top: '5%'}}>
                 <Image src={logo} width={50} />
                 <Text className="bold" size="18" margin="margin-left: 15px;">NEURAL OPS</Text>
             </Row>

@@ -40,8 +40,11 @@ export const Header = ({loggedIn = false, setRoute, route}) => {
                 <a href="/" onClick={() => setRoute(0)}>
                     <Row to="cursor" align="center" padding="padding: 30px;" position="relative" style={{width: 300}}>
                         <Image width="43px;" src={logo} />
-                        <Flex position="absolute" style={{left: 73, opacity: route != 4 && route !=3 && route != 5 ? 1 : 0, transition: 'all 500ms ease'}}>
-                            <Text margin="margin-left: 15px;" className="light" weight="700" size="18">NEURALVERSE</Text>
+                        <Flex position="absolute" style={{left: 73, opacity: route == 0 ? 1 : 0, transition: 'all 500ms ease'}}>
+                            <Text margin="margin-left: 15px;" className="light" weight="700" size="18">NEURAL LAB</Text>
+                        </Flex>
+                        <Flex position="absolute" style={{left: 73, opacity: route == 1 ? 1 : 0, transition: 'all 500ms ease'}}>
+                            <Text margin="margin-left: 15px;" className="light" weight="700" size="18">NEURAL VERSE</Text>
                         </Flex>
                         <Flex position="absolute" style={{left: 73, opacity: route == 3 ? 1 : 0, transition: 'all 500ms ease'}}>
                             <Text margin="margin-left: 15px;" className="light" weight="700" size="18">NEURAL SPACE</Text>
@@ -58,7 +61,7 @@ export const Header = ({loggedIn = false, setRoute, route}) => {
             </Row>
             <DesignHeader route={route} headerShown={headerShown}/>
             <OpsHeader route={route} headerShown={headerShown}/>
-            <Row align="center" justify="space-between" flex={route == 4 || route == 5 ? headerShown ? 3 : 0 : 3} height="100%" style={{opacity: route == 4 || route == 5 ? headerShown ? 1 : 0 : 1, transition: 'all 500ms ease', overflow: 'hidden'}}>
+            <Row align="center" justify="space-between" flex={route == 4 || route == 5 ? headerShown ? 4 : 0 : 4} height="100%" style={{opacity: route == 4 || route == 5 ? headerShown ? 1 : 0 : 1, transition: 'all 500ms ease', overflow: 'hidden'}}>
                 <a onClick={() => setRoute(1)}>
                     <Row align="center" hover={hoverTrend} onMouseOver={() => setHoverTrend(true)} onMouseLeave={() => setHoverTrend(false)} >
                         <VerseIcon width={22} />
