@@ -27,10 +27,9 @@ const textstyle = (darkMode) => {
 export const Footer = ({darkMode}) => {
     return (
         <Row height="300px;" justify="space-between" padding="padding: 55px;" bg={bgStyler(darkMode)}>
-            <Col>
+            <Col align="center">
                 <Row align="center">
-                    <Image height="20px" src={logo} />
-                    <Text className="light" margin="margin-left: 10px;">NEURALVERSE</Text>
+                    <Image height="25px" src={logo} />
                 </Row>
                 <Text style={textstyle(darkMode)} className="light" margin="margin-top: 20px;">© 2022 Neuralverse. All right reserved.</Text>
                 <Text style={textstyle(darkMode)} className="light" margin="margin-top: 10px;">Powered By Computer Vision Laboratory</Text>
@@ -42,7 +41,7 @@ export const Footer = ({darkMode}) => {
                     <Text style={textstyle(darkMode)} className="light">Other Supports:</Text>
                     <Text style={textstyle(darkMode)} className="light" margin="margin-left: 5px;">team@neuralverse.us</Text>
                 </Row>
-            </Col>
+            </Col>            
             <Col align="center">
                 <Text className="light">SERVICES</Text>
                 <Col align="center">
@@ -72,13 +71,14 @@ export const Footer = ({darkMode}) => {
                     <Text style={textstyle(darkMode)} margin="margin-top: 15px;" className="light">Privacy Policy</Text>
                 </Col>
             </Col>
-            <Col align="flex-end">
-                <Row align="center" margin="margin-bottom: 15px;">
-                    <Text className="light" margin="margin-right: 15px;margin-bottom: 5px;">COMPUTER VISION LAB</Text>
+            <Col align="center">
+                <Flex align="center" margin="margin-bottom: 10px;">
                     <Image src={cvlab} height="23px" />
-                </Row>
-                <Text style={{...textstyle(darkMode), textAlign: "right"}} lh={26} className='light'>Dept. of Computer Science & Engineering<br></br>College of Informatics, Korea University</Text>
-                <Text style={{...textstyle(darkMode), textAlign: "right"}} lh={26} className="light" margin="margin-top: 20px;">309C (309D, 404C), Science Library, Korea University, <br></br>145 Anam-ro, Seongbuk-gu, Seoul, 02841, Korea</Text>
+                </Flex>
+                <Text style={textstyle(darkMode)} lh={26} className='light'>Dept. of Computer Science & Engineering</Text>
+                <Text margin="margin-top: 5px;" style={textstyle(darkMode)} className="light">College of Informatics, Korea University</Text>
+                <Text style={textstyle(darkMode)} lh={26} className="light" margin="margin-top: 20px;">309C (309D, 404C), Science Library, Korea University,</Text>
+                <Text style={textstyle(darkMode)} className="light" margin="margin-top: 10px;">145 Anam-ro, Seongbuk-gu, Seoul, 02841, Korea</Text>
             </Col>
         </Row>
     )

@@ -52,7 +52,8 @@ export const Flex = styled.div`
         display: none;
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;
-      }`}
+      }`};
+    ${(props) => (props.bw || props.bc) && `border: ${props.bw ? props.bw : 1}px solid ${props.bc ? props.bc : "white"} `}
 `;
 
 export const Row = styled(Flex)`
