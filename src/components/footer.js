@@ -31,15 +31,15 @@ export const Footer = ({darkMode}) => {
                 <Row align="center">
                     <Image height="25px" src={logo} />
                 </Row>
-                <Text style={textstyle(darkMode)} className="light" margin="margin-top: 20px;">© 2022 Neural Lab. All right reserved.</Text>
+                <Text style={textstyle(darkMode)} className="light" margin="margin-top: 20px;">© 2022 NeuralVerse. All right reserved.</Text>
                 <Text style={textstyle(darkMode)} className="light" margin="margin-top: 10px;">Powered By Computer Vision Laboratory</Text>
                 <Row margin="margin-top: 30px;">
                     <Text style={textstyle(darkMode)} className="light">Technical Supports:</Text>
-                    <Text style={textstyle(darkMode)} className="light" margin="margin-left: 5px;">support@neurallab.us</Text>
+                    <Text style={textstyle(darkMode)} className="light" margin="margin-left: 5px;">support@neuralverse.us</Text>
                 </Row>
                 <Row margin="margin-top: 10px;">
                     <Text style={textstyle(darkMode)} className="light">Other Supports:</Text>
-                    <Text style={textstyle(darkMode)} className="light" margin="margin-left: 5px;">team@neurallab.us</Text>
+                    <Text style={textstyle(darkMode)} className="light" margin="margin-left: 5px;">team@neuralverse.us</Text>
                 </Row>
             </Col>            
             <Col align="center">

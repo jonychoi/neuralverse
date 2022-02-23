@@ -41,7 +41,7 @@ export const Header = ({loggedIn = false, setRoute, route}) => {
                     <Row to="cursor" align="center" padding="padding: 30px;" position="relative" style={{width: 300}}>
                         <Image width="43px;" src={logo} />
                         <Flex position="absolute" style={{left: 73, opacity: route == 0 ? 1 : 0, transition: 'all 500ms ease'}}>
-                            <Text margin="margin-left: 15px;" className="light" weight="700" size="18">NEURAL LAB</Text>
+                            <Text margin="margin-left: 15px;" className="light" weight="700" size="18">NEURALVERSE</Text>
                         </Flex>
                         <Flex position="absolute" style={{left: 73, opacity: route == 1 ? 1 : 0, transition: 'all 500ms ease'}}>
                             <Text margin="margin-left: 15px;" className="light" weight="700" size="18">NEURAL VERSE</Text>
