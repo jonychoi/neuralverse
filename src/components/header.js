@@ -116,7 +116,7 @@ export const Header = ({loggedIn = false, setRoute, route}) => {
                             </Flex>
                         </a>
                         <a onClick={() => setRoute(5)}>
-                            <Flex margin="margin-left: 30px;" to="cursor" width="80px" height="25px" justify="center" align="center" br="15px" bw={2} bc={purColor}>
+                            <Flex margin="margin-left: 30px;" to="cursor" width="80px" height="25px" justify="center" align="center" br="15px" bw={2} bc={blueColor}>
                                 <Text className="light" size="12" weight="600">SIGNUP</Text>
                             </Flex>
                         </a>

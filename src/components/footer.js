@@ -35,11 +35,11 @@ export const Footer = ({darkMode}) => {
                 <Text style={textstyle(darkMode)} className="light" margin="margin-top: 10px;">Powered By Computer Vision Laboratory</Text>
                 <Row margin="margin-top: 30px;">
                     <Text style={textstyle(darkMode)} className="light">Technical Supports:</Text>
-                    <Text style={textstyle(darkMode)} className="light" margin="margin-left: 5px;">support@neuralverse.us</Text>
+                    <Text style={textstyle(darkMode)} className="light" margin="margin-left: 5px;">support@neuralverse.ai</Text>
                 </Row>
                 <Row margin="margin-top: 10px;">
                     <Text style={textstyle(darkMode)} className="light">Other Supports:</Text>
-                    <Text style={textstyle(darkMode)} className="light" margin="margin-left: 5px;">team@neuralverse.us</Text>
+                    <Text style={textstyle(darkMode)} className="light" margin="margin-left: 5px;">team@neuralverse.ai</Text>
                 </Row>
             </Col>            
             <Col align="center">

@@ -11,7 +11,7 @@ export const Index = ({route, setRoute}) => {
             <Text className="bold" size="30">THE MOST SOPHISCATED END-TO-END DEEP-LEARNING OPS</Text>
             <Row align="center" justify="space-between" flex={1}>
                 <a onClick={() => setRoute(1)}>
-                    <Col padding="padding: 20px" width="300px" height="90%" bw={2} br="20px" bc="grey" align="center">
+                    <Col padding="padding: 20px" width="300px" height="90%" br="20px" align="center">
                         <Row align="center">
                             <VerseIcon width={22} />
                             <Flex to="cursor" padding="padding: 10px 15px 10px 15px;">
@@ -21,7 +21,7 @@ export const Index = ({route, setRoute}) => {
                     </Col>
                 </a>
                 <a onClick={() => setRoute(3)}>
-                    <Col padding="padding: 20px" width="300px" height="90%" bw={2} br="20px" bc="grey" align="center">
+                    <Col padding="padding: 20px" width="300px" height="90%" br="20px" align="center">
                         <Row align="center">
                             <SpaceIcon width={22} />
                             <Flex to="cursor" padding="padding: 10px 15px 10px 15px;">
@@ -31,7 +31,7 @@ export const Index = ({route, setRoute}) => {
                     </Col>
                 </a>
                 <a onClick={() => setRoute(4)}>
-                    <Col padding="padding: 20px" width="300px" height="90%" bw={2} br="20px" bc="grey" align="center">
+                    <Col padding="padding: 20px" width="300px" height="90%" br="20px" align="center">
                         <Row align="center">
                             <DesignIcon width={30} height={30} />
                             <Flex to="cursor" padding="padding: 10px 15px 10px 15px;">
@@ -41,7 +41,7 @@ export const Index = ({route, setRoute}) => {
                     </Col>
                 </a>
                 <a onClick={() => setRoute(5)}>
-                    <Col padding="padding: 20px" width="300px" height="90%" bw={2} br="20px" bc="grey" align="center">
+                    <Col padding="padding: 20px" width="300px" height="90%" br="20px" align="center">
                         <Row align="center">
                             <Image src={logo} width={30} />
                             <Flex to="cursor" padding="padding: 10px 15px 10px 12.8px;">
@@ -51,7 +51,7 @@ export const Index = ({route, setRoute}) => {
                     </Col>
                 </a>
                 <a onClick={() => setRoute(5)}>
-                    <Col padding="padding: 20px" width="300px" height="90%" bw={2} br="20px" bc="grey" align="center">
+                    <Col padding="padding: 20px" width="300px" height="90%" br="20px" align="center">
                         <Row align="center">
                             <CodeIcon stroke1={redColor} stroke2={blueColor} stroke3={blueColor} height={15} width={25} />
                             <Flex to="cursor" padding="padding: 10px 15px 10px 12.8px;">
