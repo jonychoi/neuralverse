@@ -1,4 +1,4 @@
-# NeuralVerse
+# Neuralverse
 
 Beyond the State of the Arts
 
