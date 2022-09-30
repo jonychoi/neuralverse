@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/neuralverse/static/css/main.d12a5c3a.css",
-    "main.js": "/neuralverse/static/js/main.eda63d27.js",
+    "main.js": "/neuralverse/static/js/main.d0869701.js",
     "static/media/best.mp4": "/neuralverse/static/media/best.b49256fe08856be28687.mp4",
     "static/media/gd.mp4": "/neuralverse/static/media/gd.9e30c5cd75c217cf1da5.mp4",
     "static/media/monc.jpeg": "/neuralverse/static/media/monc.ce319b044544042d371f.jpeg",
@@ -15,7 +15,6 @@
     "static/media/mountain.jpeg": "/neuralverse/static/media/mountain.dbdb7615c7ca57f5a168.jpeg",
     "static/media/computer vision.jpg": "/neuralverse/static/media/computer vision.df2e8b3a32981ffced18.jpg",
     "static/media/generalization.png": "/neuralverse/static/media/generalization.d4aefbef992f141df881.png",
-    "static/media/kim.png": "/neuralverse/static/media/kim.a8f493f1070caa5dff5c.png",
     "static/media/city.jpg": "/neuralverse/static/media/city.801c4882d48380f201dd.jpg",
     "static/media/logo.png": "/neuralverse/static/media/logo.8e279d6862ea94ece506.png",
     "static/media/image classification.jpeg": "/neuralverse/static/media/image classification.b371f55cd52e52bc00ea.jpeg",
@@ -36,10 +35,10 @@
     "index.html": "/neuralverse/index.html",
     "static/media/generate.svg": "/neuralverse/static/media/generate.97ba3536b34ba465fb9637bbd57ffe8b.svg",
     "main.d12a5c3a.css.map": "/neuralverse/static/css/main.d12a5c3a.css.map",
-    "main.eda63d27.js.map": "/neuralverse/static/js/main.eda63d27.js.map"
+    "main.d0869701.js.map": "/neuralverse/static/js/main.d0869701.js.map"
   },
   "entrypoints": [
     "static/css/main.d12a5c3a.css",
-    "static/js/main.eda63d27.js"
+    "static/js/main.d0869701.js"
   ]
 }
