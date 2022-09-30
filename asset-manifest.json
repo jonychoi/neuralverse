@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/neuralverse/static/css/main.d12a5c3a.css",
-    "main.js": "/neuralverse/static/js/main.d0869701.js",
+    "main.js": "/neuralverse/static/js/main.961f3bda.js",
     "static/media/best.mp4": "/neuralverse/static/media/best.b49256fe08856be28687.mp4",
     "static/media/gd.mp4": "/neuralverse/static/media/gd.9e30c5cd75c217cf1da5.mp4",
     "static/media/monc.jpeg": "/neuralverse/static/media/monc.ce319b044544042d371f.jpeg",
@@ -35,10 +35,10 @@
     "index.html": "/neuralverse/index.html",
     "static/media/generate.svg": "/neuralverse/static/media/generate.97ba3536b34ba465fb9637bbd57ffe8b.svg",
     "main.d12a5c3a.css.map": "/neuralverse/static/css/main.d12a5c3a.css.map",
-    "main.d0869701.js.map": "/neuralverse/static/js/main.d0869701.js.map"
+    "main.961f3bda.js.map": "/neuralverse/static/js/main.961f3bda.js.map"
   },
   "entrypoints": [
     "static/css/main.d12a5c3a.css",
-    "static/js/main.d0869701.js"
+    "static/js/main.961f3bda.js"
   ]
 }
