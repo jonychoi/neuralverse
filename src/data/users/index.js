@@ -3,7 +3,6 @@ import me from './avatars/me.jpeg';
 import kaiming from './avatars/kaiminghe.jpg';
 import rohit from './avatars/rohit.png';
 import thomas from './avatars/thomas.jpg';
-import kim from './avatars/kim.png'
 
 export default [
     {
