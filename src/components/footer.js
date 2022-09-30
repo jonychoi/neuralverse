@@ -72,15 +72,6 @@ export const Footer = ({darkMode}) => {
                     <Text style={textstyle(darkMode)} margin="margin-top: 15px;" className="light">Github</Text>
                 </Col>
             </Col>
-            <Col align="center">
-                <Flex align="center" margin="margin-bottom: 10px;">
-                    <Image src={cvlab} height="23px" />
-                </Flex>
-                <Text style={textstyle(darkMode)} lh={26} className='light'>Dept. of Computer Science & Engineering</Text>
-                <Text margin="margin-top: 5px;" style={textstyle(darkMode)} className="light">College of Informatics, Korea University</Text>
-                <Text style={textstyle(darkMode)} lh={26} className="light" margin="margin-top: 20px;">309C (309D, 404C), Science Library, Korea University,</Text>
-                <Text style={textstyle(darkMode)} className="light" margin="margin-top: 5px;">145 Anam-ro, Seongbuk-gu, Seoul, 02841, Korea</Text>
-            </Col>
         </Row>
     )
 };
