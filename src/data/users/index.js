@@ -29,32 +29,6 @@ export default [
         researchInterests: ["Computer Vision", "Deep Learning"],
     },
     {
-        id: "00003",
-        userId: "seunryongkim",
-        name: "Seungryong Kim",
-        avatar: kim,
-        briefIntroduction: "Assistant Professor at Korea University",
-        fullIntroduction: "I am an Assistant Professor at Dept. of Computer Science and Engineering, Korea University, Seoul, Korea. Before joining Korea University, I was a postdoctoral researcher in School of Computer and Communication Science  at École Polytechnique Fédérale de Lausanne (EPFL), Lausanne, Switzerland, and a postdoctoral researcher in School of Electrical and Electronic Engineering at Yonsei University, Seoul, Korea. I was a research intern at Microsoft Research Asia (MSRA), Beijing, China. I received the B.S. and Ph.D. degrees in School of Electrical and Electronic Engineering at Yonsei University, Seoul, Korea, in 2012 and 2018, respectively. My research interests include Computer Vision, Computational Photography, Machine Learning, and Deep Learning, particularly representation learning, visual scene reconstruction and understanding.",
-        workingPlace: "Korea University",
-        location: "Seoul, South Korea",
-        position: "Assistant Professor, Ph.D.",
-        contact: {
-            email: "seungryong_kim@korea.ac.kr",
-            phone: "",
-            homepage: "https://seungryong.github.io/",
-            github: "",
-            twitter: "",
-        },
-        activities: [
-            "Member of IEEE, Professional Member of ACM", "Organizer: The 1st Workshop on Customized Chat Grounding Persona and Knowledge at COLING 2022", "Program Committee: 1st Workshop on Traditional Computer Vision in the Age of Deep Learning (TradiCV) at ICCV 2021", "Area Chair: International Conference on 3D Vision (3DV), 2020", "Publication Chair: The 1st Workshop and Challenge on Comprehensive Video Understanding in the Wild (CoVieW’18) at ACM MM 2018", "Reviewers: AAAI Conference on Artificial Intelligence (AAAI), 2021", "Reviewers: International Conference on Learning Representations (ICLR), 2021", "Reviewers: Neural Information Processing Systems (NeurIPS), 2020", "Reviewers: European Conference on Computer Vision (ECCV), 2020", "Reviewers: Computer Vision and Pattern Recognition (CVPR), 2020", "Reviewers: AAAI Conference on Artificial Intelligence (AAAI), 2020", "Reviewers: International Conference on Computer Vision (ICCV), 2019", "Reviewers: Computer Vision and Pattern Recognition (CVPR), 2019", "Reviewers: IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)",
-        ],
-        googleScholar: "https://scholar.google.com/citations?user=cIK1hS8AAAAJ&hl=en",
-        awards: [
-            "Outstanding Lecture Aware at Korea University, 2021, 2022", "Award Certification by Korean Ministry of Education (교육부 장관상), 2021", "Chun-Gang Outstanding Research Award, Chun-Gang Memorial Foundation, 2018", "Doctoral Consortium Award, IEEE ICCV, 2017", "Honorable Mention Award, Outstanding Research Award, Yonsei University, 2017", "Microsoft Research Asia Fellowship Nomination Award, 2016", "Runner-up Award, Hackatone Competition, HYUNDAI Motor Group, 2016", "Bronze Award, IEEE Student Paper Contest, IEEE Seoul Section, 2012", "Volunteer Award, IEEE Broadcast Technology Society, 2012", "Honor Graduation Award, Yonsei University, 2012", "Best Award, COEX 2011 Capstone Design Symposium, 2011", "Best Award, Capstone Design Symposium, Korea University, 2011", "Best Award, Creative Research Competition, Yonsei University, 2011",
-        ],
-        researchInterests: ["Computer Vision", "Computational Photography", "Machine Learning", "Deep Learning", "Representation learning", "Visual Scene Reconstruction", "Visual Scene Understanding"],
-    },
-    {
         id: "00004",
         userId: "rohit",
         name: "Rohit Girdhar",
