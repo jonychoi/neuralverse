@@ -26,7 +26,7 @@ const textstyle = (darkMode) => {
 
 export const Footer = ({darkMode}) => {
     return (
-        <Row height="300px;" align="center" justify="space-between" padding="padding: 55px; padding-right: 100px;" bg={bgStyler(darkMode)}>
+        <Row height="300px;" align="center" justify="space-between" padding="padding: 55px; padding-right: 150px" bg={bgStyler(darkMode)}>
             <Col align="center">
                 <Image height="25px" src={logo} />
                 <Text style={textstyle(darkMode)} className="light" margin="margin-top: 20px;">© 2022 NeuralVerse. All right reserved.</Text>
