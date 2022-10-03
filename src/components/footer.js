@@ -28,11 +28,8 @@ export const Footer = ({darkMode}) => {
     return (
         <Row height="300px;" align="center" justify="space-between" padding="padding: 55px;" bg={bgStyler(darkMode)}>
             <Col align="center">
-                <Row align="center">
-                    <Image height="25px" src={logo} />
-                </Row>
+                <Image height="25px" src={logo} />
                 <Text style={textstyle(darkMode)} className="light" margin="margin-top: 20px;">© 2022 NeuralVerse. All right reserved.</Text>
-                <Text style={textstyle(darkMode)} className="light" margin="margin-top: 10px;">Powered By Computer Vision Laboratory</Text>
                 <Row margin="margin-top: 30px;">
                     <Text style={textstyle(darkMode)} className="light">Technical Supports:</Text>
                     <Text style={textstyle(darkMode)} className="light" margin="margin-left: 5px;">support@neuralverse.ai</Text>
@@ -62,7 +59,7 @@ export const Footer = ({darkMode}) => {
                     <Text style={textstyle(darkMode)} margin="margin-top: 15px;" className="light">Neural Discuss</Text>
                 </Col>
             </Col>
-            <Col align="center">
+            <Col align="center" margin="margin-right: 25px;">
                 <Text className="light">NEURALVERSE</Text>
                 <Col align="center">
                     <Text style={textstyle(darkMode)} margin="margin-top: 20px;" className="light">About Us</Text>
