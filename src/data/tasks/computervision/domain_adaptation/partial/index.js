@@ -1,3 +1,4 @@
+import React from 'react';
 import partial from './imgs/partial.png';
 
 export const Partial = {
