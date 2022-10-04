@@ -1,5 +1,4 @@
 import React from 'react';
-
 import unsupervised from './imgs/unsupervised.png';
 
 export const Unsupervised = {
