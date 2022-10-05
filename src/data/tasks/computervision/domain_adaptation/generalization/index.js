@@ -1,3 +1,4 @@
+import React from 'react';
 import generalization from './imgs/generalization.png';
 
 export const DomainGeneralization = {
