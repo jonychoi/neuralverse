@@ -1,3 +1,4 @@
+import React from 'react';
 import imageclassificationimg from './imgs/image classification.jpeg';
 import knowledgeDistillation from './knowledge_distillation';
 import selfsupervised from './self-supervised';

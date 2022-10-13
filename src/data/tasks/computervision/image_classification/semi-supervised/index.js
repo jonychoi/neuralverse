@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const SemiSupervised = {
     title: 'Semi-Supervised Image Classification',
     img: "https://production-media.paperswithcode.com/thumbnails/task/task-0000001329-ea5992e0_Tmg8Zxv.jpg",

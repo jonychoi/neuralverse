@@ -1,3 +1,4 @@
+import React from 'react';
 import fewshotsegmentation from './imgs/fewshotsegmentation.png';
 
 import fewshotimageclassification from './few-shot image classification';

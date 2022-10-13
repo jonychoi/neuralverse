@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const Face = {
     title: 'Face Generation',
     img: "https://production-media.paperswithcode.com/thumbnails/task/task-0000000990-2d591218_2jUWb8G.jpg",

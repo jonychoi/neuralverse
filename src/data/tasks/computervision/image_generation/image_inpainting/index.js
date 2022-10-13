@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const ImageImpainting = {
     title: 'Image Inpainting',
     img: "https://production-media.paperswithcode.com/thumbnails/task/task-0000000709-54774675.jpg",

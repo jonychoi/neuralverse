@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const SelfSupervised = {
     title: 'Self-Supervised Image Classification',
     img: "https://production-media.paperswithcode.com/thumbnails/task/task-0000001822-74049cbf_Ww04ZD0.jpg",

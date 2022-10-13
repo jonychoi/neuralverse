@@ -1,3 +1,4 @@
+import React from 'react';
 import conditional from './conditional';
 import face from './face';
 import imagetoimagetranslation from "./imagetoimagetranslation";
