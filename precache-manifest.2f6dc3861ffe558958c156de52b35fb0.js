@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "c7fd14bb8ec1e2f43e16",
-    "url": "/neuralverse/static/css/main.bc28c183.chunk.css"
+    "revision": "ec8a37c3dffbfea2db2b",
+    "url": "/neuralverse/static/css/main.644f732f.chunk.css"
   },
   {
-    "revision": "c7fd14bb8ec1e2f43e16",
-    "url": "/neuralverse/static/js/main.c7fd14bb.chunk.js"
+    "revision": "ec8a37c3dffbfea2db2b",
+    "url": "/neuralverse/static/js/main.ec8a37c3.chunk.js"
   },
   {
-    "revision": "fe415ba2c7b72668723e",
-    "url": "/neuralverse/static/js/1.fe415ba2.chunk.js"
+    "revision": "22c3efe49dcff7e28b0c",
+    "url": "/neuralverse/static/js/1.22c3efe4.chunk.js"
   },
   {
     "revision": "ccad2834692b315e78ba",
@@ -58,6 +58,10 @@ self.__precacheManifest = [
   {
     "revision": "d1e7aee69d3761841c93b3c2a78db41a",
     "url": "/neuralverse/static/media/gd.d1e7aee6.mp4"
+  },
+  {
+    "revision": "bedf6a1b29ed52e23aba6e09114b496d",
+    "url": "/neuralverse/static/media/satelite.bedf6a1b.jpg"
   },
   {
     "revision": "ec15cce5e6ac77dabc2ca49ee5fa562a",
@@ -136,11 +140,15 @@ self.__precacheManifest = [
     "url": "/neuralverse/static/media/cvlab.76b6db16.png"
   },
   {
+    "revision": "dc6c314a947916c197649e8bd7268723",
+    "url": "/neuralverse/static/media/streetview.dc6c314a.jpg"
+  },
+  {
     "revision": "44f88a0d0338c3971d5e18f8dac4ef1a",
     "url": "/neuralverse/static/media/computer vision.44f88a0d.jpg"
   },
   {
-    "revision": "0b49642ee21bd6afb3df4ddaceefd988",
+    "revision": "339a3d274f5cba2cafaa1e3698dd2bb1",
     "url": "/neuralverse/index.html"
   }
 ];

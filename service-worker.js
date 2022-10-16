@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/neuralverse/precache-manifest.cd629b320cd09f40f524134d00adf016.js"
+  "/neuralverse/precache-manifest.2f6dc3861ffe558958c156de52b35fb0.js"
 );
 
 workbox.clientsClaim();
