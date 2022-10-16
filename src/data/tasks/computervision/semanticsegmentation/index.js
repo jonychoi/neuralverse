@@ -4,6 +4,7 @@ import panopticsegmentation from './panoptic';
 import scenesegmentation from './scene';
 import medicalsegmentation from './medical';
 import weaklysegmentation from './weakly-supervised';
+import backgroundRemover from './background_remover';
 
 import models from './models';
 
@@ -18,13 +19,15 @@ export const SemanticSegmentation = {
         scenesegmentation,
         medicalsegmentation, 
         weaklysegmentation,
+        backgroundRemover,
     ],
     models: models.concat(
         _3dSegmentation.models,
         panopticsegmentation.models,
         scenesegmentation.models,
         medicalsegmentation.models,
-        weaklysegmentation.models
+        weaklysegmentation.models,
+        backgroundRemover.models
     )
 }
 

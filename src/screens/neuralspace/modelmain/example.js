@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export default () => (
     <table style={{color: 'white'}} className="table-striped">
                             <tbody><tr>

@@ -8,7 +8,11 @@ export const models = [
             name: "VRT: A Video Restoration Transformer",
             url: "https://paperswithcode.com/paper/vrt-a-video-restoration-transformer",
         },
-        demo: false,
+        demo: {
+            type: "object-detection",
+            api: "https://hf.space/embed/SuwoE/SuperResolution/+/api/predict/",
+            defaultSec: 10,
+        },
         benchmark: true,
         studio: true,
         paper: {
@@ -32,7 +36,7 @@ export const models = [
             datasets: ["GoPro"],
             paperswithcode: "https://paperswithcode.com/paper/vrt-a-video-restoration-transformer",
         }
-    }
+    },
 ]
 
 export default models;

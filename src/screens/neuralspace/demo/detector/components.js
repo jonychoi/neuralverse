@@ -6,6 +6,8 @@ import { bgStyler } from '../../../../styles';
 import city from '../imgs/city.jpg';
 import elephant from '../imgs/elephants.jpg';
 import zebra from '../imgs/zebras.jpg';
+import streetview from '../imgs/streetview.jpg'
+import satelite from '../imgs/satelite.jpg';
 
 export const DragAndDrop = ({darkMode, img, setImg}) => {
     return (
@@ -36,6 +38,7 @@ const ImgWrap = styled(Flex)`
 const imgs = [
     city,
     elephant,
+    satelite,
     zebra,
 ]
 
