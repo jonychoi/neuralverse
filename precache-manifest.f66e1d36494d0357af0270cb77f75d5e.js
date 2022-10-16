@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "ec8a37c3dffbfea2db2b",
+    "revision": "e4834ce8731578dabf42",
     "url": "/neuralverse/static/css/main.644f732f.chunk.css"
   },
   {
-    "revision": "ec8a37c3dffbfea2db2b",
-    "url": "/neuralverse/static/js/main.ec8a37c3.chunk.js"
+    "revision": "e4834ce8731578dabf42",
+    "url": "/neuralverse/static/js/main.e4834ce8.chunk.js"
   },
   {
     "revision": "22c3efe49dcff7e28b0c",
@@ -148,7 +148,7 @@ self.__precacheManifest = [
     "url": "/neuralverse/static/media/computer vision.44f88a0d.jpg"
   },
   {
-    "revision": "339a3d274f5cba2cafaa1e3698dd2bb1",
+    "revision": "5de3d826fd59a7e13d4a035bd31a30a0",
     "url": "/neuralverse/index.html"
   }
 ];

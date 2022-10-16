@@ -1,7 +1,7 @@
 {
   "main.css": "/neuralverse/static/css/main.644f732f.chunk.css",
-  "main.js": "/neuralverse/static/js/main.ec8a37c3.chunk.js",
-  "main.js.map": "/neuralverse/static/js/main.ec8a37c3.chunk.js.map",
+  "main.js": "/neuralverse/static/js/main.e4834ce8.chunk.js",
+  "main.js.map": "/neuralverse/static/js/main.e4834ce8.chunk.js.map",
   "static/js/1.22c3efe4.chunk.js": "/neuralverse/static/js/1.22c3efe4.chunk.js",
   "static/js/1.22c3efe4.chunk.js.map": "/neuralverse/static/js/1.22c3efe4.chunk.js.map",
   "runtime~main.js": "/neuralverse/static/js/runtime~main.ccad2834.js",
@@ -41,6 +41,6 @@
   "static/media/computer vision.jpg": "/neuralverse/static/media/computer vision.44f88a0d.jpg",
   "static/css/main.644f732f.chunk.css.map": "/neuralverse/static/css/main.644f732f.chunk.css.map",
   "index.html": "/neuralverse/index.html",
-  "precache-manifest.2f6dc3861ffe558958c156de52b35fb0.js": "/neuralverse/precache-manifest.2f6dc3861ffe558958c156de52b35fb0.js",
+  "precache-manifest.f66e1d36494d0357af0270cb77f75d5e.js": "/neuralverse/precache-manifest.f66e1d36494d0357af0270cb77f75d5e.js",
   "service-worker.js": "/neuralverse/service-worker.js"
 }
