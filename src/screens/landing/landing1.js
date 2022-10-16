@@ -178,7 +178,7 @@ export const Index = ({darkMode}) => {
                 <Text zIndex={10} className="bold" size="30" color="white" style={{textShadow: '1.5px 1.5px 1.5px rgba(20, 20, 20, 0.9)'}}>BEYOND THE STATE OF THE ARTS</Text>
                 <Text zIndex={10} margin="margin: 10px" color="white" className="bold" style={{textShadow: '1.5px 1.5px 1.5px rgba(20, 20, 20, 0.9)'}} size="20">WE BELIEVE THE HUMAN COLLECTIVE INTELLIGENCE</Text>
             </Col>
-			<ReactPlayer mute={true} playing={true} loop={true} url={earth} width='100%' height='100%' style={{position: 'absolute'}} />	
+			<ReactPlayer muted={true} playing={true} loop={true} url={earth} width='100%' height='100%' style={{position: 'absolute'}} />	
         </Col>
     )
 };
